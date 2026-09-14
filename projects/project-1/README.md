@@ -20,3 +20,14 @@ I'm researching ways to make personal information easier to organize and retriev
 ## Status
 
 🟡 In Development
+
+## Development Log
+
+### Phase 1 — Problem Identification
+Identified a recurring problem with finding and retrieving information that has previously been encountered in digital spaces.
+
+### Phase 2 — Initial Research
+Started exploring existing approaches to personal information management and how AI could improve information retrieval.
+
+### Phase 3 — Exploration
+Currently investigating possible technical approaches, backend architecture, and AI-based methods that could make retrieval more useful and context-aware.
