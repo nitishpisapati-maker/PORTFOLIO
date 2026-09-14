@@ -16,11 +16,8 @@ body {
     background: #f3f1ec;
     color: #111;
     font-family: "Manrope", sans-serif;
-
-    transition:
-        background-color 0.5s ease;
-
     overflow-x: hidden;
+    transition: background-color 0.5s ease;
 }
 
 body.menu-open {
@@ -44,7 +41,6 @@ button {
 .page-loader {
     position: fixed;
     inset: 0;
-
     z-index: 99999;
 
     display: flex;
@@ -76,10 +72,8 @@ body.loaded .page-loader {
 .loader-logo {
     font-size: 72px;
     font-weight: 800;
-
     letter-spacing: -6px;
     line-height: 1;
-
     margin-bottom: 40px;
 }
 
@@ -89,44 +83,34 @@ body.loaded .page-loader {
 
 .loader-text {
     font-family: "DM Mono", monospace;
-
     font-size: 13px;
     letter-spacing: 2px;
-
     color: #888;
-
     margin-bottom: 22px;
 }
 
 .loader-line {
     width: 100%;
     height: 2px;
-
     background: #333;
-
     overflow: hidden;
 }
 
 .loader-progress {
-    height: 100%;
     width: 0;
-
+    height: 100%;
     background: #ff4d00;
-
-    animation:
-        loaderProgress 1.3s ease forwards;
+    animation: loaderProgress 1.3s ease forwards;
 }
 
 @keyframes loaderProgress {
-
-    0% {
+    from {
         width: 0;
     }
 
-    100% {
+    to {
         width: 100%;
     }
-
 }
 
 
@@ -137,16 +121,13 @@ body.loaded .page-loader {
 .cursor-dot,
 .cursor-ring {
     position: fixed;
-
     top: 0;
     left: 0;
 
     pointer-events: none;
-
     border-radius: 50%;
 
-    transform:
-        translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 
     z-index: 100000;
 }
@@ -154,7 +135,6 @@ body.loaded .page-loader {
 .cursor-dot {
     width: 7px;
     height: 7px;
-
     background: #111;
 }
 
@@ -168,7 +148,7 @@ body.loaded .page-loader {
         width 0.25s ease,
         height 0.25s ease,
         background 0.25s ease,
-        border 0.25s ease;
+        border-color 0.25s ease;
 }
 
 body.cursor-active .cursor-ring {
@@ -176,7 +156,6 @@ body.cursor-active .cursor-ring {
     height: 55px;
 
     background: rgba(255, 77, 0, 0.1);
-
     border-color: #ff4d00;
 }
 
@@ -191,7 +170,6 @@ body.cursor-active .cursor-dot {
 
 .navbar {
     position: fixed;
-
     top: 0;
     left: 0;
     right: 0;
@@ -206,15 +184,33 @@ body.cursor-active .cursor-dot {
 
     padding: 0 5vw;
 
+    background: rgba(243, 241, 236, 0.96);
+
     transition:
         background 0.35s ease,
         backdrop-filter 0.35s ease,
         box-shadow 0.35s ease;
 }
 
+/* Important fix:
+   keeps navbar visually separated from hero */
+
+.navbar::after {
+    content: "";
+
+    position: absolute;
+
+    left: 5vw;
+    right: 5vw;
+    bottom: 0;
+
+    height: 1px;
+
+    background: rgba(17, 17, 17, 0.45);
+}
+
 .navbar.scrolled {
     background: rgba(243, 241, 236, 0.82);
-
     backdrop-filter: blur(16px);
 
     box-shadow:
@@ -222,10 +218,11 @@ body.cursor-active .cursor-dot {
 }
 
 .nav-logo {
+    position: relative;
+    z-index: 2;
+
     font-size: 23px;
-
     font-weight: 800;
-
     letter-spacing: -1px;
 }
 
@@ -236,7 +233,6 @@ body.cursor-active .cursor-dot {
 .nav-links {
     display: flex;
     align-items: center;
-
     gap: 8px;
 }
 
@@ -244,33 +240,32 @@ body.cursor-active .cursor-dot {
     padding: 11px 16px;
 
     font-family: "DM Mono", monospace;
-
     font-size: 12px;
 
     border-radius: 100px;
 
     transition:
         background 0.25s ease,
-        transform 0.25s ease;
+        transform 0.25s ease,
+        color 0.25s ease;
 }
 
 .nav-links a:hover {
     background: rgba(0, 0, 0, 0.08);
-
-    transform:
-        translateY(-2px);
+    transform: translateY(-2px);
 }
 
 .nav-right {
     display: flex;
     align-items: center;
-
     gap: 25px;
 }
 
 .nav-github {
-    font-family: "DM Mono", monospace;
+    position: relative;
+    z-index: 2;
 
+    font-family: "DM Mono", monospace;
     font-size: 12px;
 
     border-bottom: 1px solid #111;
@@ -296,7 +291,6 @@ body.cursor-active .cursor-dot {
     cursor: pointer;
 
     font-family: "DM Mono", monospace;
-
     font-size: 11px;
 }
 
@@ -316,16 +310,14 @@ body.cursor-active .cursor-dot {
 
     padding: 30px 6vw;
 
-    transform:
-        translateY(-100%);
+    transform: translateY(-100%);
 
     transition:
         transform 0.5s cubic-bezier(.77, 0, .18, 1);
 }
 
 .mobile-menu.open {
-    transform:
-        translateY(0);
+    transform: translateY(0);
 }
 
 .mobile-menu-header {
@@ -333,7 +325,6 @@ body.cursor-active .cursor-dot {
     justify-content: space-between;
 
     font-family: "DM Mono", monospace;
-
     font-size: 11px;
 
     color: #777;
@@ -348,7 +339,6 @@ body.cursor-active .cursor-dot {
     cursor: pointer;
 
     font-family: "DM Mono", monospace;
-
     font-size: 11px;
 }
 
@@ -370,7 +360,6 @@ body.cursor-active .cursor-dot {
     border-bottom: 1px solid #333;
 
     font-size: clamp(35px, 10vw, 65px);
-
     font-weight: 700;
 
     letter-spacing: -3px;
@@ -382,17 +371,13 @@ body.cursor-active .cursor-dot {
 
 .mobile-link span {
     font-family: "DM Mono", monospace;
-
     font-size: 10px;
-
     color: #777;
-
     letter-spacing: 0;
 }
 
 .mobile-link:hover {
     color: #ff4d00;
-
     padding-left: 15px;
 }
 
@@ -402,6 +387,8 @@ body.cursor-active .cursor-dot {
 ========================================= */
 
 .hero {
+    position: relative;
+
     min-height: 100vh;
 
     display: grid;
@@ -411,11 +398,16 @@ body.cursor-active .cursor-dot {
 
     align-items: center;
 
-    padding:
-        130px 7vw
-        80px;
-
     gap: 5vw;
+
+    /*
+       FIX:
+       Navbar is 82px tall.
+       Give hero enough breathing room.
+    */
+
+    padding:
+        155px 7vw 90px;
 }
 
 .hero-left {
@@ -429,9 +421,11 @@ body.cursor-active .cursor-dot {
 
     letter-spacing: 1.5px;
 
-    margin-bottom: 28px;
-
     color: #555;
+
+    margin-bottom: 30px;
+
+    white-space: nowrap;
 }
 
 .hero h1 {
@@ -458,7 +452,7 @@ body.cursor-active .cursor-dot {
 .hero-description {
     max-width: 570px;
 
-    margin-top: 35px;
+    margin-top: 38px;
 
     font-size: 17px;
 
@@ -496,15 +490,12 @@ body.cursor-active .cursor-dot {
 
 .button-primary {
     background: #111;
-
     color: #fff;
 }
 
 .button-primary:hover {
     background: #ff4d00;
-
-    transform:
-        translateY(-4px);
+    transform: translateY(-4px);
 }
 
 .button-secondary {
@@ -513,16 +504,13 @@ body.cursor-active .cursor-dot {
 
 .button-secondary:hover {
     background: #111;
-
     color: #fff;
-
-    transform:
-        translateY(-4px);
+    transform: translateY(-4px);
 }
 
 
 /* =========================================
-   HERO TERMINAL
+   HERO INTERACTION
 ========================================= */
 
 .hero-right {
@@ -530,6 +518,8 @@ body.cursor-active .cursor-dot {
 
     justify-content: center;
     align-items: center;
+
+    min-width: 0;
 }
 
 .hero-interaction {
@@ -585,7 +575,6 @@ body.cursor-active .cursor-dot {
     to {
         transform: rotate(360deg);
     }
-
 }
 
 @keyframes orbitSpinReverse {
@@ -597,8 +586,12 @@ body.cursor-active .cursor-dot {
     to {
         transform: rotate(0deg);
     }
-
 }
+
+
+/* =========================================
+   TERMINAL
+========================================= */
 
 .terminal {
     width: 420px;
@@ -640,13 +633,11 @@ body.cursor-active .cursor-dot {
     color: #888;
 
     font-family: "DM Mono", monospace;
-
     font-size: 10px;
 }
 
 .terminal-dots {
     display: flex;
-
     gap: 6px;
 }
 
@@ -681,7 +672,6 @@ body.cursor-active .cursor-dot {
     color: #aaa;
 
     margin-left: 15px !important;
-
     margin-bottom: 15px !important;
 }
 
@@ -697,7 +687,6 @@ body.cursor-active .cursor-dot {
     50% {
         opacity: 0;
     }
-
 }
 
 
@@ -706,6 +695,8 @@ body.cursor-active .cursor-dot {
 ========================================= */
 
 .section {
+    position: relative;
+
     padding:
         140px 7vw;
 
@@ -714,6 +705,10 @@ body.cursor-active .cursor-dot {
 }
 
 .section-label {
+    position: relative;
+
+    display: block;
+
     font-family: "DM Mono", monospace;
 
     font-size: 11px;
@@ -723,9 +718,16 @@ body.cursor-active .cursor-dot {
     color: #666;
 
     margin-bottom: 65px;
+
+    line-height: 1.4;
+
+    /* Prevent weird overlapping */
+    height: auto;
 }
 
 .section-content {
+    position: relative;
+
     max-width: 1250px;
 
     margin: auto;
@@ -748,7 +750,7 @@ body.cursor-active .cursor-dot {
 
 
 /* =========================================
-   REVEAL
+   REVEAL ANIMATION
 ========================================= */
 
 .reveal {
@@ -829,7 +831,6 @@ body.cursor-active .cursor-dot {
 
 .what-i-do {
     background: #111;
-
     color: #f3f1ec;
 }
 
@@ -1251,7 +1252,6 @@ body.cursor-active .cursor-dot {
 
 .toolbox-section {
     background: #111;
-
     color: #f3f1ec;
 }
 
@@ -1280,7 +1280,6 @@ body.cursor-active .cursor-dot {
 
 .tool-list {
     display: flex;
-
     flex-direction: column;
 }
 
@@ -1313,7 +1312,6 @@ body.cursor-active .cursor-dot {
 
 .learning-header h2 em {
     color: #ff4d00;
-
     font-style: normal;
 }
 
@@ -1324,7 +1322,6 @@ body.cursor-active .cursor-dot {
         repeat(3, 1fr);
 
     border-top: 1px solid #111;
-
     border-left: 1px solid #111;
 }
 
@@ -1334,7 +1331,6 @@ body.cursor-active .cursor-dot {
     padding: 25px;
 
     border-right: 1px solid #111;
-
     border-bottom: 1px solid #111;
 
     display: flex;
@@ -1490,7 +1486,6 @@ body.cursor-active .cursor-dot {
     50% {
         opacity: 0.3;
     }
-
 }
 
 .now-mark {
@@ -1555,7 +1550,9 @@ footer {
 }
 
 
-/* BACK TO TOP */
+/* =========================================
+   BACK TO TOP
+========================================= */
 
 .back-to-top {
     display: flex;
@@ -1570,7 +1567,6 @@ footer {
         25px 0;
 
     border-top: 1px solid #333;
-
     border-bottom: 1px solid #333;
 
     font-family: "DM Mono", monospace;
@@ -1600,7 +1596,6 @@ footer {
     color: #ff4d00;
 
     padding-left: 10px;
-
     padding-right: 10px;
 }
 
@@ -1639,11 +1634,11 @@ footer {
     .hero {
         grid-template-columns: 1fr;
 
-        padding-top: 150px;
+        padding-top: 140px;
     }
 
     .hero-right {
-        margin-top: 50px;
+        margin-top: 40px;
     }
 
     .about-grid {
@@ -1669,7 +1664,6 @@ footer {
     .toolbox-grid {
         grid-template-columns: 1fr;
     }
-
 }
 
 
@@ -1685,6 +1679,11 @@ footer {
         padding: 0 6vw;
     }
 
+    .navbar::after {
+        left: 6vw;
+        right: 6vw;
+    }
+
     .nav-links,
     .nav-github {
         display: none;
@@ -1695,10 +1694,18 @@ footer {
     }
 
     .hero {
-        padding:
-            120px 6vw 80px;
+        min-height: auto;
 
-        gap: 20px;
+        grid-template-columns: 1fr;
+
+        padding:
+            125px 6vw 80px;
+    }
+
+    .eyebrow {
+        white-space: normal;
+
+        line-height: 1.6;
     }
 
     .hero h1 {
@@ -1720,7 +1727,6 @@ footer {
 
     .hero-interaction {
         width: 100%;
-
         height: 420px;
     }
 
@@ -1821,7 +1827,6 @@ footer {
     .footer-bottom {
         gap: 20px;
     }
-
 }
 
 
@@ -1835,7 +1840,6 @@ footer {
     .cursor-ring {
         display: none;
     }
-
 }
 
 
@@ -1853,10 +1857,7 @@ footer {
     *::before,
     *::after {
         animation-duration: 0.01ms !important;
-
         animation-iteration-count: 1 !important;
-
         transition-duration: 0.01ms !important;
     }
-
 }
