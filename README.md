@@ -25,3 +25,10 @@ I'm exploring how AI can help people capture, organize, and retrieve the informa
 - Research & Development
 - Problem Solving
 - Building and Experimenting with New Ideas
+
+## Currently Learning
+
+- Git & GitHub
+- Backend Development
+- Artificial Intelligence & Machine Learning
+- Building and Deploying Projects
