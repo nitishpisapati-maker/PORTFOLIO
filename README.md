@@ -8,7 +8,7 @@ My goal is to build a startup by the end of my first year, and R&D is one of the
 
 I'm looking forward to seeing one of my startup ideas being put to use by students like me who face the same problem I've been trying to approach in a relatable and practical way.
 
-## Projects
+## Project-1
 
 ### --
 
