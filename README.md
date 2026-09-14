@@ -1,4 +1,4 @@
-# Hii, I'm Nitish Pisapati!!
+# Hi, I'm Nitish Pisapati
 
 ## About Me
 
