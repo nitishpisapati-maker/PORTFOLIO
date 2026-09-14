@@ -8,9 +8,9 @@ My goal is to build a startup by the end of my first year, and R&D is one of the
 
 I'm looking forward to seeing one of my startup ideas being put to use by students like me who face the same problem I've been trying to approach in a relatable and practical way.
 
-## Project-1
+## Project
 
-### --
+### Project-1
 
 I'm exploring how AI can help people capture, organize, and retrieve the information they come across in their everyday digital lives. The project focuses on making personal information easier to find and useful again when it's actually needed.
 
