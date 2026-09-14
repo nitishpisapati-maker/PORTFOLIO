@@ -12,8 +12,7 @@ body {
     background: #f3f1ec;
     color: #111;
     font-family: "Manrope", sans-serif;
-
-    transition: background-color 0.35s ease;
+    transition: background-color 0.45s ease;
 }
 
 a {
@@ -27,17 +26,17 @@ a {
 }
 
 
-/* ================= NAVBAR ================= */
+/* =========================
+   NAVBAR
+========================= */
 
 .navbar {
-    height: 80px;
-    padding: 0 5vw;
+    width: 100%;
+    padding: 24px 5vw;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    border-bottom: 1px solid #111;
 
     position: sticky;
     top: 0;
@@ -45,12 +44,14 @@ a {
 
     background: rgba(243, 241, 236, 0.88);
     backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(17, 17, 17, 0.12);
 }
 
 .logo {
     font-size: 24px;
     font-weight: 800;
-    letter-spacing: -2px;
+    letter-spacing: -1px;
 }
 
 .logo span {
@@ -59,229 +60,256 @@ a {
 
 .nav-links {
     display: flex;
-    gap: 35px;
+    gap: 8px;
 }
 
 .nav-links a {
+    padding: 9px 13px;
+
     font-family: "DM Mono", monospace;
-    font-size: 11px;
-    text-transform: uppercase;
+    font-size: 12px;
 
     transition:
-        opacity 0.2s ease,
-        transform 0.2s ease;
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.nav-links a span {
+    opacity: 0.4;
+    margin-right: 6px;
 }
 
 .nav-links a:hover {
-    opacity: 1;
-    transform: translateY(-2px);
-}
-
-.github-btn {
-    border: 1px solid #111;
-
-    padding: 11px 17px;
-
-    font-family: "DM Mono", monospace;
-    font-size: 11px;
-
-    transition: 0.25s ease;
-}
-
-.github-btn:hover {
     background: #111;
-    color: #f3f1ec;
+    color: #fff;
 }
 
-
-/* ================= GENERAL ================= */
-
-.hero,
-.section,
-.footer-main,
-.footer-bottom {
-    width: 90%;
-    max-width: 1400px;
-    margin: auto;
-}
-
-.section {
-    padding: 150px 0;
-}
-
-.section-heading {
-    display: flex;
-    justify-content: space-between;
-
-    padding-bottom: 18px;
-    margin-bottom: 80px;
+.github-link {
+    font-family: "DM Mono", monospace;
+    font-size: 12px;
 
     border-bottom: 1px solid #111;
 
-    font-family: "DM Mono", monospace;
-    font-size: 10px;
-
-    letter-spacing: 0.08em;
+    padding-bottom: 4px;
 }
 
 
-/* ================= HERO ================= */
+/* =========================
+   HERO
+========================= */
 
 .hero {
-    min-height: calc(100vh - 80px);
+    min-height: 88vh;
+
+    padding: 100px 5vw 120px;
 
     display: grid;
-    grid-template-columns: 1.6fr 0.7fr;
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 80px;
 
     align-items: center;
 
-    gap: 8vw;
-
-    padding-top: 70px;
-    padding-bottom: 70px;
+    border-bottom: 1px solid rgba(17,17,17,0.15);
 }
 
 .eyebrow {
     font-family: "DM Mono", monospace;
     font-size: 11px;
+    letter-spacing: 1.5px;
 
-    letter-spacing: 0.12em;
-
-    margin-bottom: 28px;
+    margin-bottom: 30px;
 }
 
 .hero h1 {
-    font-size: clamp(55px, 8vw, 125px);
+    max-width: 900px;
 
-    line-height: 0.88;
-
-    letter-spacing: -0.075em;
-
+    font-size: clamp(55px, 7.5vw, 115px);
+    line-height: 0.92;
+    letter-spacing: -6px;
     font-weight: 800;
-
-    max-width: 1000px;
 }
 
-.hero h1 span,
-h2 span {
+.hero h1 em {
     color: #ff4d00;
+    font-style: normal;
 }
 
 .hero-description {
     max-width: 600px;
 
-    margin-top: 45px;
+    margin-top: 42px;
 
     font-size: 17px;
-
-    line-height: 1.7;
+    line-height: 1.75;
+    color: #444;
 }
 
-.hero-actions {
+.hero-buttons {
     display: flex;
-    align-items: center;
+    gap: 14px;
 
-    gap: 30px;
+    margin-top: 40px;
+}
 
-    margin-top: 45px;
+.primary-btn,
+.secondary-btn {
+    padding: 15px 21px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
 }
 
 .primary-btn {
     background: #111;
-    color: #f3f1ec;
-
-    padding: 15px 22px;
-
-    font-family: "DM Mono", monospace;
-    font-size: 11px;
-
-    transition: 0.25s ease;
+    color: #fff;
 }
 
-.primary-btn:hover {
-    transform: translateY(-3px);
-}
-
-.text-link {
-    font-family: "DM Mono", monospace;
-    font-size: 11px;
-
-    border-bottom: 1px solid #111;
-
-    padding-bottom: 5px;
-}
-
-.hero-right {
-    align-self: end;
-}
-
-.status-box {
+.secondary-btn {
     border: 1px solid #111;
-
-    padding: 25px;
 }
 
-.status-top,
-.status-bottom {
+.primary-btn:hover,
+.secondary-btn:hover {
+    transform: translateY(-4px);
+}
+
+.secondary-btn:hover {
+    background: #111;
+    color: #fff;
+}
+
+
+/* =========================
+   TERMINAL
+========================= */
+
+.terminal {
+    background: #111;
+    color: #fff;
+
+    min-height: 400px;
+
+    box-shadow: 18px 18px 0 #ff4d00;
+}
+
+.terminal-header {
+    height: 42px;
+
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    gap: 7px;
 
-    font-family: "DM Mono", monospace;
-    font-size: 9px;
+    padding: 0 16px;
+
+    border-bottom: 1px solid #333;
 }
 
-.status-dot {
+.terminal-header span {
     width: 8px;
     height: 8px;
 
-    background: #ff4d00;
-
     border-radius: 50%;
+
+    background: #777;
 }
 
-.status-main {
-    font-size: 27px;
-
-    font-weight: 800;
-
-    line-height: 1;
-
-    margin: 70px 0;
-}
-
-.status-bottom {
-    padding-top: 15px;
-
-    border-top: 1px solid #111;
-}
-
-.hero-index {
-    margin-top: 20px;
+.terminal-body {
+    padding: 30px;
 
     font-family: "DM Mono", monospace;
+    font-size: 13px;
+    line-height: 1.7;
+}
 
-    font-size: 10px;
+.terminal-body b {
+    color: #ff4d00;
+}
+
+.terminal-result {
+    margin-bottom: 23px;
+    color: #aaa;
+}
+
+.terminal-result.active {
+    color: #fff;
+}
+
+.cursor {
+    color: #ff4d00;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
 }
 
 
-/* ================= ABOUT ================= */
+/* =========================
+   SECTIONS
+========================= */
 
-.about-layout {
+.section {
+    padding: 130px 5vw;
+
+    border-bottom: 1px solid rgba(17,17,17,0.15);
+
+    opacity: 0;
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 22px;
+    margin-bottom: 80px;
+
+    border-bottom: 1px solid rgba(17,17,17,0.2);
+}
+
+.section-heading span {
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+}
+
+.section-heading p {
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    opacity: 0.55;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-grid {
     display: grid;
-
     grid-template-columns: 1fr 1fr;
 
-    gap: 10vw;
+    gap: 100px;
 }
 
-.about-layout h2,
-.research-layout h2,
-.beyond-layout h2 {
-    font-size: clamp(50px, 6vw, 90px);
-
-    line-height: 0.9;
-
-    letter-spacing: -0.06em;
+.about-grid h2 {
+    font-size: clamp(42px, 5vw, 72px);
+    line-height: 1;
+    letter-spacing: -4px;
 }
 
 .about-content {
@@ -289,334 +317,222 @@ h2 span {
 }
 
 .about-content p {
-    font-size: 18px;
+    font-size: 17px;
+    line-height: 1.8;
 
-    line-height: 1.7;
-
-    margin-bottom: 28px;
+    margin-bottom: 30px;
 }
 
-.facts {
-    display: grid;
 
+/* =========================
+   WHAT I DO
+========================= */
+
+.four-grid {
+    display: grid;
     grid-template-columns: repeat(4, 1fr);
 
     border-top: 1px solid #111;
-    border-bottom: 1px solid #111;
-
-    margin-top: 100px;
+    border-left: 1px solid #111;
 }
 
-.facts div {
-    padding: 25px 20px;
+.info-card {
+    padding: 30px;
+
+    min-height: 320px;
 
     border-right: 1px solid #111;
+    border-bottom: 1px solid #111;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
 }
 
-.facts div:last-child {
-    border-right: none;
+.info-card:hover {
+    background: #111;
+    color: #fff;
+    transform: translateY(-8px);
 }
 
-.facts span,
-.tool-label,
-.questions span,
-.experiments span {
-    display: block;
-
+.card-number {
     font-family: "DM Mono", monospace;
-
-    font-size: 9px;
-
-    margin-bottom: 20px;
+    font-size: 11px;
+    opacity: 0.5;
 }
 
-.facts strong {
+.info-card h3 {
+    margin-top: 80px;
+
+    font-size: 25px;
+    letter-spacing: -1px;
+}
+
+.info-card p {
+    margin-top: 18px;
+
     font-size: 14px;
+    line-height: 1.7;
 }
 
 
-/* ================= PROJECTS ================= */
+/* =========================
+   PROJECT
+========================= */
 
 .project-feature {
-    display: grid;
+    border: 1px solid #111;
+    padding: 30px;
 
-    grid-template-columns: 120px 1fr;
-
-    border-top: 1px solid #111;
-    border-bottom: 1px solid #111;
+    transition:
+        background 0.35s ease,
+        color 0.35s ease;
 }
 
-.project-number {
-    padding: 35px;
-
-    font-family: "DM Mono", monospace;
-
-    font-size: 13px;
-
-    border-right: 1px solid #111;
-}
-
-.project-main {
-    padding: 35px 40px;
+.project-feature:hover {
+    background: #111;
+    color: #fff;
 }
 
 .project-top {
     display: flex;
-
     justify-content: space-between;
 
-    gap: 30px;
-}
+    padding-bottom: 25px;
 
-.project-label {
+    border-bottom: 1px solid currentColor;
+
     font-family: "DM Mono", monospace;
-
-    font-size: 9px;
-
-    margin-bottom: 18px;
-}
-
-.project-top h2 {
-    font-size: clamp(30px, 4vw, 60px);
-
-    line-height: 0.95;
-
-    letter-spacing: -0.055em;
-
-    max-width: 750px;
+    font-size: 11px;
 }
 
 .project-status {
-    font-family: "DM Mono", monospace;
+    color: #ff4d00;
+}
 
-    font-size: 9px;
+.project-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 
-    white-space: nowrap;
+    gap: 80px;
+
+    padding-top: 60px;
+    padding-bottom: 50px;
+}
+
+.project-main h2 {
+    font-size: clamp(55px, 7vw, 100px);
+    line-height: 0.88;
+    letter-spacing: -5px;
 }
 
 .project-description {
-    max-width: 700px;
+    max-width: 550px;
+}
 
-    margin-top: 50px;
-
-    font-size: 16px;
-
-    line-height: 1.7;
+.project-description p {
+    font-size: 17px;
+    line-height: 1.8;
 }
 
 .tags {
     display: flex;
-
     flex-wrap: wrap;
-
     gap: 8px;
 
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 .tags span {
-    border: 1px solid #111;
+    border: 1px solid currentColor;
 
-    padding: 8px 11px;
+    padding: 7px 10px;
 
     font-family: "DM Mono", monospace;
-
-    font-size: 9px;
+    font-size: 10px;
 }
 
-.experiments {
+.project-link {
+    display: inline-block;
+
+    margin-top: 35px;
+
+    font-family: "DM Mono", monospace;
+    font-size: 12px;
+
+    border-bottom: 1px solid currentColor;
+
+    padding-bottom: 5px;
+}
+
+
+/* =========================
+   R&D
+========================= */
+
+.rnd-section {
+    background: #e9e6df;
+}
+
+.rnd-layout {
     display: grid;
-
-    grid-template-columns: 1fr 2fr;
-
-    padding: 35px 0;
-
-    border-bottom: 1px solid #111;
-}
-
-.experiments p {
-    max-width: 600px;
-
-    font-size: 15px;
-
-    line-height: 1.6;
-}
-
-
-/* ================= R&D ================= */
-
-.research-layout {
-    display: grid;
-
     grid-template-columns: 1fr 1fr;
 
-    gap: 10vw;
+    gap: 100px;
 }
 
-.process-item {
-    display: grid;
+.rnd-layout > h2 {
+    font-size: clamp(50px, 6vw, 90px);
+    line-height: 0.92;
+    letter-spacing: -5px;
+}
 
-    grid-template-columns: 60px 1fr;
+.rnd-layout h2 em {
+    color: #ff4d00;
+    font-style: normal;
+}
+
+.process {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+
+    gap: 25px;
 
     padding: 25px 0;
 
     border-bottom: 1px solid #111;
 }
 
-.process-item strong {
+.process span {
     font-family: "DM Mono", monospace;
-
     font-size: 11px;
 }
 
-.process-item h3 {
-    font-size: 20px;
-
-    margin-bottom: 10px;
+.process h3 {
+    font-size: 17px;
 }
 
-.process-item p {
+.process p {
+    margin-top: 8px;
+
     font-size: 14px;
-
     line-height: 1.6;
+
+    opacity: 0.65;
 }
 
-.questions {
-    display: grid;
 
-    grid-template-columns: 1fr 2fr;
+/* =========================
+   INTERESTS
+========================= */
 
-    margin-top: 100px;
-
-    padding-top: 25px;
-
+.interest-list {
     border-top: 1px solid #111;
 }
 
-.questions p {
-    font-size: 20px;
-
-    line-height: 1.5;
-
-    max-width: 700px;
-}
-
-
-/* ================= INTERESTS ================= */
-
-.interest-grid {
+.interest-list div {
     display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.interest-item {
-    min-height: 230px;
-
-    padding: 30px;
-
-    border-bottom: 1px solid #111;
-    border-right: 1px solid #111;
-
-    transition:
-        background-color 0.3s ease,
-        color 0.3s ease;
-}
-
-.interest-item:nth-child(even) {
-    border-right: none;
-}
-
-.interest-item:hover {
-    background: #111;
-    color: #f3f1ec;
-}
-
-.interest-item span {
-    font-family: "DM Mono", monospace;
-
-    font-size: 10px;
-}
-
-.interest-item h3 {
-    margin-top: 55px;
-
-    font-size: 24px;
-
-    letter-spacing: -0.04em;
-}
-
-.interest-item p {
-    max-width: 450px;
-
-    margin-top: 12px;
-
-    font-size: 13px;
-
-    line-height: 1.6;
-}
-
-
-/* ================= TOOLBOX ================= */
-
-.toolbox-layout {
-    display: grid;
-
-    grid-template-columns: 1fr 1.5fr;
-
-    gap: 10vw;
-}
-
-.toolbox-title h2 {
-    font-size: clamp(55px, 7vw, 100px);
-
-    line-height: 0.85;
-
-    letter-spacing: -0.07em;
-}
-
-.tool-group {
-    padding: 25px 0;
-
-    border-bottom: 1px solid #111;
-}
-
-.tool-list {
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 8px;
-}
-
-.tool-list span {
-    padding: 9px 12px;
-
-    border: 1px solid #111;
-
-    font-family: "DM Mono", monospace;
-
-    font-size: 10px;
-
-    transition: 0.2s ease;
-}
-
-.tool-list span:hover {
-    background: #111;
-    color: #f3f1ec;
-}
-
-
-/* ================= LEARNING ================= */
-
-.learning-list {
-    border-top: 1px solid #111;
-}
-
-.learning-item {
-    display: grid;
-
-    grid-template-columns: 70px 1fr 30px;
+    grid-template-columns: 70px 1fr;
 
     align-items: center;
 
@@ -624,241 +540,338 @@ h2 span {
 
     border-bottom: 1px solid #111;
 
-    transition: 0.25s ease;
+    transition:
+        padding-left 0.3s ease,
+        background 0.3s ease;
 }
 
-.learning-item:hover {
-    padding-left: 15px;
-    padding-right: 15px;
-
-    background: rgba(17, 17, 17, 0.04);
+.interest-list div:hover {
+    padding-left: 20px;
 }
 
-.learning-item > span:first-child {
+.interest-list span {
     font-family: "DM Mono", monospace;
-
-    font-size: 10px;
+    font-size: 11px;
+    opacity: 0.5;
 }
 
-.learning-item h3 {
-    font-size: 23px;
-
-    letter-spacing: -0.03em;
-}
-
-.learning-item p {
-    margin-top: 5px;
-
-    font-size: 13px;
-
-    line-height: 1.5;
-}
-
-.learning-arrow {
-    font-size: 18px;
+.interest-list h3 {
+    font-size: clamp(30px, 4vw, 55px);
+    letter-spacing: -2px;
 }
 
 
-/* ================= BEYOND ================= */
+/* =========================
+   TOOLBOX
+========================= */
 
-.beyond-layout {
+.toolbox {
+    background: #111;
+    color: #fff;
+}
+
+.toolbox .section-heading {
+    border-color: #444;
+}
+
+.toolbox-grid {
     display: grid;
+    grid-template-columns: repeat(3, 1fr);
 
-    grid-template-columns: 1fr 1fr;
-
-    gap: 10vw;
+    gap: 50px;
 }
 
-.beyond-text {
-    max-width: 600px;
-}
+.toolbox-column h3 {
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
 
-.beyond-text p {
-    font-size: 18px;
-
-    line-height: 1.7;
+    color: #ff4d00;
 
     margin-bottom: 30px;
 }
 
+.skill-list {
+    display: flex;
+    flex-direction: column;
+}
 
-/* ================= FOOTER ================= */
+.skill-list span {
+    padding: 15px 0;
+
+    border-bottom: 1px solid #333;
+
+    font-size: 20px;
+}
+
+
+/* =========================
+   LEARNING
+========================= */
+
+.learning-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    border-top: 1px solid #111;
+    border-left: 1px solid #111;
+}
+
+.learning-item {
+    min-height: 180px;
+
+    padding: 25px;
+
+    border-right: 1px solid #111;
+    border-bottom: 1px solid #111;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.learning-item:hover {
+    background: #ff4d00;
+    color: #111;
+}
+
+.learning-item span {
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    opacity: 0.5;
+}
+
+.learning-item h3 {
+    font-size: 25px;
+}
+
+
+/* =========================
+   CURRENTLY
+========================= */
+
+.currently {
+    padding: 70px 5vw;
+
+    background: #ff4d00;
+}
+
+.currently-title {
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+
+    margin-bottom: 40px;
+}
+
+.currently-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 30px;
+}
+
+.currently-grid div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.currently-grid small {
+    font-family: "DM Mono", monospace;
+    font-size: 10px;
+}
+
+.currently-grid strong {
+    font-size: 18px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
-    margin-top: 80px;
+    padding: 120px 5vw 30px;
 
     background: #111;
-
-    color: #f3f1ec;
+    color: #fff;
 }
 
 .footer-main {
-    padding-top: 130px;
+    min-height: 480px;
 
-    padding-bottom: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
 }
 
 .footer-main h2 {
-    max-width: 1100px;
-
-    font-size: clamp(50px, 8vw, 120px);
-
-    line-height: 0.88;
-
-    letter-spacing: -0.07em;
+    font-size: clamp(55px, 8vw, 120px);
+    line-height: 0.9;
+    letter-spacing: -6px;
 }
 
-.footer-main h2 span {
-    color: #ff4d00;
+.footer-button {
+    margin-top: 50px;
+
+    padding: 15px 25px;
+
+    background: #fff;
+    color: #111;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
 }
 
-.footer-github {
-    display: inline-block;
-
-    margin-top: 60px;
-
-    border-bottom: 1px solid #f3f1ec;
-
-    padding-bottom: 8px;
-
-    font-family: "DM Mono", monospace;
-
-    font-size: 11px;
+.footer-button:hover {
+    background: #ff4d00;
 }
 
 .footer-bottom {
-    display: flex;
+    padding-top: 25px;
 
+    border-top: 1px solid #444;
+
+    display: flex;
     justify-content: space-between;
 
-    padding-top: 20px;
-    padding-bottom: 20px;
-
-    border-top: 1px solid #555;
-
     font-family: "DM Mono", monospace;
+    font-size: 10px;
 
-    font-size: 9px;
+    color: #888;
 }
 
 
-/* ================= RESPONSIVE ================= */
+/* =========================
+   MOBILE
+========================= */
 
-@media (max-width: 850px) {
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 20px 5vw;
+    }
 
     .nav-links {
         display: none;
     }
 
-    .hero,
-    .about-layout,
-    .research-layout,
-    .toolbox-layout,
-    .beyond-layout {
-        grid-template-columns: 1fr;
-    }
-
     .hero {
-        min-height: auto;
-
-        padding-top: 100px;
+        grid-template-columns: 1fr;
+        padding-top: 70px;
     }
 
-    .hero-right {
-        margin-top: 50px;
+    .hero h1 {
+        letter-spacing: -3px;
     }
 
-    .facts {
-        grid-template-columns: repeat(2, 1fr);
+    .terminal {
+        margin-top: 30px;
     }
 
-    .facts div:nth-child(2) {
-        border-right: none;
+    .about-grid,
+    .rnd-layout,
+    .project-main {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
     }
 
-    .project-feature {
+    .four-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .toolbox-grid {
         grid-template-columns: 1fr;
     }
 
-    .project-number {
-        border-right: none;
-
-        border-bottom: 1px solid #111;
+    .learning-grid {
+        grid-template-columns: 1fr 1fr;
     }
 
-    .project-top {
-        flex-direction: column;
-    }
-
-    .experiments,
-    .questions {
-        grid-template-columns: 1fr;
-
-        gap: 30px;
-    }
-
-    .interest-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .interest-item {
-        border-right: none;
-    }
-
-    .section {
-        padding: 100px 0;
-    }
-
-    .section-heading {
-        margin-bottom: 55px;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
-
-        gap: 12px;
+    .currently-grid {
+        grid-template-columns: 1fr 1fr;
     }
 }
 
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
 
     .navbar {
-        padding: 0 5%;
+        position: relative;
     }
 
-    .github-btn {
+    .github-link {
         display: none;
     }
 
-    .hero h1 {
-        font-size: 55px;
+    .hero {
+        padding: 70px 6vw 90px;
     }
 
-    .facts {
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .section {
+        padding: 90px 6vw;
+    }
+
+    .section-heading {
+        margin-bottom: 50px;
+    }
+
+    .four-grid,
+    .learning-grid,
+    .currently-grid {
         grid-template-columns: 1fr;
     }
 
-    .facts div {
-        border-right: none;
-
-        border-bottom: 1px solid #111;
+    .info-card {
+        min-height: 250px;
     }
 
-    .facts div:last-child {
-        border-bottom: none;
+    .project-main h2 {
+        font-size: 60px;
     }
 
-    .learning-item {
-        grid-template-columns: 40px 1fr 20px;
+    .rnd-layout > h2 {
+        font-size: 58px;
     }
 
-    .learning-item h3 {
-        font-size: 18px;
+    .interest-list h3 {
+        font-size: 30px;
     }
 
-    .project-main {
-        padding: 30px 20px;
+    footer {
+        padding: 90px 6vw 25px;
+    }
+
+    .footer-main {
+        min-height: 400px;
+    }
+
+    .footer-main h2 {
+        font-size: 58px;
+        letter-spacing: -3px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
     }
 
 }
