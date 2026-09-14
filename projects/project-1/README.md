@@ -1,0 +1,22 @@
+# Project 1
+
+I'm exploring how AI can help people capture, organize, and retrieve the information they come across in their everyday digital lives.
+
+## Problem
+
+As we interact with more information digitally, finding something we previously came across can become difficult and time-consuming.
+
+## What I'm Exploring
+
+I'm researching ways to make personal information easier to organize and retrieve when it is actually needed, with AI playing a role in understanding and finding that information.
+
+## Current Focus
+
+- Information Retrieval
+- AI & Machine Learning
+- Backend Development
+- Personal Knowledge Management
+
+## Status
+
+🟡 In Development
