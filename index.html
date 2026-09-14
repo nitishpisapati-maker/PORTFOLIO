@@ -3,46 +3,64 @@
 
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Nitish Pisapati — CSE Student & Builder</title>
+    <meta
+        name="description"
+        content="Nitish Pisapati — First-year Computer Science student, builder, and R&D enthusiast."
+    >
 
-    <meta name="description"
-        content="Portfolio of Nitish Pisapati — first-year CSE student interested in backend development, AI/ML, R&D and building technology.">
-    <meta name="keywords"
-        content="Nitish Pisapati, CSE student, developer, R&D, AI, machine learning, backend, portfolio">
+    <meta
+        name="keywords"
+        content="Nitish Pisapati, CSE student, Computer Science, R&D, Backend, AI, Machine Learning"
+    >
+
     <meta name="author" content="Nitish Pisapati">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#f3f1ec">
 
+    <!-- Open Graph -->
     <meta property="og:title" content="Nitish Pisapati — CSE Student & Builder">
-    <meta property="og:description"
-        content="First-year CSE student exploring backend development, AI/ML and R&D.">
+    <meta
+        property="og:description"
+        content="First-year Computer Science student interested in technology, problem-solving and R&D."
+    >
     <meta property="og:type" content="website">
-    <meta property="og:url"
-        content="https://portfolio-lac-one-atdc65rb6l.vercel.app/">
+    <meta property="og:url" content="https://portfolio-g58j.vercel.app/">
 
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Nitish Pisapati — CSE Student & Builder">
-    <meta name="twitter:description"
-        content="First-year CSE student exploring backend development, AI/ML and R&D.">
+    <meta
+        name="twitter:description"
+        content="First-year Computer Science student interested in technology, problem-solving and R&D."
+    >
 
+    <title>Nitish Pisapati — CSE Student & Builder</title>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
 
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
 
-    <!-- =========================================
-         LOADER
-    ========================================== -->
+<body id="top">
+
+
+    <!-- =====================================
+         PAGE LOADER
+    ====================================== -->
 
     <div class="page-loader">
+
         <div class="loader-content">
 
             <div class="loader-logo">
@@ -58,126 +76,31 @@
             </div>
 
         </div>
+
     </div>
 
 
-    <!-- =========================================
+    <!-- =====================================
          CUSTOM CURSOR
-    ========================================== -->
+    ====================================== -->
 
     <div class="cursor-dot"></div>
     <div class="cursor-ring"></div>
 
 
-    <!-- =========================================
-         NAVBAR
-    ========================================== -->
+    <!-- =====================================
+         HERO
+    ====================================== -->
 
-    <nav class="navbar">
-
-        <a href="#top" class="nav-logo cursor-hover">
-            NP<span>.</span>
-        </a>
-
-        <div class="nav-links">
-
-            <a href="#about" data-bg="#d6c7a8" class="cursor-hover">
-                About
-            </a>
-
-            <a href="#work" data-bg="#c9d4df" class="cursor-hover">
-                Work
-            </a>
-
-            <a href="#rnd" data-bg="#b9cdbd" class="cursor-hover">
-                R&D
-            </a>
-
-            <a href="#learning" data-bg="#c0cbd8" class="cursor-hover">
-                Learning
-            </a>
-
-        </div>
-
-        <div class="nav-right">
-
-            <a href="https://github.com/nitishpisapati-maker"
-                target="_blank"
-                class="nav-github cursor-hover">
-                GitHub ↗
-            </a>
-
-            <button class="menu-button cursor-hover" aria-label="Open menu">
-                MENU
-            </button>
-
-        </div>
-
-    </nav>
-
-
-    <!-- =========================================
-         MOBILE MENU
-    ========================================== -->
-
-    <div class="mobile-menu">
-
-        <div class="mobile-menu-header">
-            <span>MENU</span>
-
-            <button class="menu-close cursor-hover">
-                CLOSE ×
-            </button>
-        </div>
-
-        <div class="mobile-menu-links">
-
-            <a href="#about" class="mobile-link cursor-hover">
-                <span>01</span>
-                About
-            </a>
-
-            <a href="#work" class="mobile-link cursor-hover">
-                <span>02</span>
-                Work
-            </a>
-
-            <a href="#rnd" class="mobile-link cursor-hover">
-                <span>03</span>
-                R&D
-            </a>
-
-            <a href="#learning" class="mobile-link cursor-hover">
-                <span>04</span>
-                Learning
-            </a>
-
-            <a href="https://github.com/nitishpisapati-maker"
-                target="_blank"
-                class="mobile-link cursor-hover">
-                <span>05</span>
-                GitHub ↗
-            </a>
-
-        </div>
-
-    </div>
-
-
-    <main id="top">
-
-
-        <!-- =========================================
-             HERO
-        ========================================== -->
+    <main>
 
         <section class="hero">
 
             <div class="hero-left reveal">
 
-                <div class="eyebrow">
+                <p class="eyebrow">
                     FIRST-YEAR CSE STUDENT · BUILDER · R&D
-                </div>
+                </p>
 
                 <h1>
                     I like figuring out
@@ -192,21 +115,30 @@
 
                 <div class="hero-buttons">
 
-                    <a href="#work"
-                        class="button button-primary cursor-hover">
-                        Explore my work
+                    <a
+                        href="#about"
+                        class="button button-primary cursor-hover"
+                    >
+                        EXPLORE
                         <span>↓</span>
                     </a>
 
-                    <a href="#about"
-                        class="button button-secondary cursor-hover">
-                        More about me
+                    <a
+                        href="#work"
+                        class="button button-secondary cursor-hover"
+                    >
+                        SEE MY WORK
+                        <span>↘</span>
                     </a>
 
                 </div>
 
             </div>
 
+
+            <!-- =====================================
+                 HERO TERMINAL
+            ====================================== -->
 
             <div class="hero-right reveal">
 
@@ -215,7 +147,7 @@
                     <div class="orbit orbit-one"></div>
                     <div class="orbit orbit-two"></div>
 
-                    <div class="terminal">
+                    <div class="terminal cursor-hover">
 
                         <div class="terminal-header">
 
@@ -225,9 +157,12 @@
                                 <span></span>
                             </div>
 
-                            <span>about_me.exe</span>
+                            <span>
+                                about_me.exe
+                            </span>
 
                         </div>
+
 
                         <div class="terminal-body">
 
@@ -239,6 +174,7 @@
                                 Nitish Pisapati
                             </p>
 
+
                             <p>
                                 <b>></b> what I like
                             </p>
@@ -247,6 +183,7 @@
                                 Backend · AI/ML · R&D
                             </p>
 
+
                             <p>
                                 <b>></b> currently learning
                             </p>
@@ -254,6 +191,7 @@
                             <p class="terminal-answer">
                                 C · Java · NLP
                             </p>
+
 
                             <p>
                                 <b>></b> current mindset
@@ -274,50 +212,57 @@
         </section>
 
 
-        <!-- =========================================
+
+        <!-- =====================================
              ABOUT
-        ========================================== -->
+        ====================================== -->
 
-        <section class="section" id="about">
+        <section
+            class="section"
+            id="about"
+        >
 
-            <div class="section-label reveal">
+            <div class="section-label">
                 01 / ABOUT
             </div>
 
             <div class="section-content">
 
                 <h2 class="reveal">
-                    Curious by default.
-                    <span>Builder by choice.</span>
+                    Curious by
+                    <span>default.</span>
                 </h2>
+
 
                 <div class="about-grid">
 
                     <div class="about-text reveal">
 
                         <p>
-                            I'm a first-year CSE student who enjoys understanding
-                            how technology works beneath the surface.
+                            I'm a first-year Computer Science student who
+                            enjoys understanding how things work and figuring
+                            out how they can work better.
                         </p>
 
                         <p>
                             I like taking problems apart, experimenting with
-                            different approaches and learning through actually
+                            different approaches and learning by actually
                             building things.
                         </p>
 
                         <p>
-                            I'm especially interested in backend systems,
-                            artificial intelligence and research & development.
+                            I'm especially interested in backend development,
+                            AI/ML and research-driven problem solving.
                         </p>
 
                     </div>
+
 
                     <div class="about-facts reveal">
 
                         <div class="fact">
                             <span>01</span>
-                            <strong>Problem Solving</strong>
+                            <strong>Computer Science</strong>
                         </div>
 
                         <div class="fact">
@@ -327,7 +272,7 @@
 
                         <div class="fact">
                             <span>03</span>
-                            <strong>AI / ML</strong>
+                            <strong>AI / Machine Learning</strong>
                         </div>
 
                         <div class="fact">
@@ -344,13 +289,14 @@
         </section>
 
 
-        <!-- =========================================
+
+        <!-- =====================================
              WHAT I DO
-        ========================================== -->
+        ====================================== -->
 
         <section class="section what-i-do">
 
-            <div class="section-label reveal">
+            <div class="section-label">
                 02 / WHAT I DO
             </div>
 
@@ -358,49 +304,55 @@
 
                 <div class="service-grid">
 
-                    <div class="service-card reveal cursor-hover">
+                    <div class="service-card reveal">
 
                         <span class="service-number">
                             01
                         </span>
 
-                        <h3>Build</h3>
+                        <h3>
+                            Build
+                        </h3>
 
                         <p>
-                            Turning ideas into functional software and
-                            experimenting with different technologies.
+                            I enjoy turning ideas into working prototypes
+                            and experimenting with different technologies.
                         </p>
 
                     </div>
 
 
-                    <div class="service-card reveal cursor-hover">
+                    <div class="service-card reveal">
 
                         <span class="service-number">
                             02
                         </span>
 
-                        <h3>Research</h3>
+                        <h3>
+                            Explore
+                        </h3>
 
                         <p>
-                            Exploring unfamiliar concepts and understanding
-                            how existing systems work.
+                            I like exploring unfamiliar concepts and
+                            understanding how different systems work.
                         </p>
 
                     </div>
 
 
-                    <div class="service-card reveal cursor-hover">
+                    <div class="service-card reveal">
 
                         <span class="service-number">
                             03
                         </span>
 
-                        <h3>Learn</h3>
+                        <h3>
+                            Research
+                        </h3>
 
                         <p>
-                            Learning by building, testing, breaking things
-                            and improving them.
+                            I approach problems by breaking them down,
+                            testing ideas and learning from the results.
                         </p>
 
                     </div>
@@ -412,34 +364,32 @@
         </section>
 
 
-        <!-- =========================================
+
+        <!-- =====================================
              WORK
-        ========================================== -->
+        ====================================== -->
 
-        <section class="section" id="work">
+        <section
+            class="section"
+            id="work"
+        >
 
-            <div class="section-label reveal">
+            <div class="section-label">
                 03 / WORK
             </div>
 
             <div class="section-content">
 
-                <div class="project-card reveal cursor-hover">
+                <div class="project-card reveal">
 
                     <div class="project-top">
 
-                        <div>
-                            <span class="project-index">
-                                PROJECT 01
-                            </span>
+                        <span>
+                            PROJECT 01
+                        </span>
 
-                            <span class="project-status">
-                                LIVE
-                            </span>
-                        </div>
-
-                        <span class="project-year">
-                            2026
+                        <span class="project-status">
+                            LIVE
                         </span>
 
                     </div>
@@ -449,9 +399,9 @@
 
                         <div class="project-title-area">
 
-                            <span class="project-arrow">
+                            <div class="project-arrow">
                                 ↗
-                            </span>
+                            </div>
 
                             <h2>
                                 Personal
@@ -459,30 +409,41 @@
                             </h2>
 
                             <p>
-                                A personal website built to present my
-                                interests, technical skills and approach
-                                to learning and R&D.
+                                A personal portfolio website designed to
+                                present my interests, technical skills,
+                                learning journey and approach to R&D.
                             </p>
+
 
                             <div class="project-tags">
 
                                 <span>HTML</span>
                                 <span>CSS</span>
-                                <span>JavaScript</span>
-                                <span>Git</span>
-                                <span>GitHub</span>
-                                <span>Vercel</span>
+                                <span>JAVASCRIPT</span>
+                                <span>GIT</span>
+                                <span>GITHUB</span>
+                                <span>VERCEL</span>
 
                             </div>
+
+
+                            <a
+                                href="https://github.com/nitishpisapati-maker/PORTFOLIO"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="project-link cursor-hover"
+                            >
+                                VIEW ON GITHUB ↗
+                            </a>
 
                         </div>
 
 
                         <div class="project-learning">
 
-                            <div class="mini-label">
+                            <span class="mini-label">
                                 WHAT I LEARNED
-                            </div>
+                            </span>
 
                             <ul>
 
@@ -495,7 +456,11 @@
                                 </li>
 
                                 <li>
-                                    Deployment with Vercel
+                                    Responsive design
+                                </li>
+
+                                <li>
+                                    Deploying with Vercel
                                 </li>
 
                                 <li>
@@ -503,14 +468,6 @@
                                 </li>
 
                             </ul>
-
-                            <a href="https://github.com/nitishpisapati-maker/PORTFOLIO"
-                                target="_blank"
-                                class="project-link cursor-hover">
-
-                                View repository ↗
-
-                            </a>
 
                         </div>
 
@@ -523,13 +480,17 @@
         </section>
 
 
-        <!-- =========================================
+
+        <!-- =====================================
              R&D
-        ========================================== -->
+        ====================================== -->
 
-        <section class="section rnd-section" id="rnd">
+        <section
+            class="section rnd-section"
+            id="rnd"
+        >
 
-            <div class="section-label reveal">
+            <div class="section-label">
                 04 / R&D
             </div>
 
@@ -539,12 +500,12 @@
 
                     <h2>
                         I don't just want
-                        <em>to use technology.</em>
+                        to <em>use</em> things.
                     </h2>
 
                     <p>
-                        I want to understand it, experiment with it and
-                        figure out what else it can do.
+                        I want to understand them, experiment with them
+                        and figure out what else they can do.
                     </p>
 
                 </div>
@@ -554,13 +515,17 @@
 
                     <div class="rnd-item reveal">
 
-                        <span>01</span>
+                        <span>
+                            01
+                        </span>
 
-                        <h3>Question</h3>
+                        <h3>
+                            Question
+                        </h3>
 
                         <p>
-                            Start with something I don't understand or
-                            something that could work better.
+                            Start with a problem or something I don't
+                            completely understand.
                         </p>
 
                     </div>
@@ -568,9 +533,13 @@
 
                     <div class="rnd-item reveal">
 
-                        <span>02</span>
+                        <span>
+                            02
+                        </span>
 
-                        <h3>Experiment</h3>
+                        <h3>
+                            Experiment
+                        </h3>
 
                         <p>
                             Build small experiments and test different
@@ -582,13 +551,17 @@
 
                     <div class="rnd-item reveal">
 
-                        <span>03</span>
+                        <span>
+                            03
+                        </span>
 
-                        <h3>Iterate</h3>
+                        <h3>
+                            Learn
+                        </h3>
 
                         <p>
-                            Learn from what fails and keep improving
-                            what works.
+                            Understand what worked, what didn't and what
+                            could be improved.
                         </p>
 
                     </div>
@@ -600,13 +573,14 @@
         </section>
 
 
-        <!-- =========================================
+
+        <!-- =====================================
              INTERESTS
-        ========================================== -->
+        ====================================== -->
 
-        <section class="section interests-section">
+        <section class="section">
 
-            <div class="section-label reveal">
+            <div class="section-label">
                 05 / INTERESTS
             </div>
 
@@ -614,40 +588,68 @@
 
                 <div class="interest-list">
 
-                    <div class="interest-item reveal cursor-hover">
+                    <div class="interest-item reveal">
+
                         <span>01</span>
-                        <h2>Backend Development</h2>
+
+                        <h2>
+                            Backend Development
+                        </h2>
+
                         <b>↗</b>
+
                     </div>
 
-                    <div class="interest-item reveal cursor-hover">
+
+                    <div class="interest-item reveal">
+
                         <span>02</span>
-                        <h2>Artificial Intelligence</h2>
+
+                        <h2>
+                            Artificial Intelligence
+                        </h2>
+
                         <b>↗</b>
+
                     </div>
 
-                    <div class="interest-item reveal cursor-hover">
+
+                    <div class="interest-item reveal">
+
                         <span>03</span>
-                        <h2>Machine Learning</h2>
+
+                        <h2>
+                            Machine Learning
+                        </h2>
+
                         <b>↗</b>
+
                     </div>
 
-                    <div class="interest-item reveal cursor-hover">
+
+                    <div class="interest-item reveal">
+
                         <span>04</span>
-                        <h2>Research & Development</h2>
+
+                        <h2>
+                            Research & Development
+                        </h2>
+
                         <b>↗</b>
+
                     </div>
 
-                    <div class="interest-item reveal cursor-hover">
+
+                    <div class="interest-item reveal">
+
                         <span>05</span>
-                        <h2>Problem Solving</h2>
-                        <b>↗</b>
-                    </div>
 
-                    <div class="interest-item reveal cursor-hover">
-                        <span>06</span>
-                        <h2>Building New Ideas</h2>
+                        <h2>
+                            Problem Solving
+                        </h2>
+
                         <b>↗</b>
+
                     </div>
 
                 </div>
@@ -657,13 +659,14 @@
         </section>
 
 
-        <!-- =========================================
-             TOOLBOX
-        ========================================== -->
+
+        <!-- =====================================
+             TECHNICAL TOOLBOX
+        ====================================== -->
 
         <section class="section toolbox-section">
 
-            <div class="section-label reveal">
+            <div class="section-label">
                 06 / TOOLBOX
             </div>
 
@@ -674,16 +677,30 @@
                     <div class="toolbox-column reveal">
 
                         <span class="mini-label">
-                            PROGRAMMING
+                            LANGUAGES
                         </span>
 
                         <div class="tool-list">
 
-                            <span>Python</span>
-                            <span>JavaScript</span>
-                            <span>SQL</span>
-                            <span>HTML</span>
-                            <span>CSS</span>
+                            <span>
+                                Python
+                            </span>
+
+                            <span>
+                                JavaScript
+                            </span>
+
+                            <span>
+                                SQL
+                            </span>
+
+                            <span>
+                                HTML
+                            </span>
+
+                            <span>
+                                CSS
+                            </span>
 
                         </div>
 
@@ -698,11 +715,25 @@
 
                         <div class="tool-list">
 
-                            <span>FastAPI</span>
-                            <span>REST APIs</span>
-                            <span>Git</span>
-                            <span>GitHub</span>
-                            <span>Vercel</span>
+                            <span>
+                                FastAPI
+                            </span>
+
+                            <span>
+                                REST APIs
+                            </span>
+
+                            <span>
+                                Git
+                            </span>
+
+                            <span>
+                                GitHub
+                            </span>
+
+                            <span>
+                                Vercel
+                            </span>
 
                         </div>
 
@@ -717,11 +748,25 @@
 
                         <div class="tool-list">
 
-                            <span>AI / ML</span>
-                            <span>NLP</span>
-                            <span>Information Retrieval</span>
-                            <span>Backend</span>
-                            <span>R&D</span>
+                            <span>
+                                AI / ML
+                            </span>
+
+                            <span>
+                                NLP
+                            </span>
+
+                            <span>
+                                Information Retrieval
+                            </span>
+
+                            <span>
+                                Backend
+                            </span>
+
+                            <span>
+                                R&D
+                            </span>
 
                         </div>
 
@@ -734,13 +779,17 @@
         </section>
 
 
-        <!-- =========================================
-             LEARNING
-        ========================================== -->
 
-        <section class="section learning-section" id="learning">
+        <!-- =====================================
+             CURRENTLY LEARNING
+        ====================================== -->
 
-            <div class="section-label reveal">
+        <section
+            class="section"
+            id="learning"
+        >
+
+            <div class="section-label">
                 07 / CURRENTLY LEARNING
             </div>
 
@@ -749,8 +798,8 @@
                 <div class="learning-header reveal">
 
                     <h2>
-                        Still learning.
-                        <em>Always.</em>
+                        Still
+                        <em>learning.</em>
                     </h2>
 
                 </div>
@@ -758,40 +807,93 @@
 
                 <div class="learning-grid">
 
-                    <div class="learning-item reveal cursor-hover">
+                    <div class="learning-item reveal">
+
                         <span>01</span>
-                        <strong>C</strong>
-                        <small>PROGRAMMING</small>
+
+                        <strong>
+                            C
+                        </strong>
+
+                        <small>
+                            PROGRAMMING
+                        </small>
+
                     </div>
 
-                    <div class="learning-item reveal cursor-hover">
+
+                    <div class="learning-item reveal">
+
                         <span>02</span>
-                        <strong>Java</strong>
-                        <small>PROGRAMMING</small>
+
+                        <strong>
+                            Java
+                        </strong>
+
+                        <small>
+                            PROGRAMMING
+                        </small>
+
                     </div>
 
-                    <div class="learning-item reveal cursor-hover">
+
+                    <div class="learning-item reveal">
+
                         <span>03</span>
-                        <strong>AI / ML</strong>
-                        <small>INTELLIGENCE</small>
+
+                        <strong>
+                            AI / ML
+                        </strong>
+
+                        <small>
+                            ARTIFICIAL INTELLIGENCE
+                        </small>
+
                     </div>
 
-                    <div class="learning-item reveal cursor-hover">
+
+                    <div class="learning-item reveal">
+
                         <span>04</span>
-                        <strong>NLP</strong>
-                        <small>LANGUAGE</small>
+
+                        <strong>
+                            NLP
+                        </strong>
+
+                        <small>
+                            NATURAL LANGUAGE PROCESSING
+                        </small>
+
                     </div>
 
-                    <div class="learning-item reveal cursor-hover">
+
+                    <div class="learning-item reveal">
+
                         <span>05</span>
-                        <strong>Backend</strong>
-                        <small>DEVELOPMENT</small>
+
+                        <strong>
+                            Backend
+                        </strong>
+
+                        <small>
+                            DEVELOPMENT
+                        </small>
+
                     </div>
 
-                    <div class="learning-item reveal cursor-hover">
+
+                    <div class="learning-item reveal">
+
                         <span>06</span>
-                        <strong>Deployment</strong>
-                        <small>ENGINEERING</small>
+
+                        <strong>
+                            Deployment
+                        </strong>
+
+                        <small>
+                            BUILD & DEPLOY
+                        </small>
+
                     </div>
 
                 </div>
@@ -801,69 +903,78 @@
         </section>
 
 
-        <!-- =========================================
+
+        <!-- =====================================
              BEYOND CODE
-        ========================================== -->
+        ====================================== -->
 
         <section class="section beyond-section">
 
-            <div class="section-label reveal">
+            <div class="section-label">
                 08 / BEYOND CODE
             </div>
 
-            <div class="section-content">
+            <div class="section-content beyond-content">
 
-                <div class="beyond-content reveal">
+                <p class="big-statement reveal">
 
-                    <p class="big-statement">
-                        I believe the best way to learn something
-                        is to <em>actually try building it.</em>
-                    </p>
+                    The goal isn't to know
+                    <em>everything.</em>
 
-                    <p>
-                        Not every idea has to be realistic at first.
-                        Sometimes the interesting part is finding out
-                        why something doesn't work.
-                    </p>
+                </p>
 
-                </div>
+                <p class="big-statement reveal">
+
+                    It's to keep
+                    <em>figuring things out.</em>
+
+                </p>
+
+                <p class="reveal">
+                    Every project, experiment and mistake is another
+                    opportunity to learn something new.
+                </p>
 
             </div>
 
         </section>
 
 
-        <!-- =========================================
+
+        <!-- =====================================
              RIGHT NOW
-        ========================================== -->
+        ====================================== -->
 
         <section class="section now-section">
 
-            <div class="section-label reveal">
+            <div class="section-label">
                 09 / RIGHT NOW
             </div>
 
             <div class="section-content">
 
-                <div class="now-card reveal cursor-hover">
+                <div class="now-card reveal">
 
                     <div>
 
                         <span class="mini-label">
+
                             <span class="status-dot"></span>
-                            CURRENTLY ACTIVE
+
+                            CURRENTLY BUILDING
+
                         </span>
 
                         <h2>
-                            Building.
-                            <span>Learning.</span>
-                            Experimenting.
+                            Learning.
+                            <span>Building.</span>
+                            Testing.
                         </h2>
 
                     </div>
 
                     <div class="now-mark">
-                        →
+                        ↗
                     </div>
 
                 </div>
@@ -875,9 +986,10 @@
     </main>
 
 
-    <!-- =========================================
+
+    <!-- =====================================
          FOOTER
-    ========================================== -->
+    ====================================== -->
 
     <footer>
 
@@ -888,7 +1000,7 @@
             </div>
 
             <p>
-                CSE student · Builder · R&D
+                FIRST-YEAR CSE STUDENT · BUILDER · R&D
             </p>
 
         </div>
@@ -896,8 +1008,10 @@
 
         <!-- BACK TO TOP -->
 
-        <a href="#top"
-            class="back-to-top cursor-hover">
+        <a
+            href="#top"
+            class="back-to-top cursor-hover"
+        >
 
             <span>
                 BACK TO TOP
@@ -916,9 +1030,12 @@
                 © 2026 Nitish Pisapati
             </span>
 
-            <a href="https://github.com/nitishpisapati-maker"
+            <a
+                href="https://github.com/nitishpisapati-maker"
                 target="_blank"
-                class="cursor-hover">
+                rel="noopener noreferrer"
+                class="cursor-hover"
+            >
                 GitHub ↗
             </a>
 
@@ -927,135 +1044,49 @@
     </footer>
 
 
-    <!-- =========================================
+
+    <!-- =====================================
          JAVASCRIPT
-    ========================================== -->
+    ====================================== -->
 
     <script>
 
-        /* =========================================
-           LOADER
-        ========================================== */
+        /* -------------------------------------
+           PAGE LOADER
+        ------------------------------------- */
 
-        function hideLoader() {
-            document.body.classList.add("loaded");
-        }
+        window.addEventListener("load", () => {
 
-        window.addEventListener("load", function () {
+            setTimeout(() => {
 
-            setTimeout(hideLoader, 700);
+                document.body.classList.add("loaded");
 
-        });
-
-        /* Failsafe */
-        setTimeout(hideLoader, 2500);
-
-
-        /* =========================================
-           NAV BACKGROUND EFFECT
-        ========================================== */
-
-        const navLinks =
-            document.querySelectorAll(".nav-links a");
-
-        navLinks.forEach(link => {
-
-            link.addEventListener("mouseenter", () => {
-
-                const bg = link.dataset.bg;
-
-                if (bg) {
-                    document.body.style.backgroundColor = bg;
-                }
-
-            });
-
-            link.addEventListener("mouseleave", () => {
-
-                document.body.style.backgroundColor = "";
-
-            });
+            }, 700);
 
         });
 
 
-        /* =========================================
-           SCROLL NAVBAR
-        ========================================== */
 
-        const navbar =
-            document.querySelector(".navbar");
-
-        window.addEventListener("scroll", () => {
-
-            if (window.scrollY > 50) {
-                navbar.classList.add("scrolled");
-            } else {
-                navbar.classList.remove("scrolled");
-            }
-
-        });
-
-
-        /* =========================================
-           MOBILE MENU
-        ========================================== */
-
-        const menuButton =
-            document.querySelector(".menu-button");
-
-        const menuClose =
-            document.querySelector(".menu-close");
-
-        const mobileMenu =
-            document.querySelector(".mobile-menu");
-
-        const mobileLinks =
-            document.querySelectorAll(".mobile-link");
-
-
-        function openMenu() {
-            mobileMenu.classList.add("open");
-            document.body.classList.add("menu-open");
-        }
-
-
-        function closeMenu() {
-            mobileMenu.classList.remove("open");
-            document.body.classList.remove("menu-open");
-        }
-
-
-        menuButton.addEventListener("click", openMenu);
-
-        menuClose.addEventListener("click", closeMenu);
-
-
-        mobileLinks.forEach(link => {
-
-            link.addEventListener("click", closeMenu);
-
-        });
-
-
-        /* =========================================
+        /* -------------------------------------
            SCROLL REVEAL
-        ========================================== */
+        ------------------------------------- */
 
         const revealElements =
             document.querySelectorAll(".reveal");
 
-        const observer =
+        const revealObserver =
             new IntersectionObserver(
-                entries => {
+                (entries) => {
 
-                    entries.forEach(entry => {
+                    entries.forEach((entry) => {
 
                         if (entry.isIntersecting) {
 
                             entry.target.classList.add("visible");
 
-                            observer.unobserve(entry.target);
+                            revealObserver.unobserve(
+                                entry.target
+                            );
 
                         }
 
@@ -1068,16 +1099,17 @@
             );
 
 
-        revealElements.forEach(element => {
+        revealElements.forEach((element) => {
 
-            observer.observe(element);
+            revealObserver.observe(element);
 
         });
 
 
-        /* =========================================
-           HERO INTERACTION
-        ========================================== */
+
+        /* -------------------------------------
+           HERO MOUSE INTERACTION
+        ------------------------------------- */
 
         const heroInteraction =
             document.querySelector(".hero-interaction");
@@ -1088,55 +1120,31 @@
 
         if (heroInteraction && terminal) {
 
-            heroInteraction.addEventListener("mousemove", event => {
-
-                const rect =
-                    heroInteraction.getBoundingClientRect();
+            document.addEventListener("mousemove", (event) => {
 
                 const x =
-                    event.clientX - rect.left;
+                    (window.innerWidth / 2 - event.clientX) / 80;
 
                 const y =
-                    event.clientY - rect.top;
+                    (window.innerHeight / 2 - event.clientY) / 80;
 
-                const centerX =
-                    rect.width / 2;
-
-                const centerY =
-                    rect.height / 2;
-
-                const moveX =
-                    (x - centerX) / 25;
-
-                const moveY =
-                    (y - centerY) / 25;
 
                 heroInteraction.style.transform =
-                    `translate(${moveX}px, ${moveY}px)`;
+                    `translate(${x * -0.35}px, ${y * -0.35}px)`;
+
 
                 terminal.style.transform =
-                    `rotateX(${-moveY * 0.7}deg)
-                     rotateY(${moveX * 0.7}deg)`;
-
-            });
-
-
-            heroInteraction.addEventListener("mouseleave", () => {
-
-                heroInteraction.style.transform =
-                    "translate(0, 0)";
-
-                terminal.style.transform =
-                    "rotateX(0deg) rotateY(0deg)";
+                    `rotateY(${x * 0.25}deg) rotateX(${y * -0.25}deg)`;
 
             });
 
         }
 
 
-        /* =========================================
+
+        /* -------------------------------------
            CUSTOM CURSOR
-        ========================================== */
+        ------------------------------------- */
 
         const cursorDot =
             document.querySelector(".cursor-dot");
@@ -1145,57 +1153,78 @@
             document.querySelector(".cursor-ring");
 
 
-        if (
-            cursorDot &&
-            cursorRing &&
-            window.matchMedia("(pointer: fine)").matches
-        ) {
+        document.addEventListener("mousemove", (event) => {
 
-            window.addEventListener("mousemove", event => {
+            if (!cursorDot || !cursorRing) return;
 
-                cursorDot.style.left =
-                    `${event.clientX}px`;
+            cursorDot.style.left =
+                `${event.clientX}px`;
 
-                cursorDot.style.top =
-                    `${event.clientY}px`;
+            cursorDot.style.top =
+                `${event.clientY}px`;
 
-                cursorRing.style.left =
-                    `${event.clientX}px`;
 
-                cursorRing.style.top =
-                    `${event.clientY}px`;
+            cursorRing.style.left =
+                `${event.clientX}px`;
+
+            cursorRing.style.top =
+                `${event.clientY}px`;
+
+        });
+
+
+
+        /* -------------------------------------
+           CURSOR HOVER EFFECT
+        ------------------------------------- */
+
+        const hoverElements =
+            document.querySelectorAll(".cursor-hover");
+
+
+        hoverElements.forEach((element) => {
+
+            element.addEventListener("mouseenter", () => {
+
+                document.body.classList.add(
+                    "cursor-active"
+                );
 
             });
 
 
-            document
-                .querySelectorAll(".cursor-hover")
-                .forEach(element => {
+            element.addEventListener("mouseleave", () => {
 
-                    element.addEventListener(
-                        "mouseenter",
-                        () => {
+                document.body.classList.remove(
+                    "cursor-active"
+                );
 
-                            document.body.classList.add(
-                                "cursor-active"
-                            );
+            });
 
-                        }
-                    );
+        });
 
 
-                    element.addEventListener(
-                        "mouseleave",
-                        () => {
 
-                            document.body.classList.remove(
-                                "cursor-active"
-                            );
+        /* -------------------------------------
+           BACK TO TOP
+        ------------------------------------- */
 
-                        }
-                    );
+        const backToTop =
+            document.querySelector(".back-to-top");
 
+
+        if (backToTop) {
+
+            backToTop.addEventListener("click", (event) => {
+
+                event.preventDefault();
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
                 });
+
+            });
 
         }
 
