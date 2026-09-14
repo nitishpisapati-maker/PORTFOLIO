@@ -16,8 +16,15 @@ body {
     background: #f3f1ec;
     color: #111;
     font-family: "Manrope", sans-serif;
-    transition: background-color 0.5s ease;
+
+    transition:
+        background-color 0.5s ease;
+
     overflow-x: hidden;
+}
+
+body.menu-open {
+    overflow: hidden;
 }
 
 a {
@@ -25,19 +32,19 @@ a {
     text-decoration: none;
 }
 
-button,
-a {
-    -webkit-tap-highlight-color: transparent;
+button {
+    font: inherit;
 }
 
 
 /* =========================================
-   PAGE LOADER
+   LOADER
 ========================================= */
 
 .page-loader {
     position: fixed;
     inset: 0;
+
     z-index: 99999;
 
     display: flex;
@@ -69,8 +76,10 @@ body.loaded .page-loader {
 .loader-logo {
     font-size: 72px;
     font-weight: 800;
+
     letter-spacing: -6px;
     line-height: 1;
+
     margin-bottom: 40px;
 }
 
@@ -80,27 +89,36 @@ body.loaded .page-loader {
 
 .loader-text {
     font-family: "DM Mono", monospace;
+
     font-size: 13px;
     letter-spacing: 2px;
+
     color: #888;
+
     margin-bottom: 22px;
 }
 
 .loader-line {
     width: 100%;
     height: 2px;
+
     background: #333;
+
     overflow: hidden;
 }
 
 .loader-progress {
     height: 100%;
     width: 0;
+
     background: #ff4d00;
-    animation: loaderProgress 1.3s ease forwards;
+
+    animation:
+        loaderProgress 1.3s ease forwards;
 }
 
 @keyframes loaderProgress {
+
     0% {
         width: 0;
     }
@@ -108,6 +126,7 @@ body.loaded .page-loader {
     100% {
         width: 100%;
     }
+
 }
 
 
@@ -118,13 +137,16 @@ body.loaded .page-loader {
 .cursor-dot,
 .cursor-ring {
     position: fixed;
+
     top: 0;
     left: 0;
 
     pointer-events: none;
+
     border-radius: 50%;
 
-    transform: translate(-50%, -50%);
+    transform:
+        translate(-50%, -50%);
 
     z-index: 100000;
 }
@@ -132,6 +154,7 @@ body.loaded .page-loader {
 .cursor-dot {
     width: 7px;
     height: 7px;
+
     background: #111;
 }
 
@@ -151,7 +174,9 @@ body.loaded .page-loader {
 body.cursor-active .cursor-ring {
     width: 55px;
     height: 55px;
+
     background: rgba(255, 77, 0, 0.1);
+
     border-color: #ff4d00;
 }
 
@@ -181,12 +206,26 @@ body.cursor-active .cursor-dot {
 
     padding: 0 5vw;
 
-    mix-blend-mode: normal;
+    transition:
+        background 0.35s ease,
+        backdrop-filter 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.navbar.scrolled {
+    background: rgba(243, 241, 236, 0.82);
+
+    backdrop-filter: blur(16px);
+
+    box-shadow:
+        0 1px 0 rgba(17, 17, 17, 0.08);
 }
 
 .nav-logo {
     font-size: 23px;
+
     font-weight: 800;
+
     letter-spacing: -1px;
 }
 
@@ -197,6 +236,7 @@ body.cursor-active .cursor-dot {
 .nav-links {
     display: flex;
     align-items: center;
+
     gap: 8px;
 }
 
@@ -204,6 +244,7 @@ body.cursor-active .cursor-dot {
     padding: 11px 16px;
 
     font-family: "DM Mono", monospace;
+
     font-size: 12px;
 
     border-radius: 100px;
@@ -215,11 +256,21 @@ body.cursor-active .cursor-dot {
 
 .nav-links a:hover {
     background: rgba(0, 0, 0, 0.08);
-    transform: translateY(-2px);
+
+    transform:
+        translateY(-2px);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
 }
 
 .nav-github {
     font-family: "DM Mono", monospace;
+
     font-size: 12px;
 
     border-bottom: 1px solid #111;
@@ -236,6 +287,115 @@ body.cursor-active .cursor-dot {
     border-color: #ff4d00;
 }
 
+.menu-button {
+    display: none;
+
+    background: none;
+    border: none;
+
+    cursor: pointer;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   MOBILE MENU
+========================================= */
+
+.mobile-menu {
+    position: fixed;
+    inset: 0;
+
+    z-index: 9000;
+
+    background: #111;
+    color: #f3f1ec;
+
+    padding: 30px 6vw;
+
+    transform:
+        translateY(-100%);
+
+    transition:
+        transform 0.5s cubic-bezier(.77, 0, .18, 1);
+}
+
+.mobile-menu.open {
+    transform:
+        translateY(0);
+}
+
+.mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 11px;
+
+    color: #777;
+}
+
+.menu-close {
+    border: none;
+    background: none;
+
+    color: #f3f1ec;
+
+    cursor: pointer;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 11px;
+}
+
+.mobile-menu-links {
+    margin-top: 100px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-link {
+    display: grid;
+    grid-template-columns: 55px 1fr;
+
+    align-items: center;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid #333;
+
+    font-size: clamp(35px, 10vw, 65px);
+
+    font-weight: 700;
+
+    letter-spacing: -3px;
+
+    transition:
+        color 0.25s ease,
+        padding-left 0.25s ease;
+}
+
+.mobile-link span {
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    color: #777;
+
+    letter-spacing: 0;
+}
+
+.mobile-link:hover {
+    color: #ff4d00;
+
+    padding-left: 15px;
+}
+
 
 /* =========================================
    HERO
@@ -245,7 +405,9 @@ body.cursor-active .cursor-dot {
     min-height: 100vh;
 
     display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
+
+    grid-template-columns:
+        1.05fr 0.95fr;
 
     align-items: center;
 
@@ -262,7 +424,9 @@ body.cursor-active .cursor-dot {
 
 .eyebrow {
     font-family: "DM Mono", monospace;
+
     font-size: 12px;
+
     letter-spacing: 1.5px;
 
     margin-bottom: 28px;
@@ -271,9 +435,13 @@ body.cursor-active .cursor-dot {
 }
 
 .hero h1 {
-    font-size: clamp(58px, 7vw, 110px);
+    font-size:
+        clamp(58px, 7vw, 110px);
+
     line-height: 0.92;
+
     letter-spacing: -6px;
+
     font-weight: 800;
 
     max-width: 850px;
@@ -281,7 +449,9 @@ body.cursor-active .cursor-dot {
 
 .hero h1 em {
     display: block;
+
     color: #ff4d00;
+
     font-style: normal;
 }
 
@@ -291,6 +461,7 @@ body.cursor-active .cursor-dot {
     margin-top: 35px;
 
     font-size: 17px;
+
     line-height: 1.7;
 
     color: #444;
@@ -298,6 +469,7 @@ body.cursor-active .cursor-dot {
 
 .hero-buttons {
     display: flex;
+
     gap: 14px;
 
     margin-top: 38px;
@@ -305,12 +477,15 @@ body.cursor-active .cursor-dot {
 
 .button {
     display: inline-flex;
+
     align-items: center;
+
     gap: 22px;
 
     padding: 15px 21px;
 
     font-family: "DM Mono", monospace;
+
     font-size: 12px;
 
     transition:
@@ -321,12 +496,15 @@ body.cursor-active .cursor-dot {
 
 .button-primary {
     background: #111;
+
     color: #fff;
 }
 
 .button-primary:hover {
     background: #ff4d00;
-    transform: translateY(-4px);
+
+    transform:
+        translateY(-4px);
 }
 
 .button-secondary {
@@ -335,8 +513,11 @@ body.cursor-active .cursor-dot {
 
 .button-secondary:hover {
     background: #111;
+
     color: #fff;
-    transform: translateY(-4px);
+
+    transform:
+        translateY(-4px);
 }
 
 
@@ -346,6 +527,7 @@ body.cursor-active .cursor-dot {
 
 .hero-right {
     display: flex;
+
     justify-content: center;
     align-items: center;
 }
@@ -357,16 +539,19 @@ body.cursor-active .cursor-dot {
     height: 500px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
-    transition: transform 0.15s ease-out;
+    transition:
+        transform 0.15s ease-out;
 }
 
 .orbit {
     position: absolute;
 
-    border: 1px solid rgba(17, 17, 17, 0.15);
+    border:
+        1px solid rgba(17, 17, 17, 0.15);
 
     border-radius: 50%;
 
@@ -377,7 +562,8 @@ body.cursor-active .cursor-dot {
     width: 430px;
     height: 430px;
 
-    animation: orbitSpin 18s linear infinite;
+    animation:
+        orbitSpin 18s linear infinite;
 }
 
 .orbit-two {
@@ -386,10 +572,12 @@ body.cursor-active .cursor-dot {
 
     border-style: dashed;
 
-    animation: orbitSpinReverse 13s linear infinite;
+    animation:
+        orbitSpinReverse 13s linear infinite;
 }
 
 @keyframes orbitSpin {
+
     from {
         transform: rotate(0deg);
     }
@@ -397,9 +585,11 @@ body.cursor-active .cursor-dot {
     to {
         transform: rotate(360deg);
     }
+
 }
 
 @keyframes orbitSpinReverse {
+
     from {
         transform: rotate(360deg);
     }
@@ -407,6 +597,7 @@ body.cursor-active .cursor-dot {
     to {
         transform: rotate(0deg);
     }
+
 }
 
 .terminal {
@@ -414,12 +605,15 @@ body.cursor-active .cursor-dot {
     min-height: 310px;
 
     background: #111;
+
     color: #f3f1ec;
 
     position: relative;
+
     z-index: 2;
 
-    box-shadow: 22px 22px 0 rgba(255, 77, 0, 0.9);
+    box-shadow:
+        22px 22px 0 rgba(255, 77, 0, 0.9);
 
     transition:
         transform 0.15s ease-out,
@@ -427,13 +621,15 @@ body.cursor-active .cursor-dot {
 }
 
 .terminal:hover {
-    box-shadow: 28px 28px 0 rgba(255, 77, 0, 0.9);
+    box-shadow:
+        28px 28px 0 rgba(255, 77, 0, 0.9);
 }
 
 .terminal-header {
     height: 44px;
 
     display: flex;
+
     align-items: center;
     justify-content: space-between;
 
@@ -444,11 +640,13 @@ body.cursor-active .cursor-dot {
     color: #888;
 
     font-family: "DM Mono", monospace;
+
     font-size: 10px;
 }
 
 .terminal-dots {
     display: flex;
+
     gap: 6px;
 }
 
@@ -465,6 +663,7 @@ body.cursor-active .cursor-dot {
     padding: 28px;
 
     font-family: "DM Mono", monospace;
+
     font-size: 12px;
 
     line-height: 1.9;
@@ -482,18 +681,23 @@ body.cursor-active .cursor-dot {
     color: #aaa;
 
     margin-left: 15px !important;
+
     margin-bottom: 15px !important;
 }
 
 .blink {
     color: #ff4d00;
-    animation: blink 1s infinite;
+
+    animation:
+        blink 1s infinite;
 }
 
 @keyframes blink {
+
     50% {
         opacity: 0;
     }
+
 }
 
 
@@ -502,14 +706,18 @@ body.cursor-active .cursor-dot {
 ========================================= */
 
 .section {
-    padding: 140px 7vw;
+    padding:
+        140px 7vw;
 
-    border-top: 1px solid rgba(17, 17, 17, 0.15);
+    border-top:
+        1px solid rgba(17, 17, 17, 0.15);
 }
 
 .section-label {
     font-family: "DM Mono", monospace;
+
     font-size: 11px;
+
     letter-spacing: 1.5px;
 
     color: #666;
@@ -519,28 +727,35 @@ body.cursor-active .cursor-dot {
 
 .section-content {
     max-width: 1250px;
+
     margin: auto;
 }
 
 .section h2 {
-    font-size: clamp(45px, 6vw, 82px);
+    font-size:
+        clamp(45px, 6vw, 82px);
+
     line-height: 0.98;
+
     letter-spacing: -4px;
 }
 
 .section h2 span {
     display: block;
+
     color: #888;
 }
 
 
 /* =========================================
-   REVEAL ANIMATION
+   REVEAL
 ========================================= */
 
 .reveal {
     opacity: 0;
-    transform: translateY(35px);
+
+    transform:
+        translateY(35px);
 
     transition:
         opacity 0.8s ease,
@@ -549,7 +764,9 @@ body.cursor-active .cursor-dot {
 
 .reveal.visible {
     opacity: 1;
-    transform: translateY(0);
+
+    transform:
+        translateY(0);
 }
 
 
@@ -559,7 +776,9 @@ body.cursor-active .cursor-dot {
 
 .about-grid {
     display: grid;
-    grid-template-columns: 1fr 0.8fr;
+
+    grid-template-columns:
+        1fr 0.8fr;
 
     gap: 10vw;
 
@@ -568,6 +787,7 @@ body.cursor-active .cursor-dot {
 
 .about-text {
     font-size: 19px;
+
     line-height: 1.75;
 }
 
@@ -581,7 +801,9 @@ body.cursor-active .cursor-dot {
 
 .fact {
     display: grid;
-    grid-template-columns: 50px 1fr;
+
+    grid-template-columns:
+        50px 1fr;
 
     padding: 20px 0;
 
@@ -590,7 +812,9 @@ body.cursor-active .cursor-dot {
 
 .fact span {
     font-family: "DM Mono", monospace;
+
     font-size: 10px;
+
     color: #777;
 }
 
@@ -605,12 +829,15 @@ body.cursor-active .cursor-dot {
 
 .what-i-do {
     background: #111;
+
     color: #f3f1ec;
 }
 
 .service-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns:
+        repeat(3, 1fr);
 
     gap: 1px;
 
@@ -626,16 +853,22 @@ body.cursor-active .cursor-dot {
 
     transition:
         background 0.3s ease,
-        color 0.3s ease;
+        color 0.3s ease,
+        transform 0.3s ease;
 }
 
 .service-card:hover {
     background: #ff4d00;
+
     color: #111;
+
+    transform:
+        translateY(-8px);
 }
 
 .service-number {
     font-family: "DM Mono", monospace;
+
     font-size: 11px;
 
     color: #888;
@@ -643,12 +876,16 @@ body.cursor-active .cursor-dot {
 
 .service-card h3 {
     font-size: 34px;
-    margin: 55px 0 18px;
+
+    margin:
+        55px 0 18px;
 }
 
 .service-card p {
     color: #999;
+
     line-height: 1.6;
+
     max-width: 330px;
 }
 
@@ -664,10 +901,25 @@ body.cursor-active .cursor-dot {
 
 .project-card {
     border: 1px solid #111;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.project-card:hover {
+    transform:
+        translate(-6px, -6px);
+
+    box-shadow:
+        12px 12px 0 #ff4d00;
 }
 
 .project-top {
     display: flex;
+
     justify-content: space-between;
 
     padding: 20px 25px;
@@ -675,32 +927,62 @@ body.cursor-active .cursor-dot {
     border-bottom: 1px solid #111;
 
     font-family: "DM Mono", monospace;
+
     font-size: 10px;
 }
 
 .project-status {
     margin-left: 15px;
+
     color: #ff4d00;
 }
 
 .project-main {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
+
+    grid-template-columns:
+        1.2fr 0.8fr;
 }
 
 .project-title-area {
+    position: relative;
+
     padding: 70px 45px;
 }
 
+.project-arrow {
+    position: absolute;
+
+    top: 30px;
+    right: 35px;
+
+    font-size: 35px;
+
+    color: #ff4d00;
+
+    transition:
+        transform 0.3s ease;
+}
+
+.project-card:hover .project-arrow {
+    transform:
+        translate(8px, -8px);
+}
+
 .project-title-area h2 {
-    font-size: clamp(50px, 6vw, 85px);
+    font-size:
+        clamp(50px, 6vw, 85px);
+
     letter-spacing: -5px;
+
     line-height: 0.9;
 }
 
 .project-title-area h2 em {
     display: block;
+
     color: #ff4d00;
+
     font-style: normal;
 }
 
@@ -710,12 +992,15 @@ body.cursor-active .cursor-dot {
     margin-top: 35px;
 
     line-height: 1.7;
+
     color: #555;
 }
 
 .project-tags {
     display: flex;
+
     flex-wrap: wrap;
+
     gap: 8px;
 
     margin-top: 35px;
@@ -727,13 +1012,27 @@ body.cursor-active .cursor-dot {
     padding: 8px 11px;
 
     font-family: "DM Mono", monospace;
+
     font-size: 9px;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.project-tags span:hover {
+    background: #111;
+
+    border-color: #111;
+
+    color: #fff;
 }
 
 .project-learning {
     padding: 70px 45px;
 
     border-left: 1px solid #111;
+
     background: #e8e5dd;
 }
 
@@ -741,7 +1040,9 @@ body.cursor-active .cursor-dot {
     display: block;
 
     font-family: "DM Mono", monospace;
+
     font-size: 10px;
+
     letter-spacing: 1px;
 
     color: #666;
@@ -767,15 +1068,21 @@ body.cursor-active .cursor-dot {
     margin-top: 40px;
 
     font-family: "DM Mono", monospace;
+
     font-size: 11px;
 
     border-bottom: 1px solid #111;
 
     padding-bottom: 5px;
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease;
 }
 
 .project-link:hover {
     color: #ff4d00;
+
     border-color: #ff4d00;
 }
 
@@ -790,7 +1097,9 @@ body.cursor-active .cursor-dot {
 
 .rnd-header {
     display: flex;
+
     justify-content: space-between;
+
     align-items: flex-end;
 
     gap: 50px;
@@ -802,17 +1111,21 @@ body.cursor-active .cursor-dot {
 
 .rnd-header h2 em {
     color: #ff4d00;
+
     font-style: normal;
 }
 
 .rnd-header p {
     max-width: 350px;
+
     line-height: 1.7;
 }
 
 .rnd-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns:
+        repeat(3, 1fr);
 
     gap: 50px;
 
@@ -823,20 +1136,32 @@ body.cursor-active .cursor-dot {
     border-top: 2px solid #111;
 
     padding-top: 20px;
+
+    transition:
+        transform 0.3s ease;
+}
+
+.rnd-item:hover {
+    transform:
+        translateY(-8px);
 }
 
 .rnd-item span {
     font-family: "DM Mono", monospace;
+
     font-size: 11px;
 }
 
 .rnd-item h3 {
     font-size: 30px;
-    margin: 45px 0 15px;
+
+    margin:
+        45px 0 15px;
 }
 
 .rnd-item p {
     line-height: 1.7;
+
     color: #444;
 }
 
@@ -851,7 +1176,9 @@ body.cursor-active .cursor-dot {
 
 .interest-item {
     display: grid;
-    grid-template-columns: 70px 1fr;
+
+    grid-template-columns:
+        70px 1fr 50px;
 
     align-items: center;
 
@@ -861,22 +1188,60 @@ body.cursor-active .cursor-dot {
 
     transition:
         padding-left 0.3s ease,
-        color 0.3s ease;
+        color 0.3s ease,
+        background 0.3s ease;
 }
 
 .interest-item:hover {
     padding-left: 25px;
+
     color: #ff4d00;
+
+    background:
+        rgba(255, 255, 255, 0.25);
 }
 
 .interest-item span {
     font-family: "DM Mono", monospace;
+
     font-size: 10px;
 }
 
 .interest-item h2 {
-    font-size: clamp(28px, 4vw, 55px);
+    font-size:
+        clamp(28px, 4vw, 55px);
+
     letter-spacing: -2px;
+
+    transition:
+        transform 0.3s ease;
+}
+
+.interest-item b {
+    font-size: 25px;
+
+    font-weight: 400;
+
+    opacity: 0;
+
+    transform:
+        translateX(-10px);
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+.interest-item:hover h2 {
+    transform:
+        translateX(5px);
+}
+
+.interest-item:hover b {
+    opacity: 1;
+
+    transform:
+        translateX(0);
 }
 
 
@@ -886,6 +1251,7 @@ body.cursor-active .cursor-dot {
 
 .toolbox-section {
     background: #111;
+
     color: #f3f1ec;
 }
 
@@ -895,7 +1261,9 @@ body.cursor-active .cursor-dot {
 
 .toolbox-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns:
+        repeat(3, 1fr);
 
     gap: 60px;
 }
@@ -912,6 +1280,7 @@ body.cursor-active .cursor-dot {
 
 .tool-list {
     display: flex;
+
     flex-direction: column;
 }
 
@@ -929,6 +1298,7 @@ body.cursor-active .cursor-dot {
 
 .tool-list span:hover {
     color: #ff4d00;
+
     padding-left: 10px;
 }
 
@@ -943,14 +1313,18 @@ body.cursor-active .cursor-dot {
 
 .learning-header h2 em {
     color: #ff4d00;
+
     font-style: normal;
 }
 
 .learning-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns:
+        repeat(3, 1fr);
 
     border-top: 1px solid #111;
+
     border-left: 1px solid #111;
 }
 
@@ -960,34 +1334,45 @@ body.cursor-active .cursor-dot {
     padding: 25px;
 
     border-right: 1px solid #111;
+
     border-bottom: 1px solid #111;
 
     display: flex;
+
     flex-direction: column;
+
     justify-content: space-between;
 
     transition:
         background 0.25s ease,
-        color 0.25s ease;
+        color 0.25s ease,
+        transform 0.25s ease;
 }
 
 .learning-item:hover {
     background: #ff4d00;
+
+    transform:
+        translateY(-5px);
 }
 
 .learning-item span {
     font-family: "DM Mono", monospace;
+
     font-size: 10px;
 }
 
 .learning-item strong {
     font-size: 32px;
+
     letter-spacing: -1px;
 }
 
 .learning-item small {
     font-family: "DM Mono", monospace;
+
     font-size: 9px;
+
     color: #777;
 }
 
@@ -1009,7 +1394,8 @@ body.cursor-active .cursor-dot {
 }
 
 .big-statement {
-    font-size: clamp(45px, 6vw, 82px);
+    font-size:
+        clamp(45px, 6vw, 82px);
 
     line-height: 1;
 
@@ -1018,6 +1404,7 @@ body.cursor-active .cursor-dot {
 
 .big-statement em {
     color: #ff4d00;
+
     font-style: normal;
 }
 
@@ -1027,6 +1414,7 @@ body.cursor-active .cursor-dot {
     margin-top: 60px;
 
     font-size: 18px;
+
     line-height: 1.7;
 }
 
@@ -1041,7 +1429,9 @@ body.cursor-active .cursor-dot {
 
 .now-card {
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     border: 1px solid #111;
@@ -1049,10 +1439,24 @@ body.cursor-active .cursor-dot {
     padding: 55px;
 
     background: #f3f1ec;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.now-card:hover {
+    transform:
+        translate(-5px, -5px);
+
+    box-shadow:
+        10px 10px 0 #ff4d00;
 }
 
 .now-card h2 {
-    font-size: clamp(40px, 5vw, 70px);
+    font-size:
+        clamp(40px, 5vw, 70px);
+
     letter-spacing: -3px;
 }
 
@@ -1060,8 +1464,38 @@ body.cursor-active .cursor-dot {
     color: #ff4d00;
 }
 
+.status-dot {
+    display: inline-block;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #ff4d00;
+
+    margin-right: 7px;
+
+    animation:
+        statusPulse 1.5s infinite;
+}
+
+@keyframes statusPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+}
+
 .now-mark {
     font-size: 80px;
+
     font-weight: 300;
 
     transition:
@@ -1070,7 +1504,9 @@ body.cursor-active .cursor-dot {
 }
 
 .now-card:hover .now-mark {
-    transform: translateX(15px);
+    transform:
+        translateX(15px);
+
     color: #ff4d00;
 }
 
@@ -1081,22 +1517,28 @@ body.cursor-active .cursor-dot {
 
 footer {
     background: #111;
+
     color: #f3f1ec;
 
-    padding: 60px 7vw 30px;
+    padding:
+        60px 7vw 30px;
 }
 
 .footer-top {
     display: flex;
+
     justify-content: space-between;
+
     align-items: flex-start;
 
-    padding-bottom: 80px;
+    padding-bottom: 70px;
 }
 
 .footer-logo {
     font-size: 75px;
+
     font-weight: 800;
+
     letter-spacing: -6px;
 }
 
@@ -1106,19 +1548,78 @@ footer {
 
 .footer-top p {
     font-family: "DM Mono", monospace;
+
     font-size: 11px;
+
     color: #777;
+}
+
+
+/* BACK TO TOP */
+
+.back-to-top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    width: 100%;
+
+    padding:
+        25px 0;
+
+    border-top: 1px solid #333;
+
+    border-bottom: 1px solid #333;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 11px;
+
+    color: #777;
+
+    transition:
+        color 0.3s ease,
+        padding 0.3s ease;
+}
+
+.back-to-top strong {
+    font-size: 28px;
+
+    font-weight: 400;
+
+    color: #f3f1ec;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+.back-to-top:hover {
+    color: #ff4d00;
+
+    padding-left: 10px;
+
+    padding-right: 10px;
+}
+
+.back-to-top:hover strong {
+    color: #ff4d00;
+
+    transform:
+        translateY(-6px);
 }
 
 .footer-bottom {
     display: flex;
+
     justify-content: space-between;
 
     padding-top: 20px;
 
-    border-top: 1px solid #333;
-
     font-family: "DM Mono", monospace;
+
     font-size: 10px;
 
     color: #777;
@@ -1130,13 +1631,14 @@ footer {
 
 
 /* =========================================
-   RESPONSIVE
+   TABLET
 ========================================= */
 
 @media (max-width: 1000px) {
 
     .hero {
         grid-template-columns: 1fr;
+
         padding-top: 150px;
     }
 
@@ -1154,11 +1656,13 @@ footer {
 
     .project-learning {
         border-left: none;
+
         border-top: 1px solid #111;
     }
 
     .rnd-header {
         flex-direction: column;
+
         align-items: flex-start;
     }
 
@@ -1169,27 +1673,38 @@ footer {
 }
 
 
+/* =========================================
+   MOBILE
+========================================= */
+
 @media (max-width: 700px) {
 
     .navbar {
         height: 70px;
+
         padding: 0 6vw;
     }
 
-    .nav-links {
+    .nav-links,
+    .nav-github {
         display: none;
+    }
+
+    .menu-button {
+        display: block;
     }
 
     .hero {
         padding:
-            120px 6vw
-            80px;
+            120px 6vw 80px;
 
         gap: 20px;
     }
 
     .hero h1 {
-        font-size: clamp(50px, 14vw, 80px);
+        font-size:
+            clamp(50px, 14vw, 80px);
+
         letter-spacing: -4px;
     }
 
@@ -1199,16 +1714,20 @@ footer {
 
     .hero-buttons {
         flex-direction: column;
+
         align-items: flex-start;
     }
 
     .hero-interaction {
         width: 100%;
+
         height: 420px;
     }
 
     .terminal {
-        width: min(390px, 88vw);
+        width:
+            min(390px, 88vw);
+
         min-height: 290px;
     }
 
@@ -1223,7 +1742,8 @@ footer {
     }
 
     .section {
-        padding: 95px 6vw;
+        padding:
+            95px 6vw;
     }
 
     .section-label {
@@ -1246,20 +1766,27 @@ footer {
 
     .rnd-grid {
         gap: 45px;
+
         margin-top: 65px;
     }
 
     .project-title-area,
     .project-learning {
-        padding: 45px 25px;
+        padding:
+            45px 25px;
     }
 
     .project-title-area h2 {
         font-size: 55px;
     }
 
+    .project-arrow {
+        right: 20px;
+    }
+
     .interest-item {
-        grid-template-columns: 45px 1fr;
+        grid-template-columns:
+            45px 1fr 30px;
     }
 
     .interest-item h2 {
@@ -1271,7 +1798,8 @@ footer {
     }
 
     .now-card {
-        padding: 35px 25px;
+        padding:
+            35px 25px;
     }
 
     .now-mark {
@@ -1280,12 +1808,18 @@ footer {
 
     .footer-top {
         flex-direction: column;
+
         gap: 25px;
+
         padding-bottom: 50px;
     }
 
     .footer-logo {
         font-size: 60px;
+    }
+
+    .footer-bottom {
+        gap: 20px;
     }
 
 }
@@ -1319,7 +1853,9 @@ footer {
     *::before,
     *::after {
         animation-duration: 0.01ms !important;
+
         animation-iteration-count: 1 !important;
+
         transition-duration: 0.01ms !important;
     }
 
