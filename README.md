@@ -32,3 +32,8 @@ I'm exploring how AI can help people capture, organize, and retrieve the informa
 - Backend Development
 - Artificial Intelligence & Machine Learning
 - Building and Deploying Projects
+- Frontend Development
+
+## Contact
+
+- GitHub: [nitishpisapati-maker](https://github.com/nitishpisapati-maker)
