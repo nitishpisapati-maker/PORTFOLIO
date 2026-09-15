@@ -143,6 +143,7 @@ body.loaded .page-loader {
 .cursor-active .cursor-ring {
     width: 52px;
     height: 52px;
+
     background: rgba(255,255,255,0.15);
     border-color: #111;
 }
@@ -163,6 +164,9 @@ body.loaded .page-loader {
     overflow: hidden;
 }
 
+
+/* General background elements */
+
 .art-circle,
 .art-square,
 .art-cross,
@@ -176,7 +180,9 @@ body.loaded .page-loader {
 }
 
 
-/* circles */
+/* =========================================================
+   CIRCLES
+========================================================= */
 
 .art-circle {
     border: 1px solid rgba(17,17,17,0.11);
@@ -214,10 +220,14 @@ body.loaded .page-loader {
 }
 
 
-/* squares */
+/* =========================================================
+   SQUARES — DARKER / BLACK
+========================================================= */
 
 .art-square {
-    border: 1px solid rgba(17,17,17,0.09);
+    border: 1px solid #111;
+    opacity: 0.65;
+
     transform: rotate(18deg);
 }
 
@@ -242,14 +252,19 @@ body.loaded .page-loader {
 }
 
 
-/* crosses */
+/* =========================================================
+   CROSSES
+========================================================= */
 
 .art-cross {
     font-family: "DM Mono", monospace;
+
     font-size: 1.5rem;
     font-weight: 400;
 
-    opacity: 0.3;
+    color: #111;
+
+    opacity: 0.75;
 }
 
 .cross-one {
@@ -267,13 +282,16 @@ body.loaded .page-loader {
 }
 
 
-/* dots */
+/* =========================================================
+   DOTS
+========================================================= */
 
 .art-dot {
     width: 7px;
     height: 7px;
 
     border-radius: 50%;
+
     background: #111;
 
     opacity: 0.25;
@@ -301,13 +319,17 @@ body.loaded .page-loader {
 }
 
 
-/* lines */
+/* =========================================================
+   LINES — DARKER / BLACK
+========================================================= */
 
 .art-line {
     height: 1px;
     width: 180px;
 
-    background: rgba(17,17,17,0.1);
+    background: #111;
+
+    opacity: 0.65;
 }
 
 .line-one {
@@ -325,11 +347,15 @@ body.loaded .page-loader {
 }
 
 
-/* labels */
+/* =========================================================
+   BACKGROUND LABELS
+========================================================= */
 
 .art-label {
     font-family: "DM Mono", monospace;
+
     font-size: 0.58rem;
+
     letter-spacing: 0.15em;
 
     opacity: 0.28;
@@ -346,10 +372,14 @@ body.loaded .page-loader {
 }
 
 
-/* animations */
+/* =========================================================
+   BACKGROUND ANIMATIONS
+========================================================= */
 
 @keyframes floatOne {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
 
@@ -359,7 +389,9 @@ body.loaded .page-loader {
 }
 
 @keyframes floatTwo {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translate(0, 0);
     }
 
@@ -369,7 +401,9 @@ body.loaded .page-loader {
 }
 
 @keyframes floatThree {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
 
@@ -379,6 +413,7 @@ body.loaded .page-loader {
 }
 
 @keyframes rotateSquare {
+
     from {
         transform: rotate(18deg);
     }
@@ -389,6 +424,7 @@ body.loaded .page-loader {
 }
 
 @keyframes rotateSquareReverse {
+
     from {
         transform: rotate(18deg);
     }
@@ -399,7 +435,9 @@ body.loaded .page-loader {
 }
 
 @keyframes crossFloat {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
 
@@ -409,7 +447,9 @@ body.loaded .page-loader {
 }
 
 @keyframes dotPulse {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: 0.15;
         transform: scale(1);
     }
@@ -456,13 +496,17 @@ body.loaded .page-loader {
 
 .nav-logo {
     font-size: 1.45rem;
+
     font-weight: 800;
+
     letter-spacing: -0.08em;
 }
 
 .nav-links {
     display: flex;
+
     align-items: center;
+
     gap: 30px;
 }
 
@@ -472,6 +516,7 @@ body.loaded .page-loader {
     font-family: "DM Mono", monospace;
 
     font-size: 0.68rem;
+
     letter-spacing: 0.05em;
 
     text-transform: uppercase;
@@ -491,6 +536,7 @@ body.loaded .page-loader {
     background: #111;
 
     transform: scaleX(0);
+
     transform-origin: right;
 
     transition: transform 0.3s ease;
@@ -498,6 +544,7 @@ body.loaded .page-loader {
 
 .nav-link:hover::after {
     transform: scaleX(1);
+
     transform-origin: left;
 }
 
@@ -509,6 +556,7 @@ body.loaded .page-loader {
 main,
 footer {
     position: relative;
+
     z-index: 2;
 }
 
@@ -527,6 +575,7 @@ footer {
     font-family: "DM Mono", monospace;
 
     font-size: 0.7rem;
+
     letter-spacing: 0.1em;
 
     opacity: 0.45;
@@ -540,6 +589,7 @@ footer {
     font-family: "DM Mono", monospace;
 
     font-size: 0.65rem;
+
     letter-spacing: 0.13em;
 
     opacity: 0.55;
@@ -560,6 +610,7 @@ footer {
 
 .reveal {
     opacity: 0;
+
     transform: translateY(35px);
 
     transition:
@@ -569,6 +620,7 @@ footer {
 
 .reveal.visible {
     opacity: 1;
+
     transform: translateY(0);
 }
 
@@ -583,7 +635,9 @@ footer {
     padding-top: 180px;
 
     display: flex;
+
     flex-direction: column;
+
     justify-content: center;
 }
 
@@ -683,11 +737,13 @@ footer {
 
 .button-dark {
     background: #111;
+
     color: #f3f1ec;
 }
 
 .button-dark:hover {
     background: #ff4d00;
+
     border-color: #ff4d00;
 }
 
@@ -706,7 +762,9 @@ footer {
 
 .hero-visual {
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 }
 
@@ -717,6 +775,7 @@ footer {
     height: 500px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -769,6 +828,7 @@ footer {
 }
 
 @keyframes orbitSpin {
+
     from {
         transform: rotate(0deg);
     }
@@ -779,6 +839,7 @@ footer {
 }
 
 @keyframes orbitSpinReverse {
+
     from {
         transform: rotate(360deg);
     }
@@ -790,6 +851,7 @@ footer {
 
 .terminal {
     width: 420px;
+
     min-height: 310px;
 
     background: #111;
@@ -797,6 +859,7 @@ footer {
     color: #f3f1ec;
 
     position: relative;
+
     z-index: 2;
 
     box-shadow:
@@ -816,6 +879,7 @@ footer {
     height: 42px;
 
     display: flex;
+
     align-items: center;
 
     gap: 15px;
@@ -834,6 +898,7 @@ footer {
 
 .terminal-dots {
     display: flex;
+
     gap: 5px;
 }
 
@@ -877,6 +942,7 @@ footer {
 }
 
 @keyframes blink {
+
     50% {
         opacity: 0;
     }
@@ -1005,6 +1071,7 @@ footer {
     margin-top: 90px;
 
     border-top: 1px solid #111;
+
     border-bottom: 1px solid #111;
 
     padding: 25px 0 0;
@@ -1386,7 +1453,7 @@ footer {
 
 
 /* =========================================================
-   BEYOND
+   BEYOND CODE
 ========================================================= */
 
 .beyond-grid {
@@ -1467,7 +1534,8 @@ footer {
     width: 300px;
     height: 300px;
 
-    border: 1px solid rgba(243,241,236,0.2);
+    border:
+        1px solid rgba(243,241,236,0.2);
 
     border-radius: 50%;
 
@@ -1478,6 +1546,7 @@ footer {
 }
 
 @keyframes nowOrbit {
+
     from {
         transform: rotate(0deg);
     }
@@ -1591,14 +1660,13 @@ footer {
 
 
 /* =========================================================
-   RESPONSIVE
+   TABLET
 ========================================================= */
 
 @media (max-width: 1000px) {
 
     .navbar {
-        padding:
-            20px 30px;
+        padding: 20px 30px;
     }
 
     .hero-grid {
@@ -1645,8 +1713,7 @@ footer {
     }
 
     .navbar {
-        padding:
-            18px 20px;
+        padding: 18px 20px;
     }
 
     .nav-links {
@@ -1836,7 +1903,9 @@ footer {
     *::before,
     *::after {
         animation-duration: 0.01ms !important;
+
         animation-iteration-count: 1 !important;
+
         transition-duration: 0.01ms !important;
     }
 
