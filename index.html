@@ -2,27 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="description"
-        content="Nitish Pisapati — CSE student, builder and R&D enthusiast."
-    >
-
-    <meta
-        name="keywords"
-        content="Nitish Pisapati, CSE student, R&D, programming, backend, AI, portfolio"
-    >
-
+    <meta name="description" content="Nitish Pisapati — CSE student, builder and R&D enthusiast.">
     <meta name="author" content="Nitish Pisapati">
-
-    <meta property="og:title" content="Nitish Pisapati — Portfolio">
-    <meta
-        property="og:description"
-        content="CSE student, builder and R&D enthusiast."
-    >
-    <meta property="og:type" content="website">
 
     <title>Nitish Pisapati — Portfolio</title>
 
@@ -39,12 +22,10 @@
 
 <body>
 
-    <!-- PAGE LOADER -->
+    <!-- LOADER -->
     <div class="loader">
-        <div class="loader-inner">
-            <span>NP.</span>
-            <span>001</span>
-        </div>
+        <div class="loader-left">NP.</div>
+        <div class="loader-right">001 / 001</div>
     </div>
 
 
@@ -53,7 +34,7 @@
     <div class="cursor-dot"></div>
 
 
-    <!-- MOVING BACKGROUND ART -->
+    <!-- BACKGROUND ART -->
     <div class="background-art">
 
         <div class="shape square square-one"></div>
@@ -65,8 +46,8 @@
         <div class="shape line line-one"></div>
         <div class="shape line line-two"></div>
 
-        <div class="shape cross cross-one">+</div>
-        <div class="shape cross cross-two">+</div>
+        <div class="cross cross-one">+</div>
+        <div class="cross cross-two">+</div>
 
         <div class="dot dot-one"></div>
         <div class="dot dot-two"></div>
@@ -75,7 +56,7 @@
     </div>
 
 
-    <!-- NAVBAR -->
+    <!-- NAVIGATION -->
     <header class="navbar">
 
         <a href="#top" class="nav-logo magnetic">
@@ -84,35 +65,19 @@
 
         <nav class="nav-links">
 
-            <a
-                href="#about"
-                class="nav-link magnetic"
-                data-bg="#d6c7a8"
-            >
+            <a href="#about" class="nav-link magnetic" data-bg="#d6c7a8">
                 ABOUT
             </a>
 
-            <a
-                href="#projects"
-                class="nav-link magnetic"
-                data-bg="#c9d4df"
-            >
+            <a href="#projects" class="nav-link magnetic" data-bg="#c9d4df">
                 WORK
             </a>
 
-            <a
-                href="#rnd"
-                class="nav-link magnetic"
-                data-bg="#b9cdbd"
-            >
+            <a href="#rnd" class="nav-link magnetic" data-bg="#b9cdbd">
                 R&D
             </a>
 
-            <a
-                href="#learning"
-                class="nav-link magnetic"
-                data-bg="#c0cbd8"
-            >
+            <a href="#learning" class="nav-link magnetic" data-bg="#c0cbd8">
                 LEARNING
             </a>
 
@@ -130,7 +95,7 @@
 
         <div class="nav-status">
             AVAILABLE
-            <span class="status-dot"></span>
+            <span></span>
         </div>
 
     </header>
@@ -140,40 +105,105 @@
 
 
         <!-- HERO -->
-        <section class="hero section">
+        <section class="hero">
 
             <div class="hero-top">
 
-                <p class="eyebrow">
-                    CSE STUDENT <span>•</span> BUILDER <span>•</span> R&D
-                </p>
+                <div class="hero-label">
+                    CSE STUDENT <b>•</b> BUILDER <b>•</b> R&D
+                </div>
 
-                <p class="hero-number">
+                <div class="hero-number">
                     01 / 05
-                </p>
+                </div>
 
             </div>
 
 
-            <div class="hero-content">
+            <!-- INTERACTIVE HERO BOX -->
+            <div class="hero-interactive">
 
-                <div class="hero-terminal">
-                    <p>
-                        <b>&gt;</b> who am I
-                    </p>
+                <div class="hero-box-header">
+
+                    <span>
+                        TERMINAL
+                    </span>
+
+                    <span class="hero-box-status">
+                        ● LIVE
+                    </span>
+
                 </div>
 
-                <h1 class="hero-title">
-                    Things I've been<br>
+
+                <div class="hero-box-content">
+
+                    <div class="hero-command">
+                        <span>&gt;</span>
+                        <span id="commandText">who am I</span>
+                    </div>
+
+
+                    <div class="hero-answer" id="heroAnswer">
+                        I'm a first-year CSE student interested in
+                        technology, problem-solving and R&D.
+                    </div>
+
+                </div>
+
+
+                <div class="hero-options">
+
+                    <button
+                        class="hero-option active"
+                        data-command="who am I"
+                        data-answer="I'm a first-year CSE student interested in technology, problem-solving and R&D."
+                    >
+                        WHO AM I
+                    </button>
+
+                    <button
+                        class="hero-option"
+                        data-command="what do I build"
+                        data-answer="I build and experiment with software projects while learning how different systems work."
+                    >
+                        WHAT I BUILD
+                    </button>
+
+                    <button
+                        class="hero-option"
+                        data-command="what interests me"
+                        data-answer="Backend development, AI/ML, information retrieval, research and solving problems."
+                    >
+                        WHAT INTERESTS ME
+                    </button>
+
+                    <button
+                        class="hero-option"
+                        data-command="what am I learning"
+                        data-answer="C, Java, AI/ML, NLP, backend development and deployment."
+                    >
+                        WHAT I'M LEARNING
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-main">
+
+                <h1>
+                    Things I've been
                     <span>building.</span>
                 </h1>
 
                 <div class="hero-bottom">
 
-                    <p class="hero-description">
+                    <p>
                         I like finding problems worth solving,
-                        understanding how things work, and building
-                        systems around ideas that interest me.
+                        understanding how things work and building
+                        around ideas that interest me.
                     </p>
 
                     <a href="#about" class="scroll-link magnetic">
@@ -196,34 +226,35 @@
                 ABOUT
             </div>
 
+
             <div class="about-grid">
 
-                <div class="about-heading reveal">
+                <div class="reveal">
 
                     <p class="small-label">
                         WHO I AM
                     </p>
 
                     <h2>
-                        Curious by<br>
+                        Curious by
                         <span>default.</span>
                     </h2>
 
                 </div>
 
 
-                <div class="about-text reveal">
+                <div class="about-copy reveal">
 
-                    <p class="large-text">
+                    <p class="large-copy">
                         I'm a first-year CSE student interested in
-                        technology, problem-solving and building things
-                        that are actually useful.
+                        technology, problem-solving and building
+                        things that are actually useful.
                     </p>
 
                     <p>
-                        I enjoy exploring how systems work, learning new
-                        technologies and turning problems I notice into
-                        things I can experiment with.
+                        I enjoy exploring how systems work, learning
+                        new technologies and turning problems I notice
+                        into things I can experiment with.
                     </p>
 
                     <p>
@@ -245,24 +276,24 @@
 
             <div class="project-line"></div>
 
-            <div class="project-header">
+            <div class="project-top">
 
-                <span class="mono-label">
+                <span>
                     PROJECT 01
                 </span>
 
-                <span class="mono-label">
+                <span>
                     R&D / 001
                 </span>
 
             </div>
 
 
-            <div class="project-main">
+            <div class="project-content">
 
-                <div class="project-title-wrap">
+                <div class="project-title">
 
-                    <div class="project-index">
+                    <div class="project-number">
                         01
                     </div>
 
@@ -278,25 +309,26 @@
                 </div>
 
 
-                <div class="project-description">
+                <div class="project-copy">
 
-                    <p>
+                    <p class="project-description-main">
                         A personal website designed and developed to
-                        document my work, interests, technical skills and
-                        learning journey.
+                        document my work, interests, technical skills
+                        and learning journey.
                     </p>
 
                     <p>
-                        Built as an ongoing space to experiment with
+                        Built as an evolving space to experiment with
                         design, development and the technologies I'm
                         learning.
                     </p>
 
-                    <div class="project-meta">
+                    <div class="project-tags">
 
                         <span>HTML</span>
                         <span>CSS</span>
                         <span>JAVASCRIPT</span>
+                        <span>GITHUB</span>
                         <span>VERCEL</span>
 
                     </div>
@@ -318,7 +350,7 @@
                     WHAT I DO
                 </span>
 
-                <span class="big-plus">
+                <span class="what-plus">
                     +
                 </span>
 
@@ -327,52 +359,52 @@
 
             <div class="what-table">
 
-                <div class="what-row magnetic-row">
+                <div class="what-row">
 
-                    <span class="row-number">
+                    <span class="what-number">
                         01
                     </span>
 
-                    <span class="row-title">
+                    <span class="what-title">
                         Explore
                     </span>
 
                 </div>
 
 
-                <div class="what-row magnetic-row">
+                <div class="what-row">
 
-                    <span class="row-number">
+                    <span class="what-number">
                         02
                     </span>
 
-                    <span class="row-title">
+                    <span class="what-title">
                         Build
                     </span>
 
                 </div>
 
 
-                <div class="what-row magnetic-row">
+                <div class="what-row">
 
-                    <span class="row-number">
+                    <span class="what-number">
                         03
                     </span>
 
-                    <span class="row-title">
+                    <span class="what-title">
                         Test
                     </span>
 
                 </div>
 
 
-                <div class="what-row magnetic-row">
+                <div class="what-row">
 
-                    <span class="row-number">
+                    <span class="what-number">
                         04
                     </span>
 
-                    <span class="row-title">
+                    <span class="what-title">
                         Improve
                     </span>
 
@@ -395,7 +427,7 @@
 
             <div class="rnd-grid">
 
-                <div class="rnd-heading reveal">
+                <div class="reveal">
 
                     <p class="small-label">
                         HOW I APPROACH PROBLEMS
@@ -410,7 +442,7 @@
                 </div>
 
 
-                <div class="rnd-content reveal">
+                <div class="rnd-list reveal">
 
                     <div class="rnd-item">
 
@@ -418,10 +450,11 @@
 
                         <div>
                             <h3>Question</h3>
+
                             <p>
                                 Start by understanding the problem
-                                instead of immediately jumping into a
-                                solution.
+                                instead of immediately jumping into
+                                a solution.
                             </p>
                         </div>
 
@@ -434,10 +467,10 @@
 
                         <div>
                             <h3>Research</h3>
+
                             <p>
-                                Break the problem down, learn what is
-                                already known and explore possible
-                                approaches.
+                                Break the problem down and explore
+                                possible approaches.
                             </p>
                         </div>
 
@@ -450,9 +483,10 @@
 
                         <div>
                             <h3>Experiment</h3>
+
                             <p>
-                                Build small things, test assumptions and
-                                learn from what doesn't work.
+                                Build small things, test assumptions
+                                and learn from what doesn't work.
                             </p>
                         </div>
 
@@ -465,6 +499,7 @@
 
                         <div>
                             <h3>Iterate</h3>
+
                             <p>
                                 Improve the idea based on what the
                                 experiments actually reveal.
@@ -492,32 +527,32 @@
 
             <div class="interest-list">
 
-                <div class="interest-item magnetic-row">
+                <div class="interest-row">
                     <span>01</span>
                     <h2>Backend Development</h2>
                 </div>
 
-                <div class="interest-item magnetic-row">
+                <div class="interest-row">
                     <span>02</span>
                     <h2>Artificial Intelligence</h2>
                 </div>
 
-                <div class="interest-item magnetic-row">
+                <div class="interest-row">
                     <span>03</span>
                     <h2>Machine Learning</h2>
                 </div>
 
-                <div class="interest-item magnetic-row">
+                <div class="interest-row">
                     <span>04</span>
                     <h2>Research & Development</h2>
                 </div>
 
-                <div class="interest-item magnetic-row">
+                <div class="interest-row">
                     <span>05</span>
                     <h2>Problem Solving</h2>
                 </div>
 
-                <div class="interest-item magnetic-row">
+                <div class="interest-row">
                     <span>06</span>
                     <h2>Building New Ideas</h2>
                 </div>
@@ -528,7 +563,7 @@
 
 
 
-        <!-- TECHNICAL TOOLBOX -->
+        <!-- TOOLBOX -->
         <section class="section toolbox-section">
 
             <div class="section-label">
@@ -545,14 +580,12 @@
                         PROGRAMMING
                     </p>
 
-                    <div class="tool-tags">
-
+                    <div class="tags">
                         <span>PYTHON</span>
                         <span>JAVASCRIPT</span>
                         <span>SQL</span>
                         <span>HTML</span>
                         <span>CSS</span>
-
                     </div>
 
                 </div>
@@ -564,14 +597,12 @@
                         DEVELOPMENT
                     </p>
 
-                    <div class="tool-tags">
-
+                    <div class="tags">
                         <span>FASTAPI</span>
                         <span>REST APIs</span>
                         <span>GIT</span>
                         <span>GITHUB</span>
                         <span>VERCEL</span>
-
                     </div>
 
                 </div>
@@ -583,14 +614,12 @@
                         AREAS
                     </p>
 
-                    <div class="tool-tags">
-
+                    <div class="tags">
                         <span>AI / ML</span>
                         <span>NLP</span>
                         <span>INFORMATION RETRIEVAL</span>
                         <span>BACKEND</span>
                         <span>R&D</span>
-
                     </div>
 
                 </div>
@@ -612,7 +641,7 @@
 
             <div class="learning-grid">
 
-                <div class="learning-intro">
+                <div>
 
                     <p class="small-label">
                         RIGHT NOW
@@ -628,32 +657,32 @@
 
                 <div class="learning-list">
 
-                    <div class="learning-item">
+                    <div>
                         <span>01</span>
                         <p>C</p>
                     </div>
 
-                    <div class="learning-item">
+                    <div>
                         <span>02</span>
                         <p>Java</p>
                     </div>
 
-                    <div class="learning-item">
+                    <div>
                         <span>03</span>
                         <p>AI / ML</p>
                     </div>
 
-                    <div class="learning-item">
+                    <div>
                         <span>04</span>
                         <p>NLP</p>
                     </div>
 
-                    <div class="learning-item">
+                    <div>
                         <span>05</span>
                         <p>Backend Development</p>
                     </div>
 
-                    <div class="learning-item">
+                    <div>
                         <span>06</span>
                         <p>Deployment</p>
                     </div>
@@ -666,7 +695,7 @@
 
 
 
-        <!-- BEYOND CODE -->
+        <!-- BEYOND -->
         <section class="section beyond-section">
 
             <div class="section-label">
@@ -683,7 +712,7 @@
                 </h2>
 
                 <p>
-                    I'm still early in the journey, which means there is
+                    I'm still early in the journey, which means there's
                     a lot left to learn, experiment with and build.
                 </p>
 
@@ -719,7 +748,6 @@
                     href="https://github.com/nitishpisapati-maker"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="magnetic"
                 >
                     GITHUB ↗
                 </a>
@@ -733,47 +761,103 @@
 
     <script>
 
-        /* --------------------------------
-           PAGE LOADER
-        -------------------------------- */
+        /* =====================================
+           LOADER
+        ===================================== */
 
         window.addEventListener("load", () => {
 
             setTimeout(() => {
-
                 document.body.classList.add("loaded");
-
             }, 500);
 
         });
 
 
 
-        /* --------------------------------
-           NAVBAR BACKGROUND THEME
-        -------------------------------- */
+        /* =====================================
+           INTERACTIVE HERO
+        ===================================== */
 
-        const navLinks = document.querySelectorAll(".nav-link");
-        const body = document.body;
-        const navbar = document.querySelector(".navbar");
+        const heroOptions =
+            document.querySelectorAll(".hero-option");
 
-        const defaultBackground = "#f3f1ec";
+        const commandText =
+            document.getElementById("commandText");
+
+        const heroAnswer =
+            document.getElementById("heroAnswer");
+
+
+        heroOptions.forEach(option => {
+
+            option.addEventListener("click", () => {
+
+                heroOptions.forEach(item => {
+                    item.classList.remove("active");
+                });
+
+                option.classList.add("active");
+
+                commandText.style.opacity = "0";
+                heroAnswer.style.opacity = "0";
+
+                setTimeout(() => {
+
+                    commandText.textContent =
+                        option.dataset.command;
+
+                    heroAnswer.textContent =
+                        option.dataset.answer;
+
+                    commandText.style.opacity = "1";
+                    heroAnswer.style.opacity = "1";
+
+                }, 180);
+
+            });
+
+        });
+
+
+
+        /* =====================================
+           NAVIGATION THEME
+        ===================================== */
+
+        const navLinks =
+            document.querySelectorAll(".nav-link");
+
+        const navbar =
+            document.querySelector(".navbar");
+
+        const defaultBackground =
+            "#f3f1ec";
+
 
         navLinks.forEach(link => {
 
             link.addEventListener("mouseenter", () => {
 
-                const background = link.dataset.bg;
+                const background =
+                    link.dataset.bg;
 
-                body.style.backgroundColor = background;
-                navbar.style.backgroundColor = background;
+                document.body.style.backgroundColor =
+                    background;
+
+                navbar.style.backgroundColor =
+                    background;
 
             });
+
 
             link.addEventListener("mouseleave", () => {
 
-                body.style.backgroundColor = defaultBackground;
-                navbar.style.backgroundColor = defaultBackground;
+                document.body.style.backgroundColor =
+                    defaultBackground;
+
+                navbar.style.backgroundColor =
+                    defaultBackground;
 
             });
 
@@ -781,103 +865,121 @@
 
 
 
-        /* --------------------------------
-           CUSTOM CURSOR
-        -------------------------------- */
+        /* =====================================
+           CURSOR
+        ===================================== */
 
-        const cursor = document.querySelector(".cursor");
-        const cursorDot = document.querySelector(".cursor-dot");
+        const cursor =
+            document.querySelector(".cursor");
 
-        document.addEventListener("mousemove", (event) => {
+        const cursorDot =
+            document.querySelector(".cursor-dot");
 
-            cursor.style.transform =
-                `translate(${event.clientX}px, ${event.clientY}px)`;
 
-            cursorDot.style.transform =
-                `translate(${event.clientX}px, ${event.clientY}px)`;
+        document.addEventListener("mousemove", event => {
+
+            cursor.style.left =
+                event.clientX + "px";
+
+            cursor.style.top =
+                event.clientY + "px";
+
+            cursorDot.style.left =
+                event.clientX + "px";
+
+            cursorDot.style.top =
+                event.clientY + "px";
 
         });
 
 
-        const interactiveElements =
-            document.querySelectorAll("a, button, .magnetic-row");
+        const interactive =
+            document.querySelectorAll(
+                "a, button, .what-row, .interest-row"
+            );
 
-        interactiveElements.forEach(element => {
+
+        interactive.forEach(element => {
 
             element.addEventListener("mouseenter", () => {
-                cursor.classList.add("cursor-large");
+                cursor.classList.add("large");
             });
 
             element.addEventListener("mouseleave", () => {
-                cursor.classList.remove("cursor-large");
+                cursor.classList.remove("large");
             });
 
         });
 
 
 
-        /* --------------------------------
-           MAGNETIC ELEMENTS
-        -------------------------------- */
+        /* =====================================
+           MAGNETIC NAVIGATION
+        ===================================== */
 
-        const magneticElements =
-            document.querySelectorAll(".magnetic");
+        document
+            .querySelectorAll(".magnetic")
+            .forEach(element => {
 
-        magneticElements.forEach(element => {
+                element.addEventListener("mousemove", event => {
 
-            element.addEventListener("mousemove", (event) => {
+                    const rect =
+                        element.getBoundingClientRect();
 
-                const rect = element.getBoundingClientRect();
+                    const x =
+                        event.clientX -
+                        (rect.left + rect.width / 2);
 
-                const x =
-                    event.clientX -
-                    (rect.left + rect.width / 2);
+                    const y =
+                        event.clientY -
+                        (rect.top + rect.height / 2);
 
-                const y =
-                    event.clientY -
-                    (rect.top + rect.height / 2);
+                    element.style.transform =
+                        `translate(${x * 0.12}px, ${y * 0.12}px)`;
 
-                element.style.transform =
-                    `translate(${x * 0.15}px, ${y * 0.15}px)`;
+                });
+
+
+                element.addEventListener("mouseleave", () => {
+
+                    element.style.transform =
+                        "translate(0, 0)";
+
+                });
 
             });
 
-            element.addEventListener("mouseleave", () => {
-
-                element.style.transform =
-                    "translate(0, 0)";
-
-            });
-
-        });
 
 
-
-        /* --------------------------------
-           MOVING BACKGROUND SHAPES
-        -------------------------------- */
+        /* =====================================
+           BACKGROUND PARALLAX
+        ===================================== */
 
         const shapes =
-            document.querySelectorAll(".shape, .dot");
+            document.querySelectorAll(
+                ".shape, .dot, .cross"
+            );
 
-        document.addEventListener("mousemove", (event) => {
+
+        document.addEventListener("mousemove", event => {
 
             const x =
-                (event.clientX / window.innerWidth - 0.5);
+                event.clientX / window.innerWidth - 0.5;
 
             const y =
-                (event.clientY / window.innerHeight - 0.5);
+                event.clientY / window.innerHeight - 0.5;
+
 
             shapes.forEach((shape, index) => {
 
-                const strength =
-                    (index + 1) * 5;
+                const movement =
+                    (index + 1) * 4;
 
                 shape.style.marginLeft =
-                    `${x * strength}px`;
+                    `${x * movement}px`;
 
                 shape.style.marginTop =
-                    `${y * strength}px`;
+                    `${y * movement}px`;
 
             });
 
@@ -885,12 +987,13 @@
 
 
 
-        /* --------------------------------
+        /* =====================================
            SCROLL REVEAL
-        -------------------------------- */
+        ===================================== */
 
         const revealElements =
             document.querySelectorAll(".reveal");
+
 
         const observer =
             new IntersectionObserver(
@@ -900,7 +1003,9 @@
 
                         if (entry.isIntersecting) {
 
-                            entry.target.classList.add("visible");
+                            entry.target.classList.add(
+                                "visible"
+                            );
 
                         }
 
@@ -914,37 +1019,37 @@
 
 
         revealElements.forEach(element => {
-
             observer.observe(element);
-
         });
 
 
 
-        /* --------------------------------
+        /* =====================================
            SMOOTH SCROLL
-        -------------------------------- */
+        ===================================== */
 
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        document
+            .querySelectorAll('a[href^="#"]')
+            .forEach(anchor => {
 
-            anchor.addEventListener("click", function(event) {
+                anchor.addEventListener("click", event => {
 
-                const target =
-                    document.querySelector(
-                        this.getAttribute("href")
-                    );
+                    const target =
+                        document.querySelector(
+                            anchor.getAttribute("href")
+                        );
 
-                if (!target) return;
+                    if (!target) return;
 
-                event.preventDefault();
+                    event.preventDefault();
 
-                target.scrollIntoView({
-                    behavior: "smooth"
+                    target.scrollIntoView({
+                        behavior: "smooth"
+                    });
+
                 });
 
             });
-
-        });
 
     </script>
 
