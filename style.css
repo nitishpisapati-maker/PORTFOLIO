@@ -948,7 +948,6 @@ body.loaded .loader {
 
 .project-card {
     position: relative;
-
     overflow: hidden;
 
     display: grid;
@@ -975,7 +974,9 @@ body.loaded .loader {
 }
 
 
-/* Orange pointer spotlight */
+/* =========================================
+   ORANGE POINTER SPOTLIGHT
+========================================= */
 
 .project-card::before {
     content: "";
@@ -1007,13 +1008,12 @@ body.loaded .loader {
     z-index: 0;
 }
 
-.project-card:hover::before {
+.project-card.pointer-active::before {
     opacity: 1;
 }
 
 .project-card > * {
     position: relative;
-
     z-index: 1;
 }
 
@@ -1670,7 +1670,6 @@ body.loaded .loader {
 
 /* =========================================
    RESPONSIVE — MOBILE
-   Cleaner background only on phones
 ========================================= */
 
 @media (max-width: 760px) {
@@ -1690,7 +1689,7 @@ body.loaded .loader {
 
 
     /* =====================================
-       CLEAN MOBILE BACKGROUND
+       CLEANER MOBILE BACKGROUND
     ===================================== */
 
     .background-art .art-line,
@@ -2032,7 +2031,6 @@ body.loaded .loader {
             22px;
     }
 
-    /* Disable pointer spotlight on touch */
     .project-card::before {
         display: none;
     }
