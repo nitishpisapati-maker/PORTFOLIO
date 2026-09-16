@@ -17,6 +17,7 @@ body {
     background: #f3f1ec;
     color: #111111;
     overflow-x: hidden;
+
     transition:
         background-color 0.45s ease,
         color 0.35s ease;
@@ -144,7 +145,6 @@ body.loaded .loader {
 .art-cross,
 .art-dot {
     position: absolute;
-
     pointer-events: none;
 
     transition: margin 0.25s ease-out;
@@ -263,7 +263,6 @@ body.loaded .loader {
     content: "";
 
     position: absolute;
-
     background: #111111;
 }
 
@@ -427,7 +426,6 @@ body.loaded .loader {
 .nav-links {
     display: flex;
     align-items: center;
-
     gap: 7px;
 }
 
@@ -786,6 +784,11 @@ body.loaded .loader {
     letter-spacing: 0.08em;
 }
 
+
+/* =========================================
+   HERO BOTTOM
+========================================= */
+
 .hero-bottom {
     margin-top: 50px;
 
@@ -797,6 +800,7 @@ body.loaded .loader {
 .hero-scroll {
     display: flex;
     align-items: center;
+
     gap: 9px;
 }
 
@@ -943,6 +947,10 @@ body.loaded .loader {
 }
 
 .project-card {
+    position: relative;
+
+    overflow: hidden;
+
     display: grid;
 
     grid-template-columns: 90px 1fr 80px;
@@ -957,10 +965,56 @@ body.loaded .loader {
 
     background: rgba(243, 241, 236, 0.72);
 
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+
     transition:
         transform 0.35s ease,
         background-color 0.35s ease,
         box-shadow 0.35s ease;
+}
+
+
+/* Orange pointer spotlight */
+
+.project-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 320px;
+    height: 320px;
+
+    left: var(--mouse-x);
+    top: var(--mouse-y);
+
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+
+    background: radial-gradient(
+        circle,
+        rgba(255, 77, 0, 0.16) 0%,
+        rgba(255, 77, 0, 0.08) 25%,
+        rgba(255, 77, 0, 0.025) 48%,
+        transparent 72%
+    );
+
+    opacity: 0;
+
+    transition: opacity 0.25s ease;
+
+    z-index: 0;
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+.project-card > * {
+    position: relative;
+
+    z-index: 1;
 }
 
 .project-card:hover {
@@ -1219,6 +1273,7 @@ body.loaded .loader {
 
 .rnd-principles p {
     font-size: 13px;
+
     line-height: 1.5;
 }
 
@@ -1264,6 +1319,7 @@ body.loaded .loader {
     margin-top: 65px;
 
     font-size: 24px;
+
     line-height: 1;
     letter-spacing: -0.04em;
 }
@@ -1634,8 +1690,7 @@ body.loaded .loader {
 
 
     /* =====================================
-       CLEANER MOBILE BACKGROUND
-       Desktop remains completely unchanged
+       CLEAN MOBILE BACKGROUND
     ===================================== */
 
     .background-art .art-line,
@@ -1710,9 +1765,7 @@ body.loaded .loader {
     .navbar {
         height: 67px;
 
-        padding:
-            0
-            var(--page-padding);
+        padding: 0 var(--page-padding);
     }
 
     .nav-logo {
@@ -1977,6 +2030,11 @@ body.loaded .loader {
         padding:
             27px
             22px;
+    }
+
+    /* Disable pointer spotlight on touch */
+    .project-card::before {
+        display: none;
     }
 
     .project-card-number {
