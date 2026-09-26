@@ -1,6 +1,41 @@
-/* =========================================
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root {
+
+    --green: #3E6B48;
+    --green-dark: #294B34;
+    --green-deep: #1E3827;
+
+    --gold: #D5AA4E;
+    --gold-light: #E7C875;
+
+    --cream: #F4E9D2;
+    --ivory: #EFE1C0;
+
+    --burgundy: #6E2830;
+
+    --virasat: #702D2E;
+    --virasat-hover: #A83F32;
+
+    --ras: #245D42;
+    --ras-hover: #174A35;
+
+    --mahak: #304C63;
+    --mahak-hover: #243F56;
+
+    --rang: #6B3149;
+    --rang-hover: #8D3C50;
+
+    --transition:
+        cubic-bezier(.2,.8,.2,1);
+}
+
+
+/* =====================================================
    RESET
-========================================= */
+===================================================== */
 
 * {
     margin: 0;
@@ -13,14 +48,23 @@ html {
 }
 
 body {
-    font-family: "Manrope", sans-serif;
-    background: #f3f1ec;
-    color: #111111;
-    overflow-x: hidden;
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    background:
+        var(--green);
+
+    color:
+        var(--cream);
+
+    overflow-x:
+        hidden;
 
     transition:
-        background-color 0.45s ease,
-        color 0.35s ease;
+        background .8s ease,
+        color .8s ease;
 }
 
 a {
@@ -32,2286 +76,3574 @@ button {
     font: inherit;
 }
 
-::selection {
-    background: #ff4d00;
-    color: #ffffff;
-}
 
+/* =====================================================
+   AMBIENT BACKGROUND
+===================================================== */
 
-/* =========================================
-   VARIABLES
-========================================= */
+.ambient-background {
 
-:root {
-    --cream: #f3f1ec;
-    --black: #111111;
-    --orange: #ff4d00;
-    --grey: #676767;
-    --light-grey: #d8d5ce;
-
-    --nav-color: #111111;
-
-    --max-width: 1450px;
-    --page-padding: clamp(22px, 4vw, 64px);
-}
-
-
-/* =========================================
-   LOADER
-========================================= */
-
-.loader {
     position: fixed;
+
     inset: 0;
-    z-index: 9999;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #111111;
-    color: #ffffff;
-
-    transition:
-        opacity 0.7s ease,
-        visibility 0.7s ease;
-}
-
-body.loaded .loader {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.loader-inner {
-    width: min(500px, 80%);
-
-    display: grid;
-    grid-template-columns: auto 1fr;
-
-    gap: 15px 18px;
-    align-items: center;
-}
-
-.loader-number {
-    font-family: "DM Mono", monospace;
-    font-size: 13px;
-}
-
-.loader-line {
-    height: 1px;
-    background: #ffffff;
-
-    transform-origin: left;
-
-    animation: loaderLine 1s ease forwards;
-}
-
-.loader-status {
-    grid-column: 1 / -1;
-
-    font-family: "DM Mono", monospace;
-    font-size: 11px;
-    letter-spacing: 0.12em;
-}
-
-@keyframes loaderLine {
-    from {
-        transform: scaleX(0);
-    }
-
-    to {
-        transform: scaleX(1);
-    }
-}
-
-
-/* =========================================
-   BACKGROUND ART
-========================================= */
-
-.background-art {
-    position: fixed;
-    inset: 0;
-
-    z-index: -1;
-
-    pointer-events: none;
-    overflow: hidden;
-}
-
-.art-circle,
-.art-square,
-.art-line,
-.art-cross,
-.art-dot {
-    position: absolute;
-    pointer-events: none;
-
-    transition: margin 0.25s ease-out;
-}
-
-.art-circle {
-    border: 1px solid rgba(17, 17, 17, 0.38);
-    border-radius: 50%;
-}
-
-.circle-one {
-    width: 200px;
-    height: 200px;
-
-    top: 16%;
-    left: -75px;
-
-    animation: floatSlow 8s ease-in-out infinite;
-}
-
-.circle-two {
-    width: 110px;
-    height: 110px;
-
-    right: 6%;
-    top: 48%;
-
-    animation: floatSlow 11s ease-in-out infinite reverse;
-}
-
-.art-square {
-    border: 2px solid #111111;
-}
-
-.square-one {
-    width: 85px;
-    height: 85px;
-
-    left: 7%;
-    top: 38%;
-
-    transform: rotate(24deg);
-
-    animation:
-        rotateSquare 14s linear infinite,
-        floatSlow 8s ease-in-out infinite;
-}
-
-.square-two {
-    width: 120px;
-    height: 120px;
-
-    right: -35px;
-    top: 22%;
-
-    transform: rotate(35deg);
-
-    animation:
-        rotateSquare 18s linear infinite reverse,
-        floatSlow 10s ease-in-out infinite;
-}
-
-.square-three {
-    width: 60px;
-    height: 60px;
-
-    right: 20%;
-    bottom: 9%;
-
-    transform: rotate(18deg);
-
-    animation:
-        rotateSquare 11s linear infinite,
-        floatSlow 7s ease-in-out infinite;
-}
-
-.art-line {
-    width: 170px;
-    height: 2px;
-
-    background: #111111;
-
-    transform-origin: left center;
-}
-
-.line-one {
-    top: 29%;
-    left: 20%;
-
-    transform: rotate(-21deg);
-}
-
-.line-two {
-    bottom: 27%;
-    right: 14%;
-
-    transform: rotate(35deg);
-}
-
-.line-three {
-    top: 71%;
-    left: 2%;
-
-    width: 100px;
-
-    transform: rotate(17deg);
-}
-
-.art-cross {
-    width: 24px;
-    height: 24px;
-}
-
-.art-cross::before,
-.art-cross::after {
-    content: "";
-
-    position: absolute;
-    background: #111111;
-}
-
-.art-cross::before {
-    left: 50%;
-    top: 0;
-
-    width: 2px;
-    height: 100%;
-
-    transform: translateX(-50%);
-}
-
-.art-cross::after {
-    top: 50%;
-    left: 0;
-
-    height: 2px;
-    width: 100%;
-
-    transform: translateY(-50%);
-}
-
-.cross-one {
-    top: 15%;
-    right: 22%;
-}
-
-.cross-two {
-    bottom: 19%;
-    left: 24%;
-}
-
-.art-dot {
-    width: 7px;
-    height: 7px;
-
-    background: #111111;
-    border-radius: 50%;
-}
-
-.dot-one {
-    top: 34%;
-    right: 16%;
-}
-
-.dot-two {
-    bottom: 33%;
-    left: 11%;
-}
-
-.dot-three {
-    top: 12%;
-    left: 42%;
-}
-
-.dot-four {
-    bottom: 7%;
-    right: 37%;
-}
-
-.art-label {
-    position: absolute;
-
-    font-family: "DM Mono", monospace;
-    font-size: 9px;
-    letter-spacing: 0.12em;
-
-    color: rgba(17, 17, 17, 0.45);
-
-    white-space: nowrap;
-}
-
-.label-one {
-    top: 18%;
-    left: 12%;
-
-    transform: rotate(-90deg);
-}
-
-.label-two {
-    right: 3%;
-    top: 58%;
-
-    transform: rotate(90deg);
-}
-
-.label-three {
-    bottom: 7%;
-    left: 5%;
-}
-
-@keyframes rotateSquare {
-    from {
-        rotate: 0deg;
-    }
-
-    to {
-        rotate: 360deg;
-    }
-}
-
-@keyframes floatSlow {
-
-    0%,
-    100% {
-        translate: 0 0;
-    }
-
-    50% {
-        translate: 0 -12px;
-    }
-}
-
-
-/* =========================================
-   NAVBAR
-========================================= */
-
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 80px;
-
-    z-index: 1000;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 var(--page-padding);
-
-    background: #f3f1ec;
-    color: var(--nav-color);
-
-    border-bottom: 1px solid rgba(17, 17, 17, 0.1);
-
-    transition:
-        background-color 0.45s ease,
-        color 0.35s ease,
-        border-color 0.35s ease;
-}
-
-.nav-logo {
-    font-size: 21px;
-    font-weight: 800;
-    letter-spacing: -0.07em;
-
-    color: var(--nav-color);
-
-    transition: color 0.3s ease;
-}
-
-.nav-logo span {
-    color: var(--orange);
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-}
-
-.nav-link {
-    position: relative;
-
-    font-family: "DM Mono", monospace;
-    font-size: 10px;
-    letter-spacing: 0.08em;
-
-    padding: 11px 14px;
-
-    color: var(--nav-color);
-
-    transition:
-        color 0.25s ease,
-        background 0.25s ease;
-
-    border-radius: 2px;
-}
-
-.nav-link:hover {
-    background: rgba(17, 17, 17, 0.06);
-}
-
-.nav-link::after {
-    content: "";
-
-    position: absolute;
-
-    left: 14px;
-    right: 14px;
-    bottom: 7px;
-
-    height: 1px;
-
-    background: currentColor;
-
-    transform: scaleX(0);
-    transform-origin: right;
-
-    transition: transform 0.3s ease;
-}
-
-.nav-link:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
-}
-
-
-/* =========================================
-   GLOBAL SECTION
-========================================= */
-
-.section {
-    width: min(
-        var(--max-width),
-        calc(100% - (var(--page-padding) * 2))
-    );
-
-    margin: 0 auto;
-}
-
-.content-section {
-    padding-top: 150px;
-    padding-bottom: 150px;
-}
-
-
-/* =========================================
-   HERO
-========================================= */
-
-.hero {
-    min-height: 100vh;
-
-    padding-top: 130px;
-    padding-bottom: 35px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.hero-top,
-.hero-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.hero-eyebrow,
-.hero-year,
-.hero-location,
-.hero-scroll,
-.hero-current {
-    font-family: "DM Mono", monospace;
-    font-size: 10px;
-    letter-spacing: 0.08em;
-}
-
-.hero-eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-}
-
-.status-dot {
-    width: 7px;
-    height: 7px;
-
-    display: inline-block;
-
-    border-radius: 50%;
-    background: var(--orange);
-
-    animation: pulseDot 2s ease-in-out infinite;
-}
-
-@keyframes pulseDot {
-
-    0%,
-    100% {
-        opacity: 1;
-        scale: 1;
-    }
-
-    50% {
-        opacity: 0.4;
-        scale: 0.7;
-    }
-}
-
-.hero-main {
-    width: 100%;
-
-    margin-top: 75px;
-
-    position: relative;
-
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 380px;
-
-    gap: 75px;
-
-    align-items: end;
-}
-
-.hero-copy {
-    max-width: 850px;
-}
-
-.hero-kicker {
-    margin-bottom: 24px;
-
-    font-family: "DM Mono", monospace;
-    font-size: 10px;
-    letter-spacing: 0.1em;
-
-    color: var(--grey);
-}
-
-.hero-copy h1 {
-    max-width: 850px;
-
-    font-size: clamp(64px, 8.5vw, 132px);
-
-    line-height: 0.87;
-    letter-spacing: -0.085em;
-
-    font-weight: 800;
-}
-
-.hero-copy h1 span {
-    color: var(--orange);
-}
-
-.hero-description {
-    max-width: 500px;
-
-    margin-top: 38px;
-
-    font-size: 15px;
-    line-height: 1.7;
-
-    color: #555555;
-}
-
-.hero-actions {
-    display: flex;
-    gap: 28px;
-
-    margin-top: 35px;
-}
-
-.text-link {
-    display: inline-flex;
-    align-items: center;
-
-    gap: 10px;
-
-    font-family: "DM Mono", monospace;
-    font-size: 10px;
-    letter-spacing: 0.07em;
-
-    padding-bottom: 6px;
-
-    border-bottom: 1px solid #111111;
-
-    transition:
-        gap 0.3s ease,
-        color 0.3s ease,
-        border-color 0.3s ease;
-}
-
-.text-link:hover {
-    gap: 16px;
-
-    color: var(--orange);
-
-    border-color: var(--orange);
-}
-
-
-/* =========================================
-   TERMINAL
-========================================= */
-
-.hero-interactive {
-    width: 100%;
-
-    border: 1px solid #111111;
-
-    background: rgba(243, 241, 236, 0.96);
-
-    position: relative;
-
-    z-index: 10;
-
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.3s ease;
-}
-
-.hero-interactive:hover {
-    box-shadow: 10px 10px 0 rgba(17, 17, 17, 0.08);
-}
-
-.terminal-top {
-    height: 44px;
-
-    padding: 0 14px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    border-bottom: 1px solid #111111;
-}
-
-.terminal-dots {
-    display: flex;
-    gap: 5px;
-}
-
-.terminal-dots span {
-    width: 7px;
-    height: 7px;
-
-    border-radius: 50%;
-    border: 1px solid #111111;
-}
-
-.terminal-title,
-.terminal-status {
-    font-family: "DM Mono", monospace;
-    font-size: 9px;
-    letter-spacing: 0.08em;
-}
-
-.terminal-status {
-    color: var(--orange);
-}
-
-.terminal-tabs {
-    display: flex;
-    flex-wrap: wrap;
-
-    border-bottom: 1px solid #111111;
-}
-
-.terminal-tab {
-    appearance: none;
-    border: none;
-
-    background: transparent;
-    color: #555555;
-
-    cursor: pointer;
-
-    padding: 11px 10px;
-
-    font-family: "DM Mono", monospace;
-    font-size: 8px;
-    letter-spacing: 0.04em;
-
-    transition:
-        background 0.25s ease,
-        color 0.25s ease;
-}
-
-.terminal-tab:hover,
-.terminal-tab.active {
-    background: var(--orange);
-    color: #ffffff;
-}
-
-.terminal-content {
-    padding: 24px 22px 28px;
-
-    min-height: 180px;
-}
-
-.terminal-prompt {
-    display: flex;
-    gap: 8px;
-
-    font-family: "DM Mono", monospace;
-    font-size: 11px;
-
-    margin-bottom: 20px;
-}
-
-.terminal-prompt span:first-child {
-    color: var(--orange);
-}
-
-.terminal-content p {
-    font-family: "DM Mono", monospace;
-    font-size: 11px;
-    line-height: 1.8;
-
-    color: #454545;
-}
-
-.terminal-footer {
-    border-top: 1px solid #111111;
-
-    display: flex;
-    justify-content: space-between;
-
-    padding: 10px 14px;
-
-    font-family: "DM Mono", monospace;
-    font-size: 8px;
-    letter-spacing: 0.08em;
-}
-
-
-/* =========================================
-   HERO BOTTOM
-========================================= */
-
-.hero-bottom {
-    margin-top: 50px;
-
-    padding-top: 18px;
-
-    border-top: 1px solid rgba(17, 17, 17, 0.18);
-}
-
-.hero-scroll {
-    display: flex;
-    align-items: center;
-
-    gap: 9px;
-}
-
-.hero-scroll span {
-    font-size: 15px;
-}
-
-
-/* =========================================
-   TICKER
-========================================= */
-
-.ticker {
-    width: 100%;
-
-    overflow: hidden;
-
-    border-top: 1px solid #111111;
-    border-bottom: 1px solid #111111;
-
-    background: #111111;
-    color: #f3f1ec;
-}
-
-.ticker-track {
-    display: flex;
-
-    width: max-content;
-
-    padding: 16px 0;
-
-    animation: tickerMove 20s linear infinite;
-}
-
-.ticker-track span {
-    font-family: "DM Mono", monospace;
-
-    font-size: 10px;
-    letter-spacing: 0.15em;
-
-    margin-right: 70px;
-}
-
-@keyframes tickerMove {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-50%);
-    }
-}
-
-
-/* =========================================
-   SECTION HEADERS
-========================================= */
-
-.section-header {
-    display: flex;
-    align-items: center;
-
-    gap: 17px;
-
-    margin-bottom: 75px;
-}
-
-.section-number {
-    font-family: "DM Mono", monospace;
-    font-size: 10px;
-
-    color: var(--orange);
-}
-
-.section-header h2 {
-    font-size: clamp(42px, 6vw, 72px);
-
-    line-height: 0.9;
-    letter-spacing: -0.06em;
-}
-
-.section-line {
-    height: 1px;
-
-    flex: 1;
-
-    background: rgba(17, 17, 17, 0.2);
-}
-
-
-/* =========================================
-   ABOUT
-========================================= */
-
-.about-grid {
-    display: grid;
-
-    grid-template-columns: 1.35fr 0.9fr;
-
-    gap: 100px;
-}
-
-.big-text {
-    font-size: clamp(36px, 4vw, 62px);
-
-    line-height: 1.03;
-    letter-spacing: -0.06em;
-}
-
-.big-text em {
-    font-style: normal;
-    color: var(--orange);
-}
-
-.about-text {
-    max-width: 480px;
-
-    padding-top: 8px;
-}
-
-.about-text p {
-    margin-bottom: 25px;
-
-    color: #4d4d4d;
-
-    font-size: 15px;
-    line-height: 1.8;
-}
-
-
-/* =========================================
-   WORK
-========================================= */
-
-.work-intro {
-    max-width: 560px;
-
-    margin-bottom: 45px;
-
-    color: #575757;
-
-    font-size: 15px;
-    line-height: 1.7;
-}
-
-.project-card {
-    position: relative;
-    overflow: hidden;
-
-    display: grid;
-
-    grid-template-columns: 90px 1fr 80px;
-
-    gap: 40px;
-
-    align-items: center;
-
-    padding: 45px 38px;
-
-    border: 1px solid #111111;
-
-    background: rgba(243, 241, 236, 0.72);
-
-    --mouse-x: 50%;
-    --mouse-y: 50%;
-
-    transition:
-        transform 0.35s ease,
-        background-color 0.35s ease,
-        box-shadow 0.35s ease;
-}
-
-
-/* =========================================
-   ORANGE POINTER SPOTLIGHT
-========================================= */
-
-.project-card::before {
-    content: "";
-
-    position: absolute;
-
-    width: 320px;
-    height: 320px;
-
-    left: var(--mouse-x);
-    top: var(--mouse-y);
-
-    transform: translate(-50%, -50%);
-
-    pointer-events: none;
-
-    background: radial-gradient(
-        circle,
-        rgba(255, 77, 0, 0.16) 0%,
-        rgba(255, 77, 0, 0.08) 25%,
-        rgba(255, 77, 0, 0.025) 48%,
-        transparent 72%
-    );
-
-    opacity: 0;
-
-    transition: opacity 0.25s ease;
 
     z-index: 0;
-}
-
-.project-card.pointer-active::before {
-    opacity: 1;
-}
-
-.project-card > * {
-    position: relative;
-    z-index: 1;
-}
-
-.project-card:hover {
-    background: #ffffff;
-
-    box-shadow: 14px 14px 0 rgba(17, 17, 17, 0.08);
-}
-
-.project-card-number {
-    font-family: "DM Mono", monospace;
-
-    font-size: 12px;
-
-    color: var(--orange);
-}
-
-.project-label {
-    display: block;
-
-    margin-bottom: 13px;
-
-    font-family: "DM Mono", monospace;
-
-    font-size: 9px;
-    letter-spacing: 0.12em;
-
-    color: #777777;
-}
-
-.project-card-main h3 {
-    font-size: clamp(32px, 4vw, 56px);
-
-    line-height: 0.95;
-    letter-spacing: -0.065em;
-
-    margin-bottom: 20px;
-}
-
-.project-card-main p {
-    max-width: 620px;
-
-    color: #555555;
-
-    font-size: 14px;
-    line-height: 1.7;
-}
-
-.project-tags {
-    display: flex;
-    flex-wrap: wrap;
-
-    gap: 8px;
-
-    margin-top: 25px;
-}
-
-.project-tags span {
-    padding: 7px 9px;
-
-    border: 1px solid #111111;
-
-    font-family: "DM Mono", monospace;
-
-    font-size: 8px;
-}
-
-.project-card-arrow {
-    font-size: 45px;
-
-    text-align: right;
-
-    transition:
-        transform 0.35s ease,
-        color 0.35s ease;
-}
-
-.project-card:hover .project-card-arrow {
-    color: var(--orange);
-
-    transform: translate(6px, -6px);
-}
-
-
-/* =========================================
-   R&D
-========================================= */
-
-.rnd-layout {
-    display: grid;
-
-    grid-template-columns: 0.8fr 1.2fr;
-
-    gap: 100px;
-
-    align-items: center;
-}
-
-.rnd-visual {
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    min-height: 420px;
-
-    position: relative;
-}
-
-.rnd-circle {
-    width: min(320px, 80vw);
-
-    aspect-ratio: 1;
-
-    position: relative;
-
-    border: 1px solid #111111;
-
-    border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    animation: rndSpin 24s linear infinite;
-}
-
-.rnd-circle > span {
-    position: absolute;
-
-    font-family: "DM Mono", monospace;
-
-    font-size: 8px;
-    letter-spacing: 0.12em;
-}
-
-.rnd-circle > span:nth-child(1) {
-    top: 12px;
-}
-
-.rnd-circle > span:nth-child(2) {
-    right: -18px;
-    top: 50%;
-
-    transform: translateY(-50%) rotate(90deg);
-}
-
-.rnd-circle > span:nth-child(3) {
-    bottom: 12px;
-}
-
-.rnd-circle > span:nth-child(4) {
-    left: -18px;
-    top: 50%;
-
-    transform: translateY(-50%) rotate(-90deg);
-}
-
-.rnd-center {
-    width: 130px;
-    height: 130px;
-
-    border: 1px solid #111111;
-
-    border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: var(--orange);
-    color: #ffffff;
-
-    font-family: "DM Mono", monospace;
-
-    font-size: 21px;
-    font-weight: 500;
-}
-
-.rnd-orbit {
-    width: 390px;
-    height: 390px;
-
-    position: absolute;
-
-    border: 1px dashed rgba(17, 17, 17, 0.25);
-
-    border-radius: 50%;
-
-    animation: rndSpin 35s linear infinite reverse;
-}
-
-@keyframes rndSpin {
-    from {
-        rotate: 0deg;
-    }
-
-    to {
-        rotate: 360deg;
-    }
-}
-
-.rnd-content {
-    max-width: 650px;
-}
-
-.rnd-content > p:nth-child(2) {
-    max-width: 570px;
-
-    margin-top: 32px;
-
-    color: #555555;
-
-    font-size: 15px;
-    line-height: 1.8;
-}
-
-.rnd-principles {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    margin-top: 55px;
-
-    border-top: 1px solid #111111;
-}
-
-.rnd-principles div {
-    display: grid;
-
-    grid-template-columns: 35px 1fr;
-
-    gap: 13px;
-
-    padding: 20px 0;
-
-    border-bottom: 1px solid rgba(17, 17, 17, 0.25);
-}
-
-.rnd-principles div:nth-child(odd) {
-    padding-right: 25px;
-
-    border-right: 1px solid rgba(17, 17, 17, 0.25);
-}
-
-.rnd-principles div:nth-child(even) {
-    padding-left: 25px;
-}
-
-.rnd-principles span {
-    font-family: "DM Mono", monospace;
-
-    font-size: 9px;
-
-    color: var(--orange);
-}
-
-.rnd-principles p {
-    font-size: 13px;
-
-    line-height: 1.5;
-}
-
-
-/* =========================================
-   INTERESTS
-========================================= */
-
-.interest-grid {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    border-top: 1px solid #111111;
-}
-
-.interest-item {
-    min-height: 210px;
-
-    padding: 25px 20px;
-
-    border-right: 1px solid rgba(17, 17, 17, 0.22);
-    border-bottom: 1px solid rgba(17, 17, 17, 0.22);
-
-    transition:
-        background 0.3s ease,
-        transform 0.3s ease;
-}
-
-.interest-item:nth-child(3n) {
-    border-right: none;
-}
-
-.interest-item span {
-    font-family: "DM Mono", monospace;
-
-    font-size: 9px;
-
-    color: var(--orange);
-}
-
-.interest-item h3 {
-    margin-top: 65px;
-
-    font-size: 24px;
-
-    line-height: 1;
-    letter-spacing: -0.04em;
-}
-
-.interest-item:hover {
-    background: #ffffff;
-
-    transform: translateY(-4px);
-}
-
-
-/* =========================================
-   TOOLBOX
-========================================= */
-
-.toolbox-grid {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 65px;
-
-    border-top: 1px solid #111111;
-
-    padding-top: 30px;
-}
-
-.tool-heading {
-    display: block;
-
-    margin-bottom: 25px;
-
-    font-family: "DM Mono", monospace;
-
-    font-size: 9px;
-    letter-spacing: 0.1em;
-
-    color: #777777;
-}
-
-.tool-list {
-    display: flex;
-
-    flex-direction: column;
-}
-
-.tool-list span {
-    padding: 11px 0;
-
-    border-bottom: 1px solid rgba(17, 17, 17, 0.17);
-
-    font-size: 16px;
-
-    transition:
-        padding-left 0.25s ease,
-        color 0.25s ease;
-}
-
-.tool-list span:hover {
-    padding-left: 8px;
-
-    color: var(--orange);
-}
-
-
-/* =========================================
-   LEARNING
-========================================= */
-
-.learning-grid {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    border-top: 1px solid #111111;
-
-    border-left: 1px solid rgba(17, 17, 17, 0.2);
-}
-
-.learning-item {
-    min-height: 180px;
-
-    padding: 22px;
-
-    border-right: 1px solid rgba(17, 17, 17, 0.2);
-    border-bottom: 1px solid rgba(17, 17, 17, 0.2);
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: space-between;
-
-    transition:
-        background 0.3s ease,
-        transform 0.3s ease;
-}
-
-.learning-item:hover {
-    background: #ffffff;
-}
-
-.learning-item > span {
-    font-family: "DM Mono", monospace;
-
-    font-size: 9px;
-
-    color: var(--orange);
-}
-
-.learning-item strong {
-    font-size: 28px;
-
-    letter-spacing: -0.05em;
-}
-
-.learning-item small {
-    font-family: "DM Mono", monospace;
-
-    font-size: 8px;
-
-    letter-spacing: 0.1em;
-
-    color: #777777;
-}
-
-
-/* =========================================
-   FINAL SECTION
-========================================= */
-
-.final-section {
-    padding:
-        180px
-        var(--page-padding)
-        200px;
-}
-
-.final-inner {
-    max-width: 1100px;
-
-    margin: 0 auto;
-}
-
-.final-label {
-    font-family: "DM Mono", monospace;
-
-    font-size: 10px;
-
-    letter-spacing: 0.1em;
-
-    color: var(--orange);
-}
-
-.final-inner h2 {
-    margin-top: 25px;
-
-    font-size: clamp(52px, 8vw, 120px);
-
-    line-height: 0.88;
-    letter-spacing: -0.08em;
-}
-
-.final-inner h2 span {
-    color: var(--orange);
-}
-
-.final-inner p {
-    margin-top: 30px;
-
-    font-family: "DM Mono", monospace;
-
-    font-size: 11px;
-
-    color: #666666;
-}
-
-
-/* =========================================
-   FOOTER
-========================================= */
-
-.footer {
-    padding:
-        28px
-        var(--page-padding)
-        35px;
-
-    border-top: 1px solid #111111;
-}
-
-.footer-top {
-    display: flex;
-
-    align-items: center;
-    justify-content: space-between;
-
-    padding-bottom: 25px;
-
-    border-bottom: 1px solid rgba(17, 17, 17, 0.2);
-}
-
-.footer-name {
-    font-size: 13px;
-
-    font-weight: 800;
-
-    letter-spacing: -0.03em;
-}
-
-.footer-role {
-    font-family: "DM Mono", monospace;
-
-    font-size: 8px;
-
-    letter-spacing: 0.1em;
-
-    color: #666666;
-}
-
-.footer-bottom {
-    display: flex;
-
-    justify-content: space-between;
-
-    padding-top: 20px;
-
-    font-family: "DM Mono", monospace;
-
-    font-size: 8px;
-
-    color: #666666;
-}
-
-.footer-bottom a {
-    color: #111111;
-
-    transition: color 0.25s ease;
-}
-
-.footer-bottom a:hover {
-    color: var(--orange);
-}
-
-
-/* =========================================
-   REVEAL ANIMATION
-========================================= */
-
-.reveal {
-    opacity: 0;
-
-    transform: translateY(30px);
-
-    transition:
-        opacity 0.8s ease,
-        transform 0.8s ease;
-}
-
-.reveal.visible {
-    opacity: 1;
-
-    transform: translateY(0);
-}
-
-
-/* =========================================
-   CUSTOM CURSOR
-========================================= */
-
-.cursor-dot,
-.cursor-ring {
-    position: fixed;
-
-    left: 0;
-    top: 0;
 
     pointer-events: none;
 
-    z-index: 10000;
+    overflow: hidden;
 
-    transform: translate(-50%, -50%);
+    opacity: .72;
 }
 
-.cursor-dot {
-    width: 5px;
-    height: 5px;
 
-    background: #111111;
+/* Large rings */
+
+.ambient-ring {
+
+    position: absolute;
+
+    border:
+        1px solid
+        rgba(213,170,78,.10);
+
+    border-radius: 50%;
+
+    animation:
+        ambientRotate
+        50s linear infinite;
+}
+
+.ring-a {
+
+    width: 600px;
+    height: 600px;
+
+    right: -200px;
+    top: -150px;
+}
+
+.ring-b {
+
+    width: 430px;
+    height: 430px;
+
+    left: -160px;
+    bottom: 10%;
+
+    animation-direction:
+        reverse;
+
+    animation-duration:
+        42s;
+}
+
+.ring-c {
+
+    width: 220px;
+    height: 220px;
+
+    right: 18%;
+    bottom: 13%;
+
+    animation-duration:
+        30s;
+}
+
+
+.ambient-ring::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 25px;
+
+    border:
+        1px dashed
+        rgba(213,170,78,.08);
 
     border-radius: 50%;
 }
 
-.cursor-ring {
-    width: 28px;
-    height: 28px;
 
-    border: 1px solid rgba(17, 17, 17, 0.7);
+@keyframes ambientRotate {
 
-    border-radius: 50%;
+    from {
+        transform:
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+}
+
+
+/* =====================================================
+   FLOATING ARTIFACTS
+===================================================== */
+
+.float-art {
+
+    position:
+        absolute;
+
+    color:
+        var(--gold);
+
+    opacity:
+        .28;
+
+    font-size:
+        24px;
+
+    animation:
+        floatArtifact
+        8s ease-in-out infinite;
 
     transition:
-        width 0.25s ease,
-        height 0.25s ease,
-        background 0.25s ease,
-        border-color 0.25s ease;
+        transform .2s ease-out;
 }
 
-.cursor-hover .cursor-ring {
-    width: 45px;
-    height: 45px;
-
-    border-color: var(--orange);
+.art-1 {
+    top: 8%;
+    left: 7%;
 }
 
-.cursor-hover .cursor-dot {
-    background: var(--orange);
+.art-2 {
+    top: 18%;
+    right: 13%;
+    animation-delay: 1s;
+}
+
+.art-3 {
+    top: 38%;
+    left: 16%;
+    animation-delay: 2s;
+}
+
+.art-4 {
+    top: 52%;
+    right: 6%;
+    animation-delay: 3s;
+}
+
+.art-5 {
+    top: 67%;
+    left: 8%;
+    animation-delay: 4s;
+}
+
+.art-6 {
+    top: 76%;
+    right: 18%;
+    animation-delay: 5s;
+}
+
+.art-7 {
+    top: 90%;
+    left: 28%;
+    animation-delay: 6s;
+}
+
+.art-8 {
+    top: 29%;
+    right: 37%;
+    animation-delay: 1.5s;
+}
+
+.art-9 {
+    top: 62%;
+    left: 43%;
+    animation-delay: 2.5s;
+}
+
+.art-10 {
+    top: 12%;
+    left: 47%;
+    animation-delay: 4s;
 }
 
 
-/* =========================================
-   RESPONSIVE — TABLET
-========================================= */
+@keyframes floatArtifact {
 
-@media (max-width: 1000px) {
+    0%, 100% {
 
-    .hero-main {
-        grid-template-columns: 1fr 330px;
-
-        gap: 45px;
+        transform:
+            translate3d(0,0,0)
+            rotate(0deg);
     }
 
-    .about-grid {
-        gap: 55px;
-    }
+    50% {
 
-    .rnd-layout {
-        gap: 50px;
-    }
-
-    .project-card {
-        grid-template-columns: 55px 1fr 50px;
-
-        gap: 25px;
+        transform:
+            translate3d(14px,-24px,0)
+            rotate(20deg);
     }
 }
 
 
-/* =========================================
-   RESPONSIVE — MOBILE
-========================================= */
+/* =====================================================
+   PARTICLES
+===================================================== */
+
+.spice-particle {
+
+    position:
+        absolute;
+
+    width:
+        4px;
+
+    height:
+        4px;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--gold);
+
+    opacity:
+        .3;
+
+    animation:
+        particleFloat
+        6s ease-in-out infinite;
+}
+
+.spice-1 {
+    top: 14%;
+    left: 26%;
+}
+
+.spice-2 {
+    top: 28%;
+    right: 25%;
+    animation-delay: 1s;
+}
+
+.spice-3 {
+    top: 48%;
+    left: 33%;
+    animation-delay: 2s;
+}
+
+.spice-4 {
+    top: 55%;
+    right: 32%;
+    animation-delay: 3s;
+}
+
+.spice-5 {
+    top: 72%;
+    left: 22%;
+    animation-delay: 1.5s;
+}
+
+.spice-6 {
+    top: 82%;
+    right: 12%;
+    animation-delay: 2.5s;
+}
+
+.spice-7 {
+    top: 64%;
+    left: 55%;
+    animation-delay: 4s;
+}
+
+.spice-8 {
+    top: 36%;
+    left: 72%;
+    animation-delay: 5s;
+}
+
+
+@keyframes particleFloat {
+
+    0%,100% {
+
+        transform:
+            translateY(0);
+    }
+
+    50% {
+
+        transform:
+            translateY(-18px);
+    }
+}
+
+
+/* =====================================================
+   BACKGROUND SCRIPT
+===================================================== */
+
+.background-script {
+
+    position:
+        absolute;
+
+    font-family:
+        "Yatra One",
+        serif;
+
+    color:
+        var(--gold);
+
+    opacity:
+        .035;
+
+    white-space:
+        nowrap;
+
+    user-select:
+        none;
+}
+
+.bg-script-1 {
+
+    font-size:
+        250px;
+
+    right:
+        -50px;
+
+    top:
+        30%;
+}
+
+.bg-script-2 {
+
+    font-size:
+        230px;
+
+    left:
+        -70px;
+
+    top:
+        63%;
+}
+
+.bg-script-3 {
+
+    font-size:
+        260px;
+
+    right:
+        20%;
+
+    top:
+        83%;
+}
+
+
+/* =====================================================
+   CURSOR
+===================================================== */
+
+.cursor-dot {
+
+    position:
+        fixed;
+
+    width:
+        7px;
+
+    height:
+        7px;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--cream);
+
+    z-index:
+        9999;
+
+    pointer-events:
+        none;
+
+    transform:
+        translate(-50%,-50%);
+}
+
+.cursor-glow {
+
+    position:
+        fixed;
+
+    width:
+        250px;
+
+    height:
+        250px;
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(213,170,78,.16),
+            transparent 70%
+        );
+
+    z-index:
+        9998;
+
+    pointer-events:
+        none;
+
+    transform:
+        translate(-50%,-50%);
+
+    transition:
+        width .35s ease,
+        height .35s ease;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+
+    position:
+        fixed;
+
+    top:
+        0;
+
+    left:
+        0;
+
+    width:
+        100%;
+
+    height:
+        82px;
+
+    padding:
+        0 5vw;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    z-index:
+        1000;
+
+    background:
+        rgba(27,55,35,.68);
+
+    backdrop-filter:
+        blur(20px);
+
+    border-bottom:
+        1px solid
+        rgba(244,233,210,.12);
+
+    transition:
+        background .3s ease,
+        border-color .3s ease;
+}
+
+
+.brand {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        11px;
+}
+
+.brand-script {
+
+    font-family:
+        "Yatra One",
+        serif;
+
+    color:
+        var(--gold);
+
+    font-size:
+        28px;
+}
+
+.brand-name {
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        5px;
+
+    font-size:
+        12px;
+}
+
+
+.nav-links {
+
+    display:
+        flex;
+
+    gap:
+        30px;
+}
+
+.nav-links a {
+
+    font-size:
+        11px;
+
+    opacity:
+        .68;
+
+    position:
+        relative;
+
+    transition:
+        opacity .25s ease;
+}
+
+.nav-links a:hover {
+    opacity:
+        1;
+}
+
+.nav-links a::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    bottom:
+        -8px;
+
+    width:
+        0;
+
+    height:
+        1px;
+
+    background:
+        var(--gold);
+
+    transition:
+        width .3s ease;
+}
+
+.nav-links a:hover::after {
+    width:
+        100%;
+}
+
+
+.nav-button {
+
+    display:
+        flex;
+
+    gap:
+        10px;
+
+    align-items:
+        center;
+
+    padding:
+        10px 18px;
+
+    border:
+        1px solid
+        rgba(244,233,210,.42);
+
+    border-radius:
+        100px;
+
+    font-size:
+        11px;
+
+    transition:
+        .3s ease;
+}
+
+.nav-button:hover {
+
+    color:
+        var(--green-deep);
+
+    background:
+        var(--gold);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+
+    min-height:
+        100vh;
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    padding:
+        135px 7vw 100px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    overflow:
+        hidden;
+}
+
+
+/* Hero glow */
+
+.hero-burgundy-glow {
+
+    position:
+        absolute;
+
+    width:
+        650px;
+
+    height:
+        650px;
+
+    border-radius:
+        50%;
+
+    right:
+        7%;
+
+    top:
+        10%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(110,40,48,.45),
+            transparent 68%
+        );
+
+    filter:
+        blur(55px);
+
+    pointer-events:
+        none;
+}
+
+.hero-gold-glow {
+
+    position:
+        absolute;
+
+    width:
+        300px;
+
+    height:
+        300px;
+
+    left:
+        10%;
+
+    bottom:
+        5%;
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(213,170,78,.12),
+            transparent 70%
+        );
+
+    filter:
+        blur(30px);
+
+    pointer-events:
+        none;
+}
+
+
+/* =====================================================
+   ROYAL FRAME
+===================================================== */
+
+.royal-frame {
+
+    position:
+        absolute;
+
+    inset:
+        6%;
+
+    border:
+        1px solid
+        rgba(213,170,78,.24);
+
+    z-index:
+        1;
+
+    pointer-events:
+        none;
+}
+
+.frame-inner {
+
+    position:
+        absolute;
+
+    inset:
+        20px;
+
+    border:
+        1px solid
+        rgba(213,170,78,.10);
+}
+
+.frame-inner::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        18px;
+
+    border:
+        1px dashed
+        rgba(213,170,78,.08);
+}
+
+
+.frame-corner {
+
+    position:
+        absolute;
+
+    font-family:
+        "Yatra One";
+
+    font-size:
+        30px;
+
+    color:
+        var(--gold);
+
+    opacity:
+        .65;
+}
+
+.corner-tl {
+    top:
+        -17px;
+    left:
+        -17px;
+}
+
+.corner-tr {
+    top:
+        -17px;
+    right:
+        -17px;
+}
+
+.corner-bl {
+    bottom:
+        -17px;
+    left:
+        -17px;
+}
+
+.corner-br {
+    bottom:
+        -17px;
+    right:
+        -17px;
+}
+
+
+/* =====================================================
+   HERO COPY
+===================================================== */
+
+.hero-copy {
+
+    position:
+        relative;
+
+    z-index:
+        15;
+
+    max-width:
+        620px;
+}
+
+
+.hero-kicker {
+
+    font-family:
+        "Yatra One";
+
+    color:
+        var(--gold);
+
+    font-size:
+        15px;
+
+    margin-bottom:
+        25px;
+}
+
+
+.hero-copy h1 {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    line-height:
+        .72;
+}
+
+
+.hero-hindi {
+
+    font-family:
+        "Yatra One";
+
+    font-size:
+        clamp(80px,12vw,170px);
+
+    color:
+        var(--gold);
+}
+
+
+.hero-brand {
+
+    font-size:
+        clamp(70px,10vw,145px);
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        -8px;
+}
+
+
+.hero-divider {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    width:
+        120px;
+
+    margin:
+        40px 0 25px;
+}
+
+.hero-divider span {
+
+    flex:
+        1;
+
+    height:
+        1px;
+
+    background:
+        rgba(213,170,78,.6);
+}
+
+.hero-divider i {
+
+    font-size:
+        11px;
+
+    color:
+        var(--gold);
+
+    font-style:
+        normal;
+}
+
+
+.hero-copy h2 {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(42px,5vw,72px);
+
+    font-weight:
+        500;
+
+    line-height:
+        .9;
+}
+
+
+.hero-copy h2 em {
+
+    color:
+        var(--gold-light);
+
+    font-style:
+        normal;
+}
+
+
+.hero-description {
+
+    max-width:
+        470px;
+
+    margin-top:
+        30px;
+
+    font-size:
+        15px;
+
+    line-height:
+        1.8;
+
+    opacity:
+        .68;
+}
+
+
+.hero-actions {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        25px;
+
+    margin-top:
+        32px;
+}
+
+
+.primary-button {
+
+    display:
+        flex;
+
+    gap:
+        16px;
+
+    align-items:
+        center;
+
+    padding:
+        14px 21px;
+
+    background:
+        var(--gold);
+
+    color:
+        var(--green-deep);
+
+    border-radius:
+        100px;
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.primary-button:hover {
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,.2);
+}
+
+
+.text-button {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    font-size:
+        11px;
+
+    opacity:
+        .65;
+
+    transition:
+        opacity .3s ease;
+}
+
+.text-button:hover {
+    opacity:
+        1;
+}
+
+
+/* =====================================================
+   HERO VISUAL
+===================================================== */
+
+.hero-visual {
+
+    position:
+        absolute;
+
+    width:
+        min(54vw,720px);
+
+    height:
+        min(54vw,720px);
+
+    right:
+        -2vw;
+
+    top:
+        50%;
+
+    transform:
+        translateY(-50%);
+
+    z-index:
+        6;
+}
+
+
+/* Royal circles */
+
+.royal-disc {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius:
+        50%;
+
+    border:
+        1px solid
+        rgba(213,170,78,.22);
+}
+
+.disc-outer {
+
+    width:
+        87%;
+
+    height:
+        87%;
+}
+
+.disc-middle {
+
+    width:
+        63%;
+
+    height:
+        63%;
+
+    border-style:
+        dashed;
+
+    animation:
+        ambientRotate
+        35s linear infinite;
+}
+
+
+/* Food */
+
+.hero-food {
+
+    position:
+        absolute;
+
+    width:
+        220px;
+
+    height:
+        220px;
+
+    z-index:
+        20;
+
+    transition:
+        transform .15s ease-out;
+}
+
+.hero-food img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        contain;
+
+    filter:
+        drop-shadow(
+            0 35px 35px
+            rgba(0,0,0,.38)
+        );
+
+    transition:
+        transform .5s var(--transition);
+}
+
+.hero-food:hover img {
+
+    transform:
+        scale(1.13)
+        rotate(4deg);
+}
+
+
+.hero-food span {
+
+    position:
+        absolute;
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        3px;
+
+    color:
+        var(--gold);
+
+    font-weight:
+        700;
+
+    white-space:
+        nowrap;
+}
+
+
+.hero-food-north {
+
+    top:
+        1%;
+
+    left:
+        25%;
+}
+
+.hero-food-south {
+
+    bottom:
+        0;
+
+    left:
+        8%;
+}
+
+.hero-food-east {
+
+    right:
+        -1%;
+
+    top:
+        28%;
+}
+
+.hero-food-west {
+
+    right:
+        17%;
+
+    bottom:
+        12%;
+}
+
+
+.hero-food-north span {
+
+    top:
+        15px;
+
+    left:
+        -30px;
+}
+
+.hero-food-south span {
+
+    bottom:
+        10px;
+
+    left:
+        -28px;
+}
+
+.hero-food-east span {
+
+    right:
+        -35px;
+
+    top:
+        35px;
+}
+
+.hero-food-west span {
+
+    right:
+        -27px;
+
+    bottom:
+        20px;
+}
+
+
+/* Seal */
+
+.hero-seal {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    width:
+        165px;
+
+    height:
+        165px;
+
+    border:
+        1px solid
+        rgba(213,170,78,.38);
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(43,76,49,.6);
+
+    backdrop-filter:
+        blur(8px);
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    gap:
+        5px;
+
+    text-align:
+        center;
+}
+
+.seal-script {
+
+    font-family:
+        "Yatra One";
+
+    font-size:
+        34px;
+
+    color:
+        var(--gold);
+}
+
+.hero-seal small {
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        2px;
+
+    opacity:
+        .6;
+}
+
+
+/* visual words */
+
+.visual-word {
+
+    position:
+        absolute;
+
+    color:
+        rgba(244,233,210,.3);
+
+    letter-spacing:
+        5px;
+
+    font-size:
+        9px;
+
+    font-weight:
+        700;
+}
+
+.visual-north {
+    top:
+        22%;
+
+    left:
+        4%;
+}
+
+.visual-south {
+    bottom:
+        15%;
+
+    left:
+        2%;
+}
+
+.visual-east {
+    top:
+        18%;
+
+    right:
+        3%;
+}
+
+.visual-west {
+    bottom:
+        25%;
+
+    right:
+        7%;
+}
+
+
+/* =====================================================
+   HERO SCROLL
+===================================================== */
+
+.hero-scroll {
+
+    position:
+        absolute;
+
+    bottom:
+        32px;
+
+    left:
+        7vw;
+
+    display:
+        flex;
+
+    gap:
+        15px;
+
+    align-items:
+        center;
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        3px;
+
+    opacity:
+        .5;
+}
+
+.scroll-track {
+
+    width:
+        65px;
+
+    height:
+        1px;
+
+    background:
+        rgba(244,233,210,.3);
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+}
+
+.scroll-track span {
+
+    position:
+        absolute;
+
+    width:
+        25px;
+
+    height:
+        1px;
+
+    background:
+        var(--gold);
+
+    animation:
+        scrollMove
+        2s linear infinite;
+}
+
+@keyframes scrollMove {
+
+    from {
+        left:
+            -25px;
+    }
+
+    to {
+        left:
+            65px;
+    }
+}
+
+
+/* =====================================================
+   MARQUEE
+===================================================== */
+
+.flavour-marquee {
+
+    position:
+        relative;
+
+    z-index:
+        4;
+
+    overflow:
+        hidden;
+
+    border-top:
+        1px solid
+        rgba(244,233,210,.1);
+
+    border-bottom:
+        1px solid
+        rgba(244,233,210,.1);
+
+    background:
+        rgba(27,54,35,.25);
+
+    padding:
+        16px 0;
+}
+
+.marquee-track {
+
+    width:
+        max-content;
+
+    display:
+        flex;
+
+    gap:
+        22px;
+
+    align-items:
+        center;
+
+    animation:
+        marqueeMove
+        24s linear infinite;
+}
+
+.marquee-track span {
+
+    font-size:
+        11px;
+
+    letter-spacing:
+        4px;
+
+    color:
+        var(--ivory);
+}
+
+.marquee-track i {
+
+    color:
+        var(--gold);
+
+    font-style:
+        normal;
+}
+
+@keyframes marqueeMove {
+
+    to {
+        transform:
+            translateX(-50%);
+    }
+}
+
+
+/* =====================================================
+   DISCOVER
+===================================================== */
+
+.discover {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    padding:
+        170px 8vw 150px;
+}
+
+.section-eyebrow {
+
+    color:
+        var(--gold);
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        4px;
+
+    font-weight:
+        700;
+
+    margin-bottom:
+        24px;
+}
+
+
+.discover-heading {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1.2fr .8fr;
+
+    align-items:
+        end;
+
+    gap:
+        80px;
+}
+
+.discover-heading h2 {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(60px,8vw,110px);
+
+    line-height:
+        .8;
+
+    font-weight:
+        500;
+}
+
+.discover-heading h2 em {
+
+    color:
+        var(--gold);
+
+    font-style:
+        normal;
+}
+
+
+.discover-copy {
+
+    max-width:
+        450px;
+
+    line-height:
+        1.9;
+
+    opacity:
+        .67;
+}
+
+.discover-copy p + p {
+    margin-top:
+        20px;
+}
+
+
+/* Ingredient cloud */
+
+.discover-bottom {
+
+    margin-top:
+        100px;
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+}
+
+
+.ingredient-cloud {
+
+    max-width:
+        760px;
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        12px;
+}
+
+.ingredient-cloud span {
+
+    border:
+        1px solid
+        rgba(213,170,78,.23);
+
+    padding:
+        10px 15px;
+
+    border-radius:
+        100px;
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        2px;
+
+    color:
+        rgba(244,233,210,.62);
+
+    transition:
+        background .3s ease,
+        color .3s ease,
+        transform .3s ease;
+}
+
+.ingredient-cloud span:hover {
+
+    background:
+        rgba(213,170,78,.12);
+
+    color:
+        var(--gold-light);
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* Orbit */
+
+.discover-orbit {
+
+    width:
+        180px;
+
+    height:
+        180px;
+
+    border:
+        1px solid
+        rgba(213,170,78,.18);
+
+    border-radius:
+        50%;
+
+    position:
+        relative;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+}
+
+.discover-orbit div {
+
+    position:
+        absolute;
+
+    inset:
+        25px;
+
+    border:
+        1px dashed
+        rgba(213,170,78,.18);
+
+    border-radius:
+        50%;
+
+    animation:
+        ambientRotate
+        20s linear infinite;
+}
+
+.discover-orbit span {
+
+    font-family:
+        "Yatra One";
+
+    font-size:
+        42px;
+
+    color:
+        var(--gold);
+}
+
+
+/* =====================================================
+   REGIONS
+===================================================== */
+
+.regions {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    padding:
+        120px 5vw 160px;
+
+    overflow:
+        visible;
+}
+
+.regions-header {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        end;
+
+    margin-bottom:
+        70px;
+}
+
+.regions-header h2 {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(60px,7vw,105px);
+
+    line-height:
+        .78;
+
+    font-weight:
+        500;
+}
+
+.regions-header h2 em {
+
+    color:
+        var(--gold);
+
+    font-style:
+        normal;
+}
+
+.regions-header > p {
+
+    max-width:
+        360px;
+
+    line-height:
+        1.8;
+
+    opacity:
+        .58;
+}
+
+
+/* =====================================================
+   REGION GRID
+===================================================== */
+
+.region-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        3px;
+
+    background:
+        rgba(244,233,210,.16);
+
+    overflow:
+        visible;
+}
+
+
+/* =====================================================
+   REGION CARD
+===================================================== */
+
+.region-card {
+
+    min-height:
+        690px;
+
+    position:
+        relative;
+
+    padding:
+        35px;
+
+    overflow:
+        visible;
+
+    isolation:
+        isolate;
+
+    cursor:
+        pointer;
+
+    transition:
+        background .7s ease,
+        transform .45s var(--transition),
+        color .5s ease;
+}
+
+
+.region-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    z-index:
+        40;
+}
+
+
+/* palettes */
+
+.virasat {
+    background:
+        var(--virasat);
+}
+
+.virasat:hover {
+    background:
+        var(--virasat-hover);
+}
+
+.ras {
+    background:
+        var(--ras);
+}
+
+.ras:hover {
+    background:
+        var(--ras-hover);
+}
+
+.mahak {
+    background:
+        var(--mahak);
+}
+
+.mahak:hover {
+    background:
+        var(--mahak-hover);
+}
+
+.rang {
+    background:
+        var(--rang);
+}
+
+.rang:hover {
+    background:
+        var(--rang-hover);
+}
+
+
+/* =====================================================
+   REGION ART LAYER
+===================================================== */
+
+.region-art {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    opacity:
+        0;
+
+    transition:
+        opacity .6s ease,
+        transform .8s ease;
+
+    z-index:
+        1;
+}
+
+.region-card:hover .region-art {
+
+    opacity:
+        1;
+
+    transform:
+        scale(1.04);
+}
+
+
+/* North */
+
+.virasat .region-art {
+
+    background:
+        radial-gradient(
+            ellipse at 70% 25%,
+            rgba(213,170,78,.2),
+            transparent 40%
+        );
+}
+
+
+/* South */
+
+.ras .region-art {
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 28px,
+            rgba(244,233,210,.035) 29px,
+            transparent 30px
+        );
+}
+
+
+/* East */
+
+.mahak .region-art {
+
+    background:
+        radial-gradient(
+            circle at 70% 25%,
+            rgba(213,170,78,.15),
+            transparent 36%
+        );
+}
+
+
+/* West */
+
+.rang .region-art {
+
+    background:
+        radial-gradient(
+            circle at 60% 30%,
+            rgba(245,180,90,.16),
+            transparent 40%
+        );
+}
+
+
+/* =====================================================
+   REGION TOP
+===================================================== */
+
+.region-top {
+
+    position:
+        relative;
+
+    z-index:
+        5;
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        3px;
+
+    opacity:
+        .55;
+}
+
+
+/* =====================================================
+   REGION CULTURE
+===================================================== */
+
+.regional-decor {
+
+    position:
+        absolute;
+
+    right:
+        35px;
+
+    top:
+        35px;
+
+    z-index:
+        2;
+
+    pointer-events:
+        none;
+
+    opacity:
+        .5;
+
+    transition:
+        transform .7s ease;
+}
+
+.region-card:hover .regional-decor {
+
+    transform:
+        rotate(7deg)
+        scale(1.08);
+}
+
+
+/* North arch */
+
+.mughal-arch {
+
+    width:
+        230px;
+
+    height:
+        290px;
+
+    border:
+        1px solid
+        rgba(213,170,78,.2);
+
+    border-bottom:
+        0;
+
+    border-radius:
+        130px 130px 0 0;
+}
+
+.mughal-arch::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        18px;
+
+    border:
+        1px dashed
+        rgba(213,170,78,.17);
+
+    border-bottom:
+        0;
+
+    border-radius:
+        115px 115px 0 0;
+}
+
+
+.virasat-decor > span {
+
+    position:
+        absolute;
+
+    color:
+        rgba(213,170,78,.55);
+
+    font-size:
+        28px;
+}
+
+.virasat-decor > span:nth-child(2) {
+
+    top:
+        10px;
+
+    left:
+        -35px;
+}
+
+.virasat-decor > span:nth-child(3) {
+
+    top:
+        80px;
+
+    right:
+        -15px;
+}
+
+.virasat-decor > span:nth-child(4) {
+
+    bottom:
+        30px;
+
+    left:
+        20px;
+}
+
+
+/* South kolam */
+
+.kolam {
+
+    width:
+        220px;
+
+    height:
+        220px;
+
+    border:
+        1px solid
+        rgba(244,233,210,.18);
+
+    transform:
+        rotate(45deg);
+
+    position:
+        relative;
+}
+
+.kolam::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        30px;
+
+    border:
+        1px dashed
+        rgba(244,233,210,.18);
+}
+
+.kolam-two {
+
+    position:
+        absolute;
+
+    right:
+        -20px;
+
+    top:
+        25px;
+
+    width:
+        120px;
+
+    height:
+        120px;
+
+    opacity:
+        .5;
+}
+
+
+/* East */
+
+.mahak-decor {
+
+    display:
+        flex;
+
+    gap:
+        25px;
+
+    align-items:
+        center;
+}
+
+.mahak-decor span {
+
+    color:
+        rgba(244,233,210,.32);
+
+    font-size:
+        64px;
+}
+
+
+/* West */
+
+.rangoli-ring {
+
+    width:
+        220px;
+
+    height:
+        220px;
+
+    border:
+        1px solid
+        rgba(245,180,90,.22);
+
+    transform:
+        rotate(45deg);
+
+    border-radius:
+        22px;
+}
+
+.rangoli-ring::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        35px;
+
+    border:
+        1px solid
+        rgba(245,180,90,.2);
+
+    border-radius:
+        12px;
+}
+
+.rang-decor span {
+
+    position:
+        absolute;
+
+    color:
+        rgba(245,180,90,.5);
+
+    font-size:
+        38px;
+}
+
+.rang-decor span:nth-child(2) {
+
+    top:
+        -5px;
+
+    left:
+        85px;
+}
+
+.rang-decor span:nth-child(3) {
+
+    right:
+        -10px;
+
+    top:
+        85px;
+}
+
+.rang-decor span:nth-child(4) {
+
+    bottom:
+        -5px;
+
+    left:
+        85px;
+}
+
+
+/* =====================================================
+   REGION COPY
+===================================================== */
+
+.region-copy {
+
+    position:
+        relative;
+
+    z-index:
+        8;
+
+    max-width:
+        430px;
+
+    margin-top:
+        90px;
+}
+
+
+.identity {
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        5px;
+
+    color:
+        var(--gold-light);
+}
+
+
+.region-copy h3 {
+
+    font-size:
+        clamp(46px,5vw,76px);
+
+    line-height:
+        .82;
+
+    margin-top:
+        17px;
+}
+
+
+/* individual fonts */
+
+.virasat .region-copy h3 {
+    font-family:
+        "Rozha One";
+}
+
+.ras .region-copy h3 {
+    font-family:
+        "Yatra One";
+}
+
+.mahak .region-copy h3 {
+    font-family:
+        "Philosopher";
+
+    font-weight:
+        700;
+}
+
+.rang .region-copy h3 {
+    font-family:
+        "Rye";
+}
+
+
+.region-copy p {
+
+    max-width:
+        320px;
+
+    margin-top:
+        22px;
+
+    line-height:
+        1.75;
+
+    font-size:
+        13px;
+
+    opacity:
+        .65;
+}
+
+
+/* =====================================================
+   REGIONAL DISH
+===================================================== */
+
+.regional-dish {
+
+    position:
+        absolute;
+
+    width:
+        360px;
+
+    height:
+        360px;
+
+    z-index:
+        15;
+
+    pointer-events:
+        none;
+
+    transition:
+        transform .15s ease-out;
+}
+
+
+.regional-dish img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        contain;
+
+    filter:
+        drop-shadow(
+            0 40px 40px
+            rgba(0,0,0,.4)
+        );
+
+    transition:
+        transform .6s var(--transition),
+        filter .5s ease;
+}
+
+.region-card:hover .regional-dish img {
+
+    transform:
+        scale(1.12);
+
+    filter:
+        drop-shadow(
+            0 55px 50px
+            rgba(0,0,0,.5)
+        );
+}
+
+
+/* dish placement */
+
+.dish-virasat {
+
+    right:
+        -110px;
+
+    bottom:
+        -85px;
+
+    transform:
+        rotate(6deg);
+}
+
+.dish-ras {
+
+    right:
+        -95px;
+
+    top:
+        38%;
+
+    transform:
+        rotate(-6deg);
+}
+
+.dish-mahak {
+
+    left:
+        -115px;
+
+    bottom:
+        -90px;
+
+    transform:
+        rotate(-7deg);
+}
+
+.dish-rang {
+
+    right:
+        -110px;
+
+    bottom:
+        -60px;
+
+    transform:
+        rotate(7deg);
+}
+
+
+/* =====================================================
+   DISH LABEL
+===================================================== */
+
+.dish-label {
+
+    position:
+        absolute;
+
+    bottom:
+        12px;
+
+    left:
+        20px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    opacity:
+        0;
+
+    transform:
+        translateY(10px);
+
+    transition:
+        opacity .4s ease,
+        transform .4s ease;
+
+    white-space:
+        nowrap;
+
+    text-shadow:
+        0 2px 15px
+        rgba(0,0,0,.5);
+}
+
+.region-card:hover .dish-label {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+}
+
+.dish-label small {
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        3px;
+
+    opacity:
+        .65;
+}
+
+.dish-label {
+
+    font-family:
+        "Cormorant Garamond";
+
+    font-size:
+        22px;
+}
+
+
+/* =====================================================
+   REGIONAL SCRIPT
+===================================================== */
+
+.regional-script {
+
+    position:
+        absolute;
+
+    right:
+        30px;
+
+    bottom:
+        30px;
+
+    font-family:
+        "Yatra One";
+
+    font-size:
+        75px;
+
+    opacity:
+        .09;
+
+    transition:
+        opacity .5s ease,
+        transform .5s ease;
+}
+
+.ras .regional-script {
+    font-family:
+        "Kalam";
+}
+
+.rang .regional-script {
+    font-family:
+        "Yatra One";
+}
+
+.region-card:hover .regional-script {
+
+    opacity:
+        .22;
+
+    transform:
+        scale(1.1)
+        rotate(-5deg);
+}
+
+
+/* =====================================================
+   REGION BUTTON
+===================================================== */
+
+.region-explore {
+
+    position:
+        absolute;
+
+    left:
+        35px;
+
+    bottom:
+        35px;
+
+    z-index:
+        30;
+
+    border:
+        1px solid
+        rgba(244,233,210,.4);
+
+    background:
+        transparent;
+
+    color:
+        inherit;
+
+    padding:
+        11px 17px;
+
+    border-radius:
+        100px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    font-size:
+        10px;
+
+    cursor:
+        pointer;
+
+    transition:
+        .3s ease;
+}
+
+.region-explore:hover {
+
+    background:
+        var(--gold);
+
+    color:
+        var(--green-deep);
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* =====================================================
+   SIGNATURES
+===================================================== */
+
+.signatures {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    padding:
+        160px 8vw;
+}
+
+.signatures-heading {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        end;
+
+    margin-bottom:
+        80px;
+}
+
+
+.signatures-heading h2 {
+
+    font-family:
+        "Cormorant Garamond";
+
+    font-size:
+        clamp(60px,8vw,110px);
+
+    font-weight:
+        500;
+
+    line-height:
+        .78;
+}
+
+.signatures-heading h2 em {
+
+    color:
+        var(--gold);
+
+    font-style:
+        normal;
+}
+
+
+.signatures-heading p {
+
+    max-width:
+        310px;
+
+    line-height:
+        1.8;
+
+    opacity:
+        .55;
+}
+
+
+.signature-list {
+
+    border-top:
+        1px solid
+        rgba(244,233,210,.18);
+}
+
+
+.signature-item {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        80px 1fr 50px;
+
+    align-items:
+        center;
+
+    padding:
+        28px 0;
+
+    border-bottom:
+        1px solid
+        rgba(244,233,210,.13);
+
+    transition:
+        padding .4s ease,
+        background .4s ease;
+}
+
+.signature-item:hover {
+
+    padding:
+        28px 20px;
+
+    background:
+        rgba(213,170,78,.06);
+}
+
+.signature-item > span:first-child {
+
+    color:
+        var(--gold);
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        2px;
+}
+
+.signature-item strong {
+
+    font-family:
+        "Cormorant Garamond";
+
+    font-size:
+        30px;
+
+    font-weight:
+        500;
+
+    display:
+        block;
+}
+
+.signature-item small {
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        2px;
+
+    opacity:
+        .45;
+
+    display:
+        block;
+
+    margin-top:
+        4px;
+}
+
+.signature-arrow {
+
+    width:
+        40px;
+
+    height:
+        40px;
+
+    border:
+        1px solid
+        rgba(244,233,210,.22);
+
+    border-radius:
+        50%;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    transition:
+        transform .4s ease,
+        background .3s ease;
+}
+
+.signature-item:hover .signature-arrow {
+
+    transform:
+        rotate(45deg);
+
+    background:
+        rgba(213,170,78,.15);
+}
+
+
+/* =====================================================
+   STORY
+===================================================== */
+
+.story {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    text-align:
+        center;
+
+    max-width:
+        1000px;
+
+    margin:
+        auto;
+
+    padding:
+        180px 8vw;
+}
+
+
+.story-ornament {
+
+    color:
+        var(--gold);
+
+    font-size:
+        35px;
+
+    margin-bottom:
+        25px;
+
+    animation:
+        ambientRotate
+        20s linear infinite;
+}
+
+.story h2 {
+
+    font-family:
+        "Cormorant Garamond";
+
+    font-size:
+        clamp(65px,9vw,125px);
+
+    font-weight:
+        500;
+
+    line-height:
+        .78;
+}
+
+.story h2 em {
+
+    color:
+        var(--gold);
+
+    font-style:
+        normal;
+}
+
+.story > p:not(.section-eyebrow) {
+
+    max-width:
+        580px;
+
+    margin:
+        45px auto 0;
+
+    line-height:
+        1.9;
+
+    opacity:
+        .58;
+}
+
+
+.story-line {
+
+    width:
+        170px;
+
+    margin:
+        55px auto 0;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+}
+
+.story-line span {
+
+    flex:
+        1;
+
+    height:
+        1px;
+
+    background:
+        rgba(213,170,78,.35);
+}
+
+.story-line i {
+
+    color:
+        var(--gold);
+
+    font-style:
+        normal;
+
+    font-size:
+        10px;
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    padding:
+        130px 8vw;
+
+    border-top:
+        1px solid
+        rgba(244,233,210,.12);
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        end;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(110,40,48,.18),
+            transparent
+        );
+}
+
+.contact h2 {
+
+    font-family:
+        "Cormorant Garamond";
+
+    font-size:
+        clamp(55px,7vw,95px);
+
+    font-weight:
+        500;
+
+    line-height:
+        .8;
+}
+
+.contact h2 em {
+
+    color:
+        var(--gold);
+
+    font-style:
+        normal;
+}
+
+.contact-button {
+
+    padding:
+        15px 22px;
+
+    border:
+        1px solid
+        rgba(244,233,210,.35);
+
+    border-radius:
+        100px;
+
+    display:
+        flex;
+
+    gap:
+        15px;
+
+    align-items:
+        center;
+
+    font-size:
+        11px;
+
+    transition:
+        .3s ease;
+}
+
+.contact-button:hover {
+
+    background:
+        var(--gold);
+
+    color:
+        var(--green-deep);
+
+    transform:
+        translateY(-4px);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    padding:
+        45px 6vw;
+
+    border-top:
+        1px solid
+        rgba(244,233,210,.12);
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr auto 1fr;
+
+    align-items:
+        center;
+
+    gap:
+        30px;
+}
+
+.footer-brand {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+}
+
+.footer-brand span {
+
+    font-family:
+        "Yatra One";
+
+    font-size:
+        27px;
+
+    color:
+        var(--gold);
+}
+
+.footer-brand strong {
+
+    letter-spacing:
+        4px;
+
+    font-size:
+        11px;
+}
+
+
+.footer-links {
+
+    display:
+        flex;
+
+    gap:
+        25px;
+
+    font-size:
+        10px;
+
+    opacity:
+        .55;
+}
+
+.footer-links a:hover {
+    opacity:
+        1;
+}
+
+footer p {
+
+    justify-self:
+        end;
+
+    font-size:
+        10px;
+
+    opacity:
+        .4;
+}
+
+.copyright {
+    display:
+        none;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .nav-links {
+        gap:
+            19px;
+    }
+
+    .nav-links a:nth-child(6) {
+        display:
+            none;
+    }
+
+    .hero-visual {
+
+        opacity:
+            .72;
+
+        right:
+            -12vw;
+    }
+
+    .discover-heading {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .discover-copy {
+        max-width:
+            600px;
+    }
+
+    .regions-header {
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+        gap:
+            30px;
+    }
+
+    .signatures-heading {
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+        gap:
+            30px;
+    }
+}
+
 
 @media (max-width: 760px) {
 
-    :root {
-        --page-padding: 19px;
-    }
-
-    body {
-        cursor: auto;
-    }
-
-    .cursor-dot,
-    .cursor-ring {
-        display: none;
-    }
-
-
-    /* =====================================
-       CLEANER MOBILE BACKGROUND
-    ===================================== */
-
-    .background-art .art-line,
-    .background-art .art-cross,
-    .background-art .art-label,
-    .background-art .dot-two,
-    .background-art .dot-three,
-    .background-art .dot-four,
-    .background-art .square-two,
-    .background-art .square-three,
-    .background-art .circle-two {
-        display: none;
-    }
-
-    .background-art .circle-one {
-        display: block;
-
-        width: 150px;
-        height: 150px;
-
-        left: -90px;
-        top: 24%;
-
-        opacity: 0.45;
-
-        border-color: rgba(17, 17, 17, 0.28);
-
-        animation:
-            floatSlow 10s ease-in-out infinite;
-    }
-
-    .background-art .square-one {
-        display: block;
-
-        width: 52px;
-        height: 52px;
-
-        left: auto;
-        right: 8%;
-        top: 18%;
-
-        opacity: 0.45;
-
-        border-width: 1.5px;
-
-        animation:
-            rotateSquare 18s linear infinite,
-            floatSlow 9s ease-in-out infinite;
-    }
-
-    .background-art .dot-one {
-        display: block;
-
-        width: 6px;
-        height: 6px;
-
-        right: 11%;
-        top: 44%;
-
-        opacity: 0.55;
-    }
-
-    .background-art {
-        opacity: 0.8;
-    }
-
-
-    /* =====================================
-       NAVIGATION
-    ===================================== */
-
     .navbar {
-        height: 67px;
 
-        padding: 0 var(--page-padding);
-    }
+        height:
+            74px;
 
-    .nav-logo {
-        font-size: 19px;
+        padding:
+            0 5vw;
     }
 
     .nav-links {
-        gap: 2px;
+        display:
+            none;
     }
 
-    .nav-link {
-        padding: 9px 6px;
-
-        font-size: 7px;
-
-        letter-spacing: 0.03em;
+    .nav-button {
+        display:
+            none;
     }
-
-    .nav-link::after {
-        left: 6px;
-        right: 6px;
-
-        bottom: 5px;
-    }
-
-
-    /* =====================================
-       HERO
-    ===================================== */
 
     .hero {
-        min-height: auto;
 
-        padding-top: 105px;
-        padding-bottom: 35px;
+        min-height:
+            1000px;
+
+        padding:
+            130px 7vw 100px;
     }
 
-    .hero-top {
-        align-items: flex-start;
+    .royal-frame {
+        inset:
+            4%;
     }
 
-    .hero-eyebrow {
-        max-width: 240px;
+    .hero-visual {
 
-        line-height: 1.5;
-    }
+        width:
+            105vw;
 
-    .hero-year {
-        font-size: 9px;
-    }
+        height:
+            105vw;
 
-    .hero-main {
-        margin-top: 55px;
+        right:
+            -28vw;
 
-        display: block;
+        top:
+            68%;
+
+        opacity:
+            .55;
     }
 
     .hero-copy {
-        max-width: none;
-    }
-
-    .hero-kicker {
-        font-size: 8px;
-
-        line-height: 1.5;
-
-        margin-bottom: 18px;
-    }
-
-    .hero-copy h1 {
-        max-width: none;
-
-        font-size: clamp(
-            52px,
-            15.5vw,
-            92px
-        );
-
-        line-height: 0.87;
-
-        letter-spacing: -0.085em;
-    }
-
-    .hero-description {
-        margin-top: 27px;
-
-        font-size: 13px;
-
-        line-height: 1.7;
-
-        max-width: 420px;
+        max-width:
+            90%;
     }
 
     .hero-actions {
-        gap: 22px;
+        flex-direction:
+            column;
 
-        margin-top: 28px;
+        align-items:
+            flex-start;
     }
 
-    .text-link {
-        font-size: 8px;
-    }
-
-
-    /* =====================================
-       TERMINAL
-    ===================================== */
-
-    .hero-interactive {
-        margin-top: 50px;
-
-        transform: none !important;
-    }
-
-    .terminal-top {
-        height: 41px;
-    }
-
-    .terminal-tabs {
-        display: grid;
-
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .terminal-tab {
-        min-height: 38px;
-
-        padding: 7px 5px;
-
-        font-size: 7px;
-
-        border-right:
-            1px solid
-            rgba(17, 17, 17, 0.2);
-
-        border-bottom:
-            1px solid
-            rgba(17, 17, 17, 0.2);
-    }
-
-    .terminal-content {
-        min-height: 180px;
-
+    .regions {
         padding:
-            21px
-            18px
-            23px;
+            100px 4vw;
     }
 
-    .terminal-content p {
-        font-size: 10px;
+    .region-grid {
 
-        line-height: 1.75;
+        grid-template-columns:
+            1fr;
     }
 
-    .terminal-footer {
-        font-size: 7px;
+    .region-card {
+
+        min-height:
+            630px;
     }
 
-    .hero-bottom {
-        margin-top: 35px;
+    .regional-dish {
 
-        gap: 10px;
+        width:
+            285px;
 
-        flex-wrap: wrap;
+        height:
+            285px;
     }
 
-    .hero-location,
-    .hero-scroll,
-    .hero-current {
-        font-size: 7px;
+    .dish-virasat,
+    .dish-rang {
+
+        right:
+            -75px;
     }
 
-    .hero-current {
-        display: none;
+    .dish-ras {
+
+        right:
+            -65px;
     }
 
+    .dish-mahak {
 
-    /* =====================================
-       TICKER
-    ===================================== */
-
-    .ticker-track {
-        padding: 13px 0;
+        left:
+            -70px;
     }
 
-    .ticker-track span {
-        font-size: 8px;
+    .discover-bottom {
 
-        margin-right: 45px;
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+        gap:
+            60px;
     }
 
+    .signature-item {
 
-    /* =====================================
-       SECTIONS
-    ===================================== */
-
-    .content-section {
-        padding-top: 95px;
-        padding-bottom: 95px;
+        grid-template-columns:
+            45px 1fr 40px;
     }
 
-    .section-header {
-        gap: 10px;
+    .contact {
 
-        margin-bottom: 50px;
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+        gap:
+            50px;
     }
 
-    .section-number {
-        font-size: 8px;
+    footer {
+
+        display:
+            flex;
+
+        flex-direction:
+            column;
+
+        text-align:
+            center;
     }
 
-    .section-header h2 {
-        font-size: 43px;
+    footer p {
+        justify-self:
+            auto;
     }
 
-
-    /* =====================================
-       ABOUT
-    ===================================== */
-
-    .about-grid {
-        display: block;
-    }
-
-    .big-text {
-        font-size: clamp(
-            34px,
-            10vw,
-            52px
-        );
-
-        line-height: 1;
-    }
-
-    .about-text {
-        padding-top: 35px;
-    }
-
-    .about-text p {
-        font-size: 13px;
-
-        line-height: 1.75;
-    }
-
-
-    /* =====================================
-       WORK
-    ===================================== */
-
-    .work-intro {
-        font-size: 13px;
-
-        line-height: 1.7;
-
-        margin-bottom: 32px;
-    }
-
-    .project-card {
-        display: block;
-
-        padding:
-            27px
-            22px;
-    }
-
-    .project-card::before {
-        display: none;
-    }
-
-    .project-card-number {
-        margin-bottom: 25px;
-    }
-
-    .project-card-main h3 {
-        font-size: 37px;
-    }
-
-    .project-card-main p {
-        font-size: 12px;
-
-        line-height: 1.7;
-    }
-
-    .project-tags {
-        gap: 6px;
-    }
-
-    .project-tags span {
-        font-size: 7px;
-    }
-
-    .project-card-arrow {
-        margin-top: 25px;
-
-        text-align: left;
-
-        font-size: 35px;
-    }
-
-
-    /* =====================================
-       R&D
-    ===================================== */
-
-    .rnd-layout {
-        display: block;
-    }
-
-    .rnd-visual {
-        min-height: 340px;
-
-        margin-bottom: 55px;
-    }
-
-    .rnd-circle {
-        width: 235px;
-    }
-
-    .rnd-orbit {
-        width: 285px;
-        height: 285px;
-    }
-
-    .rnd-center {
-        width: 95px;
-        height: 95px;
-
-        font-size: 16px;
-    }
-
-    .rnd-circle > span {
-        font-size: 6px;
-    }
-
-    .rnd-circle > span:nth-child(2) {
-        right: -15px;
-    }
-
-    .rnd-circle > span:nth-child(4) {
-        left: -15px;
-    }
-
-    .rnd-content > p:nth-child(2) {
-        font-size: 13px;
-
-        line-height: 1.75;
-    }
-
-    .rnd-principles {
-        grid-template-columns: 1fr;
-
-        margin-top: 40px;
-    }
-
-    .rnd-principles div,
-    .rnd-principles div:nth-child(odd),
-    .rnd-principles div:nth-child(even) {
-        border-right: none;
-
-        padding: 17px 0;
-    }
-
-
-    /* =====================================
-       INTERESTS
-    ===================================== */
-
-    .interest-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .interest-item {
-        min-height: 155px;
-
-        padding:
-            18px
-            14px;
-    }
-
-    .interest-item:nth-child(3n) {
-        border-right:
-            1px solid
-            rgba(17, 17, 17, 0.22);
-    }
-
-    .interest-item:nth-child(2n) {
-        border-right: none;
-    }
-
-    .interest-item h3 {
-        margin-top: 42px;
-
-        font-size: 18px;
-
-        line-height: 1.05;
-    }
-
-
-    /* =====================================
-       TOOLBOX
-    ===================================== */
-
-    .toolbox-grid {
-        grid-template-columns: 1fr;
-
-        gap: 45px;
-    }
-
-    .tool-list span {
-        font-size: 14px;
-    }
-
-
-    /* =====================================
-       LEARNING
-    ===================================== */
-
-    .learning-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .learning-item {
-        min-height: 135px;
-
-        padding: 17px;
-    }
-
-    .learning-item strong {
-        font-size: 22px;
-    }
-
-
-    /* =====================================
-       FINAL
-    ===================================== */
-
-    .final-section {
-        padding:
-            110px
-            var(--page-padding)
-            120px;
-    }
-
-    .final-inner h2 {
-        font-size: clamp(
-            48px,
-            14vw,
-            76px
-        );
-    }
-
-    .final-inner p {
-        font-size: 9px;
-    }
-
-
-    /* =====================================
-       FOOTER
-    ===================================== */
-
-    .footer {
-        padding:
-            24px
-            var(--page-padding)
-            27px;
-    }
-
-    .footer-top,
-    .footer-bottom {
-        gap: 15px;
-    }
-
-    .footer-top {
-        align-items: flex-start;
-
-        flex-direction: column;
-    }
-
-    .footer-name {
-        font-size: 12px;
-    }
-
-    .footer-role {
-        font-size: 7px;
-    }
-
-    .footer-bottom {
-        font-size: 7px;
+    .footer-links {
+        flex-wrap:
+            wrap;
+
+        justify-content:
+            center;
     }
 }
 
 
-/* =========================================
-   RESPONSIVE — SMALL MOBILE
-========================================= */
-
-@media (max-width: 430px) {
-
-    .nav-links {
-        gap: 0;
-    }
-
-    .nav-link {
-        padding-left: 4px;
-        padding-right: 4px;
-
-        font-size: 6.5px;
-    }
-
-    .hero-copy h1 {
-        font-size: 50px;
-    }
-
-    .hero-description {
-        font-size: 12px;
-    }
-
-    .terminal-tab {
-        font-size: 6.5px;
-    }
-
-    .section-header h2 {
-        font-size: 39px;
-    }
-
-    .interest-item h3 {
-        font-size: 16px;
-    }
-}
-
-
-/* =========================================
+/* =====================================================
    REDUCED MOTION
-========================================= */
+===================================================== */
 
 @media (prefers-reduced-motion: reduce) {
 
     *,
     *::before,
     *::after {
-        scroll-behavior: auto !important;
 
-        animation-duration: 0.01ms !important;
+        animation-duration:
+            0.01ms !important;
 
-        animation-iteration-count: 1 !important;
+        animation-iteration-count:
+            1 !important;
 
-        transition-duration: 0.01ms !important;
+        transition-duration:
+            0.01ms !important;
+
+        scroll-behavior:
+            auto !important;
     }
 }
