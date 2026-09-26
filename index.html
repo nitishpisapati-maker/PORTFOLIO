@@ -1,1333 +1,1137 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <title>CHAAR — One India. Many Flavours.</title>
 
-    <meta
-        name="description"
-        content="Nitish Pisapati — CSE student, builder and R&D enthusiast interested in backend development, AI and problem solving."
-    >
-
-    <meta
-        name="keywords"
-        content="Nitish Pisapati, CSE student, backend developer, AI, R&D, GitHub, portfolio"
-    >
-
-    <meta name="author" content="Nitish Pisapati">
-
-    <meta name="theme-color" content="#f3f1ec">
-
-    <meta
-        property="og:title"
-        content="Nitish Pisapati — CSE Student • Builder • R&D"
-    >
-
-    <meta
-        property="og:description"
-        content="Portfolio of Nitish Pisapati — exploring technology, backend development, AI and R&D."
-    >
-
-    <meta property="og:type" content="website">
-
-    <title>Nitish Pisapati — CSE Student • Builder • R&D</title>
-
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Yatra+One&family=Rozha+One&family=Philosopher:wght@400;700&family=Rye&family=Kalam:wght@400;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
         rel="stylesheet"
     >
 
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
-    <!-- LOADER -->
-    <div class="loader" id="loader">
-        <div class="loader-inner">
-            <span class="loader-number">01</span>
-            <span class="loader-line"></span>
-            <span class="loader-status">LOADING PORTFOLIO</span>
-        </div>
+    <!-- ==================================================
+         GLOBAL BACKGROUND
+    =================================================== -->
+
+    <div class="ambient-background">
+
+        <!-- Decorative rings -->
+        <div class="ambient-ring ring-a"></div>
+        <div class="ambient-ring ring-b"></div>
+        <div class="ambient-ring ring-c"></div>
+
+        <!-- Floating artifacts -->
+        <span class="float-art art-1">✦</span>
+        <span class="float-art art-2">❋</span>
+        <span class="float-art art-3">✧</span>
+        <span class="float-art art-4">❈</span>
+        <span class="float-art art-5">✺</span>
+        <span class="float-art art-6">◇</span>
+        <span class="float-art art-7">✦</span>
+        <span class="float-art art-8">❋</span>
+        <span class="float-art art-9">✧</span>
+        <span class="float-art art-10">❈</span>
+
+        <!-- Floating spice particles -->
+        <span class="spice-particle spice-1"></span>
+        <span class="spice-particle spice-2"></span>
+        <span class="spice-particle spice-3"></span>
+        <span class="spice-particle spice-4"></span>
+        <span class="spice-particle spice-5"></span>
+        <span class="spice-particle spice-6"></span>
+        <span class="spice-particle spice-7"></span>
+        <span class="spice-particle spice-8"></span>
+
+        <!-- Large decorative script -->
+        <span class="background-script bg-script-1">स्वाद</span>
+        <span class="background-script bg-script-2">रंग</span>
+        <span class="background-script bg-script-3">रस</span>
+
     </div>
 
 
-    <!-- BACKGROUND DECORATION -->
-    <div class="background-art" aria-hidden="true">
+    <!-- ==================================================
+         CURSOR
+    =================================================== -->
 
-        <div class="art-circle circle-one"></div>
-        <div class="art-circle circle-two"></div>
-
-        <div class="art-square square-one"></div>
-        <div class="art-square square-two"></div>
-        <div class="art-square square-three"></div>
-
-        <div class="art-line line-one"></div>
-        <div class="art-line line-two"></div>
-        <div class="art-line line-three"></div>
-
-        <div class="art-cross cross-one"></div>
-        <div class="art-cross cross-two"></div>
-
-        <div class="art-dot dot-one"></div>
-        <div class="art-dot dot-two"></div>
-        <div class="art-dot dot-three"></div>
-        <div class="art-dot dot-four"></div>
-
-        <span class="art-label label-one">R&amp;D / 01</span>
-        <span class="art-label label-two">BUILD / TEST / ITERATE</span>
-        <span class="art-label label-three">EST. 2026</span>
-
-    </div>
+    <div class="cursor-dot"></div>
+    <div class="cursor-glow"></div>
 
 
-    <!-- NAVBAR -->
-    <header class="navbar" id="navbar">
+    <!-- ==================================================
+         NAVBAR
+    =================================================== -->
 
-        <a
-            href="#top"
-            class="nav-logo"
-            data-bg="#f3f1ec"
-        >
-            NP<span>.</span>
+    <header class="navbar">
+
+        <a href="#home" class="brand">
+
+            <span class="brand-script">
+                चार
+            </span>
+
+            <span class="brand-name">
+                CHAAR
+            </span>
+
         </a>
+
 
         <nav class="nav-links">
 
-            <a
-                href="#about"
-                class="nav-link"
-                data-bg="#d6c7a8"
-            >
-                ABOUT
-            </a>
-
-            <a
-                href="#work"
-                class="nav-link"
-                data-bg="#c9d4df"
-            >
-                WORK
-            </a>
-
-            <a
-                href="#rnd"
-                class="nav-link"
-                data-bg="#b9cdbd"
-            >
-                R&amp;D
-            </a>
-
-            <a
-                href="#learning"
-                class="nav-link"
-                data-bg="#c0cbd8"
-            >
-                LEARNING
-            </a>
-
-            <a
-                href="https://github.com/nitishpisapati-maker"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="nav-link"
-                data-bg="#d5bfd2"
-            >
-                GITHUB
-            </a>
+            <a href="#home">Home</a>
+            <a href="#discover">Discover</a>
+            <a href="#regions">Cuisines</a>
+            <a href="#dishes">Signatures</a>
+            <a href="#story">Our Story</a>
+            <a href="#contact">Contact</a>
 
         </nav>
+
+
+        <a href="#regions" class="nav-button">
+
+            Explore
+
+            <span>↗</span>
+
+        </a>
 
     </header>
 
 
-    <main id="top">
+
+    <main>
 
 
-        <!-- HERO -->
-        <section class="hero section">
+        <!-- ==================================================
+             HERO
+        =================================================== -->
 
-            <div class="hero-top">
+        <section class="hero" id="home">
 
-                <div class="hero-eyebrow">
-                    <span class="status-dot"></span>
-                    CSE STUDENT&nbsp; • &nbsp;BUILDER&nbsp; • &nbsp;R&amp;D
+
+            <!-- Royal frame -->
+
+            <div class="royal-frame">
+
+                <span class="frame-corner corner-tl">❈</span>
+                <span class="frame-corner corner-tr">❈</span>
+                <span class="frame-corner corner-bl">❈</span>
+                <span class="frame-corner corner-br">❈</span>
+
+                <div class="frame-inner"></div>
+
+            </div>
+
+
+            <!-- Hero glow -->
+
+            <div class="hero-burgundy-glow"></div>
+            <div class="hero-gold-glow"></div>
+
+
+            <!-- Hero content -->
+
+            <div class="hero-copy">
+
+                <p class="hero-kicker">
+                    एक भारत · अनेक स्वाद
+                </p>
+
+
+                <h1>
+
+                    <span class="hero-hindi">
+                        चार
+                    </span>
+
+                    <span class="hero-brand">
+                        CHAAR
+                    </span>
+
+                </h1>
+
+
+                <div class="hero-divider">
+
+                    <span></span>
+
+                    <i>✦</i>
+
+                    <span></span>
+
                 </div>
 
-                <div class="hero-year">
-                    2026
+
+                <h2>
+
+                    One India.
+                    <br>
+
+                    <em>Many Flavours.</em>
+
+                </h2>
+
+
+                <p class="hero-description">
+
+                    Journey across India's culinary landscape,
+                    where every region speaks through its own
+                    flavours, traditions and colours.
+
+                </p>
+
+
+                <div class="hero-actions">
+
+                    <a href="#regions" class="primary-button">
+
+                        Discover cuisines
+
+                        <span>↓</span>
+
+                    </a>
+
+
+                    <a href="#discover" class="text-button">
+
+                        Why CHAAR?
+
+                        <span>↗</span>
+
+                    </a>
+
                 </div>
 
             </div>
 
 
-            <div class="hero-main">
 
-                <div class="hero-copy">
+            <!-- Hero visual -->
 
-                    <p class="hero-kicker">
-                        TECHNOLOGY / CURIOSITY / EXPERIMENTATION
-                    </p>
+            <div class="hero-visual">
 
-                    <h1>
-                        I like finding
-                        <span>problems</span>
-                        worth solving.
-                    </h1>
 
-                    <p class="hero-description">
-                        I'm a first-year CSE student interested in understanding
-                        how technology works, building things from scratch,
-                        and exploring ideas through experimentation.
-                    </p>
+                <div class="royal-disc disc-outer"></div>
+                <div class="royal-disc disc-middle"></div>
 
-                    <div class="hero-actions">
 
-                        <a href="#work" class="text-link">
-                            VIEW WORK
-                            <span>↗</span>
-                        </a>
+                <!-- Four dishes -->
 
-                        <a href="#about" class="text-link">
-                            ABOUT ME
-                            <span>↓</span>
-                        </a>
+                <div
+                    class="hero-food hero-food-north"
+                    data-speed="1.15"
+                >
 
-                    </div>
+                    <img
+                        src="images/north.png"
+                        alt="North Indian signature dish"
+                    >
+
+                    <span>
+                        VIRASAT
+                    </span>
 
                 </div>
 
 
-                <!-- TERMINAL -->
                 <div
-                    class="hero-interactive"
-                    id="heroInteractive"
+                    class="hero-food hero-food-south"
+                    data-speed="0.8"
                 >
 
-                    <div class="terminal-top">
+                    <img
+                        src="images/south.png"
+                        alt="South Indian signature dish"
+                    >
 
-                        <div class="terminal-dots">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
+                    <span>
+                        RAS
+                    </span>
 
-                        <span class="terminal-title">
-                            nitish.exe
+                </div>
+
+
+                <div
+                    class="hero-food hero-food-east"
+                    data-speed="1.35"
+                >
+
+                    <img
+                        src="images/east.png"
+                        alt="East Indian signature dish"
+                    >
+
+                    <span>
+                        MAHAK
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="hero-food hero-food-west"
+                    data-speed="1"
+                >
+
+                    <img
+                        src="images/west.png"
+                        alt="West Indian signature dish"
+                    >
+
+                    <span>
+                        RANG
+                    </span>
+
+                </div>
+
+
+                <!-- Center seal -->
+
+                <div class="hero-seal">
+
+                    <span class="seal-script">
+                        चार
+                    </span>
+
+                    <small>
+                        ONE INDIA
+                    </small>
+
+                    <small>
+                        FOUR IDENTITIES
+                    </small>
+
+                </div>
+
+
+                <!-- Floating decorative labels -->
+
+                <span class="visual-word visual-north">
+                    NORTH
+                </span>
+
+                <span class="visual-word visual-south">
+                    SOUTH
+                </span>
+
+                <span class="visual-word visual-east">
+                    EAST
+                </span>
+
+                <span class="visual-word visual-west">
+                    WEST
+                </span>
+
+            </div>
+
+
+            <div class="hero-scroll">
+
+                <span>
+                    SCROLL TO EXPLORE
+                </span>
+
+                <div class="scroll-track">
+                    <span></span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             MARQUEE
+        =================================================== -->
+
+        <div class="flavour-marquee">
+
+            <div class="marquee-track">
+
+                <span>SPICE</span>
+                <i>✦</i>
+
+                <span>TRADITION</span>
+                <i>✦</i>
+
+                <span>HERITAGE</span>
+                <i>✦</i>
+
+                <span>AROMA</span>
+                <i>✦</i>
+
+                <span>STORY</span>
+                <i>✦</i>
+
+                <span>CHAAR</span>
+                <i>✦</i>
+
+                <span>SPICE</span>
+                <i>✦</i>
+
+                <span>TRADITION</span>
+                <i>✦</i>
+
+                <span>HERITAGE</span>
+                <i>✦</i>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ==================================================
+             DISCOVER
+        =================================================== -->
+
+        <section class="discover" id="discover">
+
+            <div class="section-eyebrow">
+                THE IDEA
+            </div>
+
+
+            <div class="discover-heading">
+
+                <h2>
+
+                    India isn't
+                    <br>
+
+                    <em>one flavour.</em>
+
+                </h2>
+
+
+                <div class="discover-copy">
+
+                    <p>
+                        A dish can tell you where you are,
+                        who cooked it, what grew around it,
+                        and what generations before you
+                        chose to preserve.
+                    </p>
+
+                    <p>
+                        CHAAR turns that diversity into
+                        an interactive journey through four
+                        distinct culinary identities.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="discover-bottom">
+
+                <div class="ingredient-cloud">
+
+                    <span>CARDAMOM</span>
+                    <span>COCONUT</span>
+                    <span>SAFFRON</span>
+                    <span>MUSTARD</span>
+                    <span>TAMARIND</span>
+                    <span>CHILLI</span>
+
+                </div>
+
+
+                <div class="discover-orbit">
+
+                    <div></div>
+
+                    <span>
+                        ४
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             REGIONS
+        =================================================== -->
+
+        <section class="regions" id="regions">
+
+
+            <div class="regions-header">
+
+                <div>
+
+                    <div class="section-eyebrow">
+                        CHOOSE YOUR FLAVOUR
+                    </div>
+
+                    <h2>
+
+                        Four identities.
+                        <br>
+
+                        <em>Four worlds.</em>
+
+                    </h2>
+
+                </div>
+
+
+                <p>
+
+                    Hover over a world.
+                    Move through its atmosphere.
+                    Every cuisine has its own visual language.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="region-grid">
+
+
+                <!-- ==================================================
+                     VIRASAT
+                =================================================== -->
+
+                <article
+                    class="region-card virasat"
+                    data-region="virasat"
+                >
+
+                    <div class="region-art"></div>
+
+
+                    <div class="region-top">
+
+                        <span>
+                            01
                         </span>
 
-                        <span class="terminal-status">
-                            ONLINE
+                        <span>
+                            NORTH INDIA
                         </span>
 
                     </div>
 
 
-                    <div class="terminal-tabs">
+                    <div class="regional-decor virasat-decor">
 
-                        <button
-                            class="terminal-tab active"
-                            data-command="who"
-                        >
-                            WHO AM I
-                        </button>
+                        <div class="mughal-arch"></div>
 
-                        <button
-                            class="terminal-tab"
-                            data-command="build"
-                        >
-                            WHAT I BUILD
-                        </button>
-
-                        <button
-                            class="terminal-tab"
-                            data-command="interest"
-                        >
-                            WHAT INTERESTS ME
-                        </button>
-
-                        <button
-                            class="terminal-tab"
-                            data-command="learn"
-                        >
-                            WHAT I'M LEARNING
-                        </button>
+                        <span>✦</span>
+                        <span>❈</span>
+                        <span>✦</span>
 
                     </div>
 
 
-                    <div class="terminal-content">
+                    <div class="region-copy">
 
-                        <div class="terminal-prompt">
-                            <span>&gt;</span>
-                            <span id="terminalCommand">who am I</span>
-                        </div>
+                        <span class="identity">
+                            VIRASAT
+                        </span>
 
-                        <p id="terminalAnswer">
-                            A first-year CSE student who enjoys
-                            exploring technology, solving problems,
-                            and building things to understand how they work.
+                        <h3>
+
+                            Rich &
+                            <br>
+                            Traditional
+
+                        </h3>
+
+                        <p>
+
+                            Royal gravies, fragrant rice,
+                            tandoor smoke and recipes
+                            carried across generations.
+
                         </p>
 
                     </div>
 
 
-                    <div class="terminal-footer">
-                        <span>INTERACTIVE PROFILE</span>
-                        <span>01 / 04</span>
+                    <!-- Dish deliberately breaks grid -->
+
+                    <div class="regional-dish dish-virasat">
+
+                        <img
+                            src="images/north.png"
+                            alt="Virasat signature dish"
+                        >
+
+                        <div class="dish-label">
+                            <small>SIGNATURE</small>
+                            Butter Chicken
+                        </div>
+
                     </div>
 
-                </div>
 
-            </div>
+                    <div class="regional-script">
+                        विरासत
+                    </div>
 
 
-            <div class="hero-bottom">
+                    <button class="region-explore">
 
-                <div class="hero-location">
-                    CHENNAI / INDIA
-                </div>
+                        Explore
 
-                <div class="hero-scroll">
-                    SCROLL TO EXPLORE
-                    <span>↓</span>
-                </div>
+                        <span>↗</span>
 
-                <div class="hero-current">
-                    CURRENTLY EXPLORING
-                </div>
+                    </button>
+
+                </article>
+
+
+
+                <!-- ==================================================
+                     RAS
+                =================================================== -->
+
+                <article
+                    class="region-card ras"
+                    data-region="ras"
+                >
+
+                    <div class="region-art"></div>
+
+
+                    <div class="region-top">
+
+                        <span>
+                            02
+                        </span>
+
+                        <span>
+                            SOUTH INDIA
+                        </span>
+
+                    </div>
+
+
+                    <div class="regional-decor ras-decor">
+
+                        <div class="kolam"></div>
+                        <div class="kolam kolam-two"></div>
+
+                    </div>
+
+
+                    <div class="region-copy">
+
+                        <span class="identity">
+                            RAS
+                        </span>
+
+                        <h3>
+
+                            Spicy &
+                            <br>
+                            Aromatic
+
+                        </h3>
+
+                        <p>
+
+                            Curry leaves, coconut,
+                            tamarind, fermented batters
+                            and deep-rooted comfort.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="regional-dish dish-ras">
+
+                        <img
+                            src="images/south.png"
+                            alt="Ras signature dish"
+                        >
+
+                        <div class="dish-label">
+                            <small>SIGNATURE</small>
+                            Masala Dosa
+                        </div>
+
+                    </div>
+
+
+                    <div class="regional-script">
+                        ரச
+                    </div>
+
+
+                    <button class="region-explore">
+
+                        Explore
+
+                        <span>↗</span>
+
+                    </button>
+
+                </article>
+
+
+
+                <!-- ==================================================
+                     MAHAK
+                =================================================== -->
+
+                <article
+                    class="region-card mahak"
+                    data-region="mahak"
+                >
+
+                    <div class="region-art"></div>
+
+
+                    <div class="region-top">
+
+                        <span>
+                            03
+                        </span>
+
+                        <span>
+                            EAST INDIA
+                        </span>
+
+                    </div>
+
+
+                    <div class="regional-decor mahak-decor">
+
+                        <span>❀</span>
+                        <span>✦</span>
+                        <span>❀</span>
+
+                    </div>
+
+
+                    <div class="region-copy">
+
+                        <span class="identity">
+                            MAHAK
+                        </span>
+
+                        <h3>
+
+                            Delicate &
+                            <br>
+                            Distinct
+
+                        </h3>
+
+                        <p>
+
+                            Mustard, fish, delicate spices,
+                            sweets and coastal traditions.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="regional-dish dish-mahak">
+
+                        <img
+                            src="images/east.png"
+                            alt="Mahak signature dish"
+                        >
+
+                        <div class="dish-label">
+                            <small>SIGNATURE</small>
+                            Macher Jhol
+                        </div>
+
+                    </div>
+
+
+                    <div class="regional-script">
+                        মাহক
+                    </div>
+
+
+                    <button class="region-explore">
+
+                        Explore
+
+                        <span>↗</span>
+
+                    </button>
+
+                </article>
+
+
+
+                <!-- ==================================================
+                     RANG
+                =================================================== -->
+
+                <article
+                    class="region-card rang"
+                    data-region="rang"
+                >
+
+                    <div class="region-art"></div>
+
+
+                    <div class="region-top">
+
+                        <span>
+                            04
+                        </span>
+
+                        <span>
+                            WEST INDIA
+                        </span>
+
+                    </div>
+
+
+                    <div class="regional-decor rang-decor">
+
+                        <div class="rangoli-ring"></div>
+
+                        <span>✺</span>
+                        <span>◇</span>
+                        <span>✺</span>
+
+                    </div>
+
+
+                    <div class="region-copy">
+
+                        <span class="identity">
+                            RANG
+                        </span>
+
+                        <h3>
+
+                            Vibrant &
+                            <br>
+                            Colourful
+
+                        </h3>
+
+                        <p>
+
+                            Street food, colourful thalis,
+                            bold textures and flavours
+                            full of character.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="regional-dish dish-rang">
+
+                        <img
+                            src="images/west.png"
+                            alt="Rang signature dish"
+                        >
+
+                        <div class="dish-label">
+                            <small>SIGNATURE</small>
+                            Vada Pav
+                        </div>
+
+                    </div>
+
+
+                    <div class="regional-script">
+                        रंग
+                    </div>
+
+
+                    <button class="region-explore">
+
+                        Explore
+
+                        <span>↗</span>
+
+                    </button>
+
+                </article>
 
             </div>
 
         </section>
 
 
-        <!-- TICKER -->
-        <div class="ticker" aria-hidden="true">
 
-            <div class="ticker-track">
+        <!-- ==================================================
+             SIGNATURES
+        =================================================== -->
 
-                <span>BUILD</span>
-                <span>EXPLORE</span>
-                <span>RESEARCH</span>
-                <span>EXPERIMENT</span>
-                <span>ITERATE</span>
+        <section class="signatures" id="dishes">
 
-                <span>BUILD</span>
-                <span>EXPLORE</span>
-                <span>RESEARCH</span>
-                <span>EXPERIMENT</span>
-                <span>ITERATE</span>
-
+            <div class="section-eyebrow">
+                THE SIGNATURES
             </div>
 
-        </div>
 
-
-        <!-- ABOUT -->
-        <section
-            class="section content-section"
-            id="about"
-        >
-
-            <div class="section-header reveal">
-
-                <span class="section-number">
-                    01
-                </span>
+            <div class="signatures-heading">
 
                 <h2>
-                    About
+
+                    A few dishes.
+                    <br>
+
+                    <em>A thousand stories.</em>
+
                 </h2>
-
-                <span class="section-line"></span>
-
-            </div>
-
-
-            <div class="about-grid">
-
-                <div class="about-intro reveal">
-
-                    <p class="big-text">
-                        I'm interested in the space between
-                        <em>an idea</em> and
-                        <em>something that actually works.</em>
-                    </p>
-
-                </div>
-
-
-                <div class="about-text reveal">
-
-                    <p>
-                        I'm a first-year Computer Science Engineering
-                        student who likes understanding systems rather
-                        than just using them.
-                    </p>
-
-                    <p>
-                        I enjoy experimenting with different technologies,
-                        learning by building, and turning problems I notice
-                        into things I can investigate.
-                    </p>
-
-                    <p>
-                        Right now, I'm especially interested in backend
-                        development, artificial intelligence, search
-                        technology and research &amp; development.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- WORK -->
-        <section
-            class="section content-section"
-            id="work"
-        >
-
-            <div class="section-header reveal">
-
-                <span class="section-number">
-                    02
-                </span>
-
-                <h2>
-                    Work
-                </h2>
-
-                <span class="section-line"></span>
-
-            </div>
-
-
-            <div class="work-intro reveal">
 
                 <p>
-                    A collection of things I'm building, experimenting with,
-                    and learning from.
+                    These are only the beginning.
+                    Your journey continues inside every cuisine.
                 </p>
 
             </div>
 
 
-            <a
-                href="https://github.com/nitishpisapati-maker/PORTFOLIO"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="project-card reveal"
-            >
-
-                <div class="project-card-number">
-                    01
-                </div>
+            <div class="signature-list">
 
 
-                <div class="project-card-main">
+                <div class="signature-item">
 
-                    <span class="project-label">
-                        CURRENT / PUBLIC
-                    </span>
+                    <span>01</span>
 
-                    <h3>
-                        Personal Portfolio
-                    </h3>
+                    <div>
+                        <strong>
+                            Butter Chicken
+                        </strong>
 
-                    <p>
-                        A continuously evolving space documenting my
-                        technical interests, experiments, learning journey,
-                        and approach to R&amp;D.
-                    </p>
-
-                    <div class="project-tags">
-
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JAVASCRIPT</span>
-                        <span>GITHUB</span>
-                        <span>VERCEL</span>
-
+                        <small>
+                            VIRASAT · NORTH
+                        </small>
                     </div>
 
+                    <span class="signature-arrow">
+                        ↗
+                    </span>
+
                 </div>
 
 
-                <div class="project-card-arrow">
-                    ↗
+                <div class="signature-item">
+
+                    <span>02</span>
+
+                    <div>
+                        <strong>
+                            Hyderabadi Biryani
+                        </strong>
+
+                        <small>
+                            RAS · SOUTH
+                        </small>
+                    </div>
+
+                    <span class="signature-arrow">
+                        ↗
+                    </span>
+
                 </div>
+
+
+                <div class="signature-item">
+
+                    <span>03</span>
+
+                    <div>
+                        <strong>
+                            Macher Jhol
+                        </strong>
+
+                        <small>
+                            MAHAK · EAST
+                        </small>
+                    </div>
+
+                    <span class="signature-arrow">
+                        ↗
+                    </span>
+
+                </div>
+
+
+                <div class="signature-item">
+
+                    <span>04</span>
+
+                    <div>
+                        <strong>
+                            Vada Pav
+                        </strong>
+
+                        <small>
+                            RANG · WEST
+                        </small>
+                    </div>
+
+                    <span class="signature-arrow">
+                        ↗
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             STORY
+        =================================================== -->
+
+        <section class="story" id="story">
+
+            <div class="story-ornament">
+                ✦
+            </div>
+
+
+            <div class="section-eyebrow">
+                OUR STORY
+            </div>
+
+
+            <h2>
+
+                Food carries
+                <br>
+
+                <em>memory.</em>
+
+            </h2>
+
+
+            <p>
+
+                CHAAR is an exploration of the people,
+                ingredients, rituals and traditions behind
+                India's regional cuisines.
+
+            </p>
+
+
+            <div class="story-line">
+
+                <span></span>
+                <i>❈</i>
+                <span></span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             CONTACT
+        =================================================== -->
+
+        <section class="contact" id="contact">
+
+            <div>
+
+                <span class="section-eyebrow">
+                    COME TO THE TABLE
+                </span>
+
+                <h2>
+                    Your journey
+                    <br>
+                    <em>starts here.</em>
+                </h2>
+
+            </div>
+
+
+            <a href="#home" class="contact-button">
+
+                Back to the beginning
+
+                <span>↑</span>
 
             </a>
 
         </section>
 
 
-        <!-- R&D -->
-        <section
-            class="section content-section rnd-section"
-            id="rnd"
-        >
 
-            <div class="section-header reveal">
+        <!-- ==================================================
+             FOOTER
+        =================================================== -->
 
-                <span class="section-number">
-                    03
+        <footer>
+
+            <div class="footer-brand">
+
+                <span>
+                    चार
                 </span>
 
-                <h2>
-                    R&amp;D
-                </h2>
-
-                <span class="section-line"></span>
+                <strong>
+                    CHAAR
+                </strong>
 
             </div>
 
 
-            <div class="rnd-layout">
+            <div class="footer-links">
 
-                <div class="rnd-visual reveal">
-
-                    <div class="rnd-circle">
-
-                        <span>RESEARCH</span>
-                        <span>DEVELOPMENT</span>
-                        <span>EXPERIMENT</span>
-                        <span>ITERATE</span>
-
-                        <div class="rnd-center">
-                            R&amp;D
-                        </div>
-
-                    </div>
-
-                    <div class="rnd-orbit"></div>
-
-                </div>
-
-
-                <div class="rnd-content reveal">
-
-                    <p class="big-text">
-                        I don't need an idea to be
-                        <em>perfect</em> before I start
-                        exploring it.
-                    </p>
-
-                    <p>
-                        For me, research and development is about
-                        investigating questions, testing assumptions,
-                        learning from failed attempts, and gradually
-                        turning an idea into something practical.
-                    </p>
-
-
-                    <div class="rnd-principles">
-
-                        <div>
-                            <span>01</span>
-                            <p>Question the problem.</p>
-                        </div>
-
-                        <div>
-                            <span>02</span>
-                            <p>Build a working experiment.</p>
-                        </div>
-
-                        <div>
-                            <span>03</span>
-                            <p>Test what actually works.</p>
-                        </div>
-
-                        <div>
-                            <span>04</span>
-                            <p>Iterate from what you learn.</p>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- INTERESTS -->
-        <section class="section content-section">
-
-            <div class="section-header reveal">
-
-                <span class="section-number">
-                    04
-                </span>
-
-                <h2>
-                    Interests
-                </h2>
-
-                <span class="section-line"></span>
+                <a href="#home">Home</a>
+                <a href="#regions">Cuisines</a>
+                <a href="#dishes">Signatures</a>
+                <a href="#story">Story</a>
 
             </div>
 
 
-            <div class="interest-grid">
+            <p>
+                One India. Many Flavours.
+            </p>
 
-                <div class="interest-item reveal">
-                    <span>01</span>
-                    <h3>Backend Development</h3>
-                </div>
 
-                <div class="interest-item reveal">
-                    <span>02</span>
-                    <h3>Artificial Intelligence</h3>
-                </div>
+            <span class="copyright">
+                © 2026 CHAAR
+            </span>
 
-                <div class="interest-item reveal">
-                    <span>03</span>
-                    <h3>Machine Learning</h3>
-                </div>
+        </footer>
 
-                <div class="interest-item reveal">
-                    <span>04</span>
-                    <h3>Research &amp; Development</h3>
-                </div>
-
-                <div class="interest-item reveal">
-                    <span>05</span>
-                    <h3>Problem Solving</h3>
-                </div>
-
-                <div class="interest-item reveal">
-                    <span>06</span>
-                    <h3>Building New Ideas</h3>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- TOOLBOX -->
-        <section class="section content-section">
-
-            <div class="section-header reveal">
-
-                <span class="section-number">
-                    05
-                </span>
-
-                <h2>
-                    Toolbox
-                </h2>
-
-                <span class="section-line"></span>
-
-            </div>
-
-
-            <div class="toolbox-grid">
-
-                <div class="tool-group reveal">
-
-                    <span class="tool-heading">
-                        PROGRAMMING
-                    </span>
-
-                    <div class="tool-list">
-
-                        <span>Python</span>
-                        <span>JavaScript</span>
-                        <span>SQL</span>
-                        <span>HTML</span>
-                        <span>CSS</span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="tool-group reveal">
-
-                    <span class="tool-heading">
-                        DEVELOPMENT
-                    </span>
-
-                    <div class="tool-list">
-
-                        <span>FastAPI</span>
-                        <span>REST APIs</span>
-                        <span>Git</span>
-                        <span>GitHub</span>
-                        <span>Vercel</span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="tool-group reveal">
-
-                    <span class="tool-heading">
-                        AREAS
-                    </span>
-
-                    <div class="tool-list">
-
-                        <span>AI / ML</span>
-                        <span>NLP</span>
-                        <span>Information Retrieval</span>
-                        <span>Backend</span>
-                        <span>R&amp;D</span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- LEARNING -->
-        <section
-            class="section content-section learning-section"
-            id="learning"
-        >
-
-            <div class="section-header reveal">
-
-                <span class="section-number">
-                    06
-                </span>
-
-                <h2>
-                    Currently Learning
-                </h2>
-
-                <span class="section-line"></span>
-
-            </div>
-
-
-            <div class="learning-grid">
-
-                <div class="learning-item reveal">
-                    <span>01</span>
-                    <strong>C</strong>
-                    <small>LANGUAGE</small>
-                </div>
-
-                <div class="learning-item reveal">
-                    <span>02</span>
-                    <strong>Java</strong>
-                    <small>LANGUAGE</small>
-                </div>
-
-                <div class="learning-item reveal">
-                    <span>03</span>
-                    <strong>AI / ML</strong>
-                    <small>TECHNOLOGY</small>
-                </div>
-
-                <div class="learning-item reveal">
-                    <span>04</span>
-                    <strong>NLP</strong>
-                    <small>TECHNOLOGY</small>
-                </div>
-
-                <div class="learning-item reveal">
-                    <span>05</span>
-                    <strong>Backend</strong>
-                    <small>DEVELOPMENT</small>
-                </div>
-
-                <div class="learning-item reveal">
-                    <span>06</span>
-                    <strong>Deployment</strong>
-                    <small>DEVELOPMENT</small>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- FINAL STATEMENT -->
-        <section class="final-section">
-
-            <div class="final-inner reveal">
-
-                <span class="final-label">
-                    ONE MORE THING
-                </span>
-
-                <h2>
-                    I'm still figuring out
-                    <span>what comes next.</span>
-                </h2>
-
-                <p>
-                    That's part of the fun.
-                </p>
-
-            </div>
-
-        </section>
 
     </main>
 
 
-    <!-- FOOTER -->
-    <footer class="footer">
-
-        <div class="footer-top">
-
-            <div class="footer-name">
-                NITISH PISAPATI
-            </div>
-
-            <div class="footer-role">
-                CSE STUDENT / BUILDER / R&amp;D
-            </div>
-
-        </div>
-
-
-        <div class="footer-bottom">
-
-            <span>
-                © 2026 Nitish Pisapati
-            </span>
-
-            <a
-                href="https://github.com/nitishpisapati-maker"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                GITHUB ↗
-            </a>
-
-        </div>
-
-    </footer>
-
-
-    <!-- CUSTOM CURSOR -->
-    <div class="cursor-dot" id="cursorDot"></div>
-    <div class="cursor-ring" id="cursorRing"></div>
-
-
-    <script>
-
-        /* =========================================
-           LOADER
-        ========================================= */
-
-        window.addEventListener("load", () => {
-
-            setTimeout(() => {
-                document.body.classList.add("loaded");
-            }, 400);
-
-        });
-
-
-        /* =========================================
-           NAVIGATION BACKGROUND THEME
-        ========================================= */
-
-        const body = document.body;
-        const navbar = document.getElementById("navbar");
-        const navLinks = document.querySelectorAll(".nav-link");
-
-        const baseBackground = "#f3f1ec";
-        const baseText = "#111111";
-
-        navLinks.forEach(link => {
-
-            link.addEventListener("mouseenter", () => {
-
-                const background =
-                    link.dataset.bg || baseBackground;
-
-                body.style.backgroundColor = background;
-                navbar.style.backgroundColor = background;
-
-                body.style.setProperty(
-                    "--nav-color",
-                    baseText
-                );
-
-                navbar.style.color = baseText;
-
-            });
-
-        });
-
-        navbar.addEventListener("mouseleave", () => {
-
-            body.style.backgroundColor = baseBackground;
-            navbar.style.backgroundColor = baseBackground;
-
-            body.style.setProperty(
-                "--nav-color",
-                baseText
-            );
-
-            navbar.style.color = baseText;
-
-        });
-
-
-        /* =========================================
-           TERMINAL INTERACTION
-        ========================================= */
-
-        const terminalTabs =
-            document.querySelectorAll(".terminal-tab");
-
-        const terminalCommand =
-            document.getElementById("terminalCommand");
-
-        const terminalAnswer =
-            document.getElementById("terminalAnswer");
-
-        const terminalData = {
-
-            who: {
-                command: "who am I",
-                answer:
-                    "A first-year CSE student who enjoys exploring technology, solving problems, and building things to understand how they work."
-            },
-
-            build: {
-                command: "what do I build",
-                answer:
-                    "I like building experiments, websites, software projects, and technical ideas that help me understand a problem better."
-            },
-
-            interest: {
-                command: "what interests me",
-                answer:
-                    "Backend development, AI, machine learning, search technology, research, experimentation, and problem solving."
-            },
-
-            learn: {
-                command: "what am I learning",
-                answer:
-                    "C, Java, AI/ML, NLP, backend development, deployment, and the fundamentals behind building useful systems."
-            }
-
-        };
-
-        terminalTabs.forEach((tab, index) => {
-
-            tab.addEventListener("click", () => {
-
-                terminalTabs.forEach(item => {
-                    item.classList.remove("active");
-                });
-
-                tab.classList.add("active");
-
-                const command = tab.dataset.command;
-                const data = terminalData[command];
-
-                if (!data) return;
-
-                terminalCommand.textContent =
-                    data.command;
-
-                terminalAnswer.textContent =
-                    data.answer;
-
-                const counter =
-                    document.querySelector(
-                        ".terminal-footer span:last-child"
-                    );
-
-                if (counter) {
-
-                    counter.textContent =
-                        String(index + 1).padStart(2, "0")
-                        + " / 04";
-
-                }
-
-            });
-
-        });
-
-
-        /* =========================================
-           CUSTOM CURSOR
-        ========================================= */
-
-        const cursorDot =
-            document.getElementById("cursorDot");
-
-        const cursorRing =
-            document.getElementById("cursorRing");
-
-        let mouseX = window.innerWidth / 2;
-        let mouseY = window.innerHeight / 2;
-
-        let ringX = mouseX;
-        let ringY = mouseY;
-
-        window.addEventListener("mousemove", event => {
-
-            mouseX = event.clientX;
-            mouseY = event.clientY;
-
-            if (cursorDot) {
-
-                cursorDot.style.left =
-                    `${mouseX}px`;
-
-                cursorDot.style.top =
-                    `${mouseY}px`;
-
-            }
-
-        });
-
-        function animateCursor() {
-
-            ringX += (mouseX - ringX) * 0.12;
-            ringY += (mouseY - ringY) * 0.12;
-
-            if (cursorRing) {
-
-                cursorRing.style.left =
-                    `${ringX}px`;
-
-                cursorRing.style.top =
-                    `${ringY}px`;
-
-            }
-
-            requestAnimationFrame(animateCursor);
-
-        }
-
-        animateCursor();
-
-
-        /* =========================================
-           CURSOR HOVER EFFECT
-        ========================================= */
-
-        const interactiveElements =
-            document.querySelectorAll(
-                "a, button, .project-card, .interest-item, .learning-item"
-            );
-
-        interactiveElements.forEach(element => {
-
-            element.addEventListener("mouseenter", () => {
-
-                document.body.classList.add(
-                    "cursor-hover"
-                );
-
-            });
-
-            element.addEventListener("mouseleave", () => {
-
-                document.body.classList.remove(
-                    "cursor-hover"
-                );
-
-            });
-
-        });
-
-
-        /* =========================================
-           REVEAL ON SCROLL
-        ========================================= */
-
-        const revealElements =
-            document.querySelectorAll(".reveal");
-
-        const revealObserver =
-            new IntersectionObserver(
-                entries => {
-
-                    entries.forEach(entry => {
-
-                        if (entry.isIntersecting) {
-
-                            entry.target.classList.add(
-                                "visible"
-                            );
-
-                            revealObserver.unobserve(
-                                entry.target
-                            );
-
-                        }
-
-                    });
-
-                },
-                {
-                    threshold: 0.12
-                }
-            );
-
-        revealElements.forEach(element => {
-            revealObserver.observe(element);
-        });
-
-
-        /* =========================================
-           BACKGROUND PARALLAX
-        ========================================= */
-
-        const artElements =
-            document.querySelectorAll(
-                ".art-circle, .art-square, .art-line, .art-cross, .art-dot"
-            );
-
-        window.addEventListener("mousemove", event => {
-
-            if (window.innerWidth <= 760) return;
-
-            const x =
-                event.clientX / window.innerWidth - 0.5;
-
-            const y =
-                event.clientY / window.innerHeight - 0.5;
-
-            artElements.forEach((element, index) => {
-
-                const strength =
-                    ((index % 4) + 1) * 7;
-
-                const moveX =
-                    x * strength;
-
-                const moveY =
-                    y * strength;
-
-                element.style.marginLeft =
-                    `${moveX}px`;
-
-                element.style.marginTop =
-                    `${moveY}px`;
-
-            });
-
-        });
-
-
-        /* =========================================
-           HERO TERMINAL PARALLAX
-        ========================================= */
-
-        const heroInteractive =
-            document.getElementById(
-                "heroInteractive"
-            );
-
-        window.addEventListener("mousemove", event => {
-
-            if (
-                window.innerWidth <= 760 ||
-                !heroInteractive
-            ) {
-                return;
-            }
-
-            const x =
-                event.clientX / window.innerWidth - 0.5;
-
-            const y =
-                event.clientY / window.innerHeight - 0.5;
-
-            heroInteractive.style.transform =
-                `translate(${x * 10}px, ${y * 8}px)`;
-
-        });
-
-
-        /* =========================================
-           PROJECT CARD POINTER EFFECT
-           ONLY THIS PART HANDLES THE SPOTLIGHT
-        ========================================= */
-
-        const projectCard =
-            document.querySelector(".project-card");
-
-        if (projectCard) {
-
-            projectCard.addEventListener(
-                "mousemove",
-                event => {
-
-                    if (window.innerWidth <= 760) {
-                        return;
-                    }
-
-                    const rect =
-                        projectCard.getBoundingClientRect();
-
-                    const x =
-                        event.clientX - rect.left;
-
-                    const y =
-                        event.clientY - rect.top;
-
-                    /* Move orange spotlight */
-                    projectCard.style.setProperty(
-                        "--mouse-x",
-                        `${x}px`
-                    );
-
-                    projectCard.style.setProperty(
-                        "--mouse-y",
-                        `${y}px`
-                    );
-
-                    /* Existing 3D tilt */
-                    const rotateY =
-                        ((x / rect.width) - 0.5) * 3;
-
-                    const rotateX =
-                        ((y / rect.height) - 0.5) * -3;
-
-                    projectCard.style.transform =
-                        `perspective(1000px)
-                         rotateX(${rotateX}deg)
-                         rotateY(${rotateY}deg)
-                         translateY(-5px)`;
-
-                }
-            );
-
-
-            projectCard.addEventListener(
-                "mouseenter",
-                () => {
-
-                    projectCard.classList.add(
-                        "pointer-active"
-                    );
-
-                }
-            );
-
-
-            projectCard.addEventListener(
-                "mouseleave",
-                () => {
-
-                    projectCard.classList.remove(
-                        "pointer-active"
-                    );
-
-                    projectCard.style.transform = "";
-
-                    projectCard.style.setProperty(
-                        "--mouse-x",
-                        "50%"
-                    );
-
-                    projectCard.style.setProperty(
-                        "--mouse-y",
-                        "50%"
-                    );
-
-                }
-            );
-
-        }
-
-
-        /* =========================================
-           SECTION PROGRESS
-        ========================================= */
-
-        const sections =
-            document.querySelectorAll(
-                "main section[id]"
-            );
-
-        const sectionObserver =
-            new IntersectionObserver(
-                entries => {
-
-                    entries.forEach(entry => {
-
-                        if (entry.isIntersecting) {
-
-                            document.body.dataset.section =
-                                entry.target.id || "";
-
-                        }
-
-                    });
-
-                },
-                {
-                    threshold: 0.45
-                }
-            );
-
-        sections.forEach(section => {
-            sectionObserver.observe(section);
-        });
-
-
-        /* =========================================
-           SMOOTH SCROLL
-        ========================================= */
-
-        document
-            .querySelectorAll('a[href^="#"]')
-            .forEach(link => {
-
-                link.addEventListener(
-                    "click",
-                    event => {
-
-                        const target =
-                            document.querySelector(
-                                link.getAttribute("href")
-                            );
-
-                        if (!target) return;
-
-                        event.preventDefault();
-
-                        target.scrollIntoView({
-                            behavior: "smooth",
-                            block: "start"
-                        });
-
-                    }
-                );
-
-            });
-
-    </script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
